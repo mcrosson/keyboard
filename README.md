@@ -7,6 +7,14 @@ A fork of the main [mdloader](https://github.com/Massdrop/mdloader) repo that ha
 - The ```firmware``` folder has pre-compiled firmware as well as screen shots of the board layout
 - The ```src_mdloader``` folder has a copy of the ```mdloader 1.0.3``` release
 
+## Source Tweaks
+
+- This code has had the following chip id's added so others don't have to add them
+  - ```0x60060006```
+  - ```0x60060305```
+  - ```0x60060306```
+  - ```0x60060005```
+
 ## Using
 
 To work with this repo build and run the ```mdloader``` tool with ```--list```. I have patched the code to show *all* of the chip ids for boards found. Once you have the chip id, edit ```mdloader_common.c``` and change the chip id as necessary. Rebuild the tool and run per the standard documentation.

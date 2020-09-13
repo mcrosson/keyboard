@@ -36,6 +36,9 @@ mcu_t mcus[] = {
       //Name,       Chip ID     Chip ID,    Program Memory, Data Memory,    Program Addr,   Data Addr
       //            Address                 (FLASH_SIZE)    (HSRAM_SIZE)    (FLASH_ADDR)    (HSRAM_ADDR)
     { "SAMD51J18A", 0x41002018, 0x60060006, 0x40000,        0x20000,        0x00000000,     0x20000000},
+    { "SAMD51J18A", 0x41002018, 0x60060305, 0x40000,        0x20000,        0x00000000,     0x20000000},
+    { "SAMD51J18A", 0x41002018, 0x60060306, 0x40000,        0x20000,        0x00000000,     0x20000000},
+    { "SAMD51J18A", 0x41002018, 0x60060005, 0x40000,        0x20000,        0x00000000,     0x20000000},
 };
 
 mcu_t *mcu; //Pointer to mcus entry if found
@@ -330,6 +333,7 @@ int test_mcu(char silent)
     {
         mcu = (mcu_t *)&mcus[mcu_index];
         deviceid = read_word(mcu->cidr_addr);
+        printf("Devid id read from mcu->cidr_addr: %x\n", deviceid);
         if (read_error)
         {
             if (!silent && verbose) printf("Notice: Could not read device ID at %08X!\n", mcu->cidr_addr);
