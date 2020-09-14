@@ -95,7 +95,7 @@ void rgb_matrix_indicators_user(void) {
     }
   }
   if (host_keyboard_leds() & (1<<USB_LED_CAPS_LOCK)) {
-    rgb_matrix_set_color(CAPS_LED, 128, 255, 255);
+    rgb_matrix_set_color(CAPS_LED, 0, 191, 255);
   }
 }
 
