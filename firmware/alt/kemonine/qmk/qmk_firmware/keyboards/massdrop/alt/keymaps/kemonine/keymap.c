@@ -1,7 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#define CAPS_LOCK_LED_ID 30
-
 enum alt_keycodes {
     U_T_AUTO = SAFE_RANGE, //USB Extra Port Toggle Auto Detect / Always Active
     U_T_AGCR,              //USB Toggle Automatic GCR control
@@ -44,15 +42,8 @@ void matrix_scan_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static uint32_t key_timer;
-    static bool caps_state;
 
     switch (keycode) {
-        case KC_CAPSLOCK:
-            if (caps_state) {
-                rgb_matrix_set_color(CAPS_LOCK_LED_ID, 255, 255, 255);
-            }
-            caps_state = !caps_state;
-            return true;
         case U_T_AUTO:
             if (record->event.pressed && MODS_SHIFT && MODS_CTRL) {
                 TOGGLE_FLAG_AND_PRINT(usb_extra_manual, "USB extra port manual mode");
