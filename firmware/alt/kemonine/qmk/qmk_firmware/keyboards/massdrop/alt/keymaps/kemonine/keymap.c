@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                      KC_CAPS, KC_TRNS, KC_TRNS, KC_MS_UP, KC_TRNS, KC_TRNS, KC_TRNS, RESET, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_INS,
                                      KC_NO, KC_MS_WH_DOWN, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,
                                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MEDIA_PLAY_PAUSE, KC_RSFT, RGB_VAI, KC_MUTE,
-                                     KC_TRNS, KC_TRNS, KC_MS_BTN2, KC_MS_BTN1, KC_NO, KC_TRNS, KC_VOLD, RGB_VAD, KC_VOLU)
+                                     KC_TRNS, KC_TRNS, KC_MS_BTN2, KC_MS_BTN1, KC_NO, KC_RCTL, KC_VOLD, RGB_VAD, KC_VOLU)
 };
 
 const uint8_t PROGMEM layercolors[][2] = {
@@ -42,7 +42,7 @@ const uint8_t PROGMEM ledcolors[][DRIVER_LED_TOTAL][3] = {
         {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255},
         {0, 0, 0}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255},
         {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {0, 0, 0}, {128, 255, 255}, {128, 255, 255},
-        {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {128, 255, 255}, {0, 0, 0}, {0, 0, 0},{128, 255, 255}, {128, 255, 255}, {128, 255, 255}
+        {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {128, 255, 255}, {0, 0, 0}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}
     }
 };
 
