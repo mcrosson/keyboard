@@ -11,6 +11,7 @@
 
 #define RGB_KMN_NO_COLOR 0, 0, 0
 #define RGB_KMN_CYAN 128, 255, 255
+#define RGB_KMN_PRPL 215, 195, 42
 #define RGB_KMN_CYAN_HILIGHT 0, 191, 255
 
 #define HS_KMN_ORANGE 10,255
@@ -54,7 +55,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint8_t PROGMEM layercolors[][2] = {
     [0] = {HS_KMN_ORANGE},
-    [1] = {HS_KMN_CYAN}
+    [1] = {HS_KMN_CYAN},
+    [2] = {HS_KMN_CYAN}
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -62,22 +64,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                      KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS, KC_PGUP,
                                      LM(1, MOD_LALT), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT, KC_PGDN,
                                      KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_END,
-                                     KC_LCTL, KC_LGUI, TD(ALT_LAYER), KC_SPC, MO(1), KC_RALT, KC_LEFT, KC_DOWN, KC_RGHT),
+                                     KC_LCTL, KC_LGUI, TD(ALT_LAYER), KC_SPC, MO(1), KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
         [1] = LAYOUT_65_ansi_blocker(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_DEL, KC_DEL,
-                                     KC_CAPS, KC_TRNS, KC_TRNS, KC_MS_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_WH_UP, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET, KC_INS,
-                                     KC_TRNS, KC_TRNS, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,
-                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_BTN2, KC_MS_WH_DOWN, KC_TRNS, KC_TRNS, KC_MEDIA_PLAY_PAUSE, KC_RSFT, RGB_VAI, KC_MUTE,
-                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_BTN1, KC_TRNS, KC_RCTL, KC_VOLD, RGB_VAD, KC_VOLU),
+                                     KC_CAPS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET, KC_INS,
+                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,
+                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MEDIA_PLAY_PAUSE, KC_RSFT, RGB_VAI, KC_MUTE,
+                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_RALT, KC_VOLD, RGB_VAD, KC_VOLU),
+        [2] = LAYOUT_65_ansi_blocker(KC_ESC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                                     KC_NO, KC_NO, KC_NO, KC_MS_UP, KC_NO, KC_NO, KC_NO, KC_MS_WH_UP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                                     KC_NO, KC_NO, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_NO, KC_NO, KC_MS_BTN1, KC_MS_BTN2, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                                     KC_LSFT, KC_NO, KC_X, KC_C, KC_V, KC_NO, KC_NO, KC_MS_WH_DOWN, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                                     KC_LCTL, KC_NO, TG(2), KC_NO, TG(2), KC_NO, KC_NO, KC_NO, KC_NO),
 };
 
 const uint8_t PROGMEM ledcolors[][DRIVER_LED_TOTAL][3] = {
     [1] = {
         {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN},
-        {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN},
-        {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN},
-        {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN},
+        {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN},
+        {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN},
+        {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN},
         {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}
-    }
+    },
+    [2] = {
+        {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
+        {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
+        {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
+        {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
+        {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}
+    },
 };
 
 // Runs just one time when the keyboard initializes.
@@ -119,12 +133,12 @@ void al_finished(qk_tap_dance_state_t *state, void *user_data) {
             break;
         case DOUBLE_TAP:
             // Check to see if the layer is already set
-            if (layer_state_is(1)) {
+            if (layer_state_is(2)) {
                 // If already set, then switch it off
-                layer_off(1);
+                layer_off(2);
             } else {
                 // If not already set, then switch the layer on
-                layer_on(1);
+                layer_on(2);
             }
             break;
     }
@@ -173,6 +187,9 @@ void rgb_matrix_indicators_user(void) {
         break;
       case 1:
         set_leds_color(1);
+        break;
+      case 2:
+        set_leds_color(2);
         break;
     }
   }
