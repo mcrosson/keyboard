@@ -5,6 +5,14 @@
 #include QMK_KEYBOARD_H
 
 #define CAPS_LED 30
+#define LALT_LED 60
+
+#define RGB_KMN_NO_COLOR 0, 0, 0
+#define RGB_KMN_CYAN 128, 255, 255
+#define RGB_KMN_CYAN_HILIGHT 0, 191, 255
+
+#define HS_KMN_ORANGE 10,255
+#define HS_KMN_CYAN 128, 255
 
 enum alt_keycodes {
     U_T_AUTO = SAFE_RANGE, //USB Extra Port Toggle Auto Detect / Always Active
@@ -20,8 +28,8 @@ keymap_config_t keymap_config;
 rgb_config_t rgb_matrix_config;
 
 const uint8_t PROGMEM layercolors[][2] = {
-    [0] = {10,255},
-    [1] = {128, 255}
+    [0] = {HS_KMN_ORANGE},
+    [1] = {HS_KMN_CYAN}
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -29,21 +37,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                      KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS, KC_PGUP,
                                      LM(1, MOD_LALT), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT, KC_PGDN,
                                      KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_END,
-                                     KC_LCTL, KC_LGUI, MO(1), KC_SPC, MO(1), KC_RALT, KC_LEFT, KC_DOWN, KC_RGHT),
+                                     KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, MO(1), KC_RALT, KC_LEFT, KC_DOWN, KC_RGHT),
         [1] = LAYOUT_65_ansi_blocker(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_DEL, KC_DEL,
                                      KC_CAPS, KC_TRNS, KC_TRNS, KC_MS_UP, KC_TRNS, KC_TRNS, RESET, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_INS,
                                      KC_NO, KC_MS_WH_DOWN, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_MS_WH_UP, KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,
                                      KC_TRNS, KC_TRNS, KC_TRNS, KC_MS_BTN2, KC_MS_BTN1, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MEDIA_PLAY_PAUSE, KC_RSFT, RGB_VAI, KC_MUTE,
-                                     KC_TRNS, KC_TRNS, KC_NO, KC_TRNS, KC_NO, KC_RCTL, KC_VOLD, RGB_VAD, KC_VOLU)
+                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_RCTL, KC_VOLD, RGB_VAD, KC_VOLU),
 };
 
 const uint8_t PROGMEM ledcolors[][DRIVER_LED_TOTAL][3] = {
     [1] = {
-        {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255},
-        {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {0, 0, 0}, {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255},
-        {0, 0, 0}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {0, 0, 0}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255},
-        {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {128, 255, 255}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {0, 0, 0}, {128, 255, 255}, {128, 255, 255},
-        {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {0, 0, 0}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}, {128, 255, 255}
+        {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN},
+        {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN},
+        {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN},
+        {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN},
+        {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_NO_COLOR}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}, {RGB_KMN_CYAN}
     }
 };
 
@@ -99,7 +107,7 @@ void rgb_matrix_indicators_user(void) {
     }
   }
   if (host_keyboard_leds() & (1<<USB_LED_CAPS_LOCK)) {
-    rgb_matrix_set_color(CAPS_LED, 0, 191, 255);
+    rgb_matrix_set_color(CAPS_LED, RGB_KMN_CYAN_HILIGHT);
   }
 }
 
