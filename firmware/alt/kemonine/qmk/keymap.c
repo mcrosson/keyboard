@@ -115,7 +115,7 @@ void al_finished(qk_tap_dance_state_t *state, void *user_data) {
             tap_code(KC_LALT);
             break;
         case SINGLE_HOLD:
-            //layer_on(1);
+            register_mods(MOD_BIT(KC_LALT));
             break;
         case DOUBLE_TAP:
             // Check to see if the layer is already set
@@ -133,7 +133,7 @@ void al_finished(qk_tap_dance_state_t *state, void *user_data) {
 void al_reset(qk_tap_dance_state_t *state, void *user_data) {
     // If the key was held down and now is released then switch off the layer
     if (al_tap_state.state == SINGLE_HOLD) {
-        layer_off(1);
+        unregister_mods(MOD_BIT(KC_LALT));
     }
     al_tap_state.state = 0;
 }
