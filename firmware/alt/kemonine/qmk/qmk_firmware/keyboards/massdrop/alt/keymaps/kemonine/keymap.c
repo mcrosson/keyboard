@@ -174,10 +174,6 @@ void rgb_matrix_indicators_user(void) {
       case 1:
         set_leds_color(1);
         break;
-      case 2:
-        set_layer_color(0);
-        rgb_matrix_set_color(LALT_LED, RGB_KMN_CYAN_HILIGHT);
-        break;
     }
   }
   if (host_keyboard_leds() & (1<<USB_LED_CAPS_LOCK)) {
