@@ -17,6 +17,15 @@ Various sources and information on how KemoNine has setup their keyboards and ma
   - ```0x60060306```
   - ```0x60060005```
 
+## Building mdloader on Windows
+
+1. Install Chocolatey
+    * See https://chocolatey.org/install for details on how to install Chocolatey
+1. Install build tools via Administrator Powershell window: ```choco install make mingw gnuwin32-coreutils.portable```
+    - make : for the Makefile included with mdloader
+    - mingw : for gcc, the compiler used to build mdloader binaries
+    - gnuwin32-coreutils.portable : for rm, used by the Makefile included with mdloader
+
 ## Using mdloader
 
 To work with this repo's fork of mdloader, build and run the ```mdloader``` tool with ```--list```. I have patched the code to show *all* of the chip ids for boards found. Once you have the chip id, edit ```mdloader_common.c``` and change the chip id as necessary. Rebuild the tool and run per the standard documentation.
