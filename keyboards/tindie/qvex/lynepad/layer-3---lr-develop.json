@@ -1,0 +1,90 @@
+[
+  {
+    "backcolor": "#00f3ff",
+    "name": "Layer 3 - LR Develop",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "a": 0,
+      "f": 5,
+      "w": 2,
+      "h": 2
+    },
+    "Go to Library module\nCtrl + Alt + 1\n\n\nMOD(1)",
+    {
+      "a": 4,
+      "w": 2,
+      "h": 2
+    },
+    "Rotate photo left (counter clockwise)\nCtrl + [",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Rotate photo right (clockwise)\nCtrl + ]",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Select White Balance tool\nW"
+  ],
+  [
+    {
+      "y": 1,
+      "w": 2,
+      "h": 2
+    },
+    "Show/hide all panels\nShift + Tab",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Select the Spot Removal tool\nQ",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Reset crop\nCtrl + Alt + R",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Select the Crop tool\nR",
+    {
+      "x": 1,
+      "w": 3.25,
+      "h": 3.25
+    },
+    "Zoom in\nZoom out\nCtrl + =\nCtrl + -\n\n\n&larr;\n&rarr;\n&uarr;\nSlider Small Increments (+/-)\n&darr;"
+  ],
+  [
+    {
+      "y": 1,
+      "w": 2,
+      "h": 2
+    },
+    "Flag photo as a reject and go to next photo\nShift + X",
+    {
+      "a": 7,
+      "w": 2,
+      "h": 2
+    },
+    "",
+    {
+      "w": 2,
+      "h": 2
+    },
+    ""
+  ],
+  [
+    {
+      "y": 1,
+      "x": 6,
+      "a": 5,
+      "w": 4,
+      "h": 4
+    },
+    "Increase/decrease selected slider in larger increments\nShift + Up Arrow / Shift + Down Arrow\n\n\n\n\n<i class='fa fa-retweet'></i>"
+  ]
+]

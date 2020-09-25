@@ -1,0 +1,90 @@
+[
+  {
+    "backcolor": "#00f3ff",
+    "name": "Layer 2 - LR Library",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "a": 0,
+      "f": 5,
+      "w": 2,
+      "h": 2
+    },
+    "Go to Develop module\nCtrl + Alt + 2\n\n\nMOD(3)",
+    {
+      "a": 4,
+      "w": 2,
+      "h": 2
+    },
+    "Delete rejected photo(s)\nCtrl + Backspace",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Flag photo as a reject and go to next photo\nShift + X",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Flag photo as a pick and go to next photo\nShift + P"
+  ],
+  [
+    {
+      "y": 1,
+      "w": 2,
+      "h": 2
+    },
+    "Show/hide all panels\nShift + Tab",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Enter Library Grid view\nG",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Enter Library Loupe view\nE",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Enter Library Compare view\nC",
+    {
+      "x": 1,
+      "w": 3.25,
+      "h": 3.25
+    },
+    "Zoom in\nZoom out\nCtrl + =\nCtrl + -\n\n\n&larr;\n&rarr;\n&uarr;\n<i class='fa fa-retweet'></i>\n&darr;"
+  ],
+  [
+    {
+      "y": 1,
+      "w": 2,
+      "h": 2
+    },
+    "Layer Down",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Layer Up",
+    {
+      "a": 7,
+      "w": 2,
+      "h": 2
+    },
+    ""
+  ],
+  [
+    {
+      "y": 1,
+      "x": 6,
+      "a": 5,
+      "w": 4,
+      "h": 4
+    },
+    "Increase/decrease rating by one star\n] / [\n\n\n\n\n<i class='fa fa-retweet'></i>"
+  ]
+]

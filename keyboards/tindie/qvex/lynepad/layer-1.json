@@ -1,0 +1,53 @@
+[
+  {
+    "backcolor": "#ba00ff",
+    "name": "Layer 1",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "a": 7
+    },
+    "",
+    "Right Click",
+    "Up",
+    "Left Click"
+  ],
+  [
+    "",
+    "Left",
+    "Down",
+    "Right"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 4.5,
+      "a": 4,
+      "w": 1.25,
+      "h": 1.25
+    },
+    "\n\n\n\n\n\n&larr;\n&rarr;\n&uarr;\n<i class='fa fa-retweet'></i>\n&darr;"
+  ],
+  [
+    {
+      "y": -0.5
+    },
+    "Layer Down",
+    "Layer Up",
+    {
+      "a": 7
+    },
+    ""
+  ],
+  [
+    {
+      "y": 0.5,
+      "x": 3.5,
+      "a": 4,
+      "w": 2,
+      "h": 2
+    },
+    "Mouse Wheel\n\n\n\n\n\n\n\n\n<i class='fa fa-retweet'></i>"
+  ]
+]
