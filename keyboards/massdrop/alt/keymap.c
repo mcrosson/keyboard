@@ -50,7 +50,7 @@ enum td_keycodes {
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-    [ALT_LAYER] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, al_finished, al_reset)
+    [LAYERS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, al_finished, al_reset)
 };
 
 const uint8_t PROGMEM layercolors[][2] = {
