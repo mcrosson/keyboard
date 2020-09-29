@@ -126,7 +126,7 @@ void al_finished(qk_tap_dance_state_t *state, void *user_data) {
     al_tap_state.state = cur_dance(state);
     switch (al_tap_state.state) {
         case SINGLE_TAP:
-            // Do nothing ; Should be held to get layer 1
+            layer_on(1); // Activate layer 1 immediately since we probably are holding this down ; if released it'll go away fast and shouldn't be an issue
             break;
         case SINGLE_HOLD:
             layer_on(1); // Activate layer 1 since that's what the intent is
