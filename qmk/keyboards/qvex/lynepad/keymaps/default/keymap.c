@@ -18,26 +18,15 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap (Base Layer) Default Layer
    * |----------------------------|
-   * | 1 | 2 | 3 | 4 |            |
-   * | 5 | 6 | 7 | 8 |            |
-   * |----------------------------|
-   * |                      | OK ||
-   * |----------------------------|
+   * | 1 | 2  | 3  | 4 |          |
+   * | 5 | 6  | 7  | 8 |          |
    * | 9 | 10 | 11 |              |
-   * |----------------------------|
-   * |               | Up |       |
-   * |        | Left | OK | Right |
-   * |              | Down |      |
    * |----------------------------|
    */
 [0] = LAYOUT(
   KC_NO, KC_MS_BTN2, KC_MS_UP,   KC_MS_BTN1,
   KC_NO, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT,
-                                              KC_ESC,
-  TO(0), TO(0),      KC_NO,
-                                              KC_UP,
-                                    KC_LEFT, KC_ENTER, KC_RIGHT,
-                                              KC_DOWN
+  TO(0), TO(0),      KC_NO
   )
 };
 

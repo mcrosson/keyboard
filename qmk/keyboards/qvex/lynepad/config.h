@@ -31,22 +31,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 7
 #define MATRIX_COLS 6
 
-#define MATRIX_ROW_PINS { D0, D1, D2, D3, D4, D5, D6} // FIXME: Update to match Lynepad
-#define MATRIX_COL_PINS { B0, B1, B2, B3, B4, B5 } // FIXME: Update to match Lynepad
+#define MATRIX_ROW_PINS { PC7, PF7, PF6 }
+#define MATRIX_COL_PINS { PF0, PF1, PF4, PF5 }
 #define UNUSED_PINS
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW // FIXME: Update to match Lynepad
+#define DIODE_DIRECTION COL2ROW // FIXME: Double check this actually works
 
 /* Encoders */
-#define ENCODERS_PAD_A { E1, E3 } // FIXME: Update to match Lynepad
-#define ENCODERS_PAD_B { E2, E4 } // FIXME: Update to match Lynepad
-
-/* number of backlight levels */
-#define BACKLIGHT_PIN C0 // FIXME: Update to match Lynepad
-#ifdef BACKLIGHT_PIN
-#define BACKLIGHT_LEVELS 3
-#endif
+#define ENCODERS_PAD_A { PD0, PB5 }
+#define ENCODERS_PAD_B { PD1, PD6 }
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
@@ -57,7 +51,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-#define RGB_DI_PIN D1 // FIXME: Update to match Lynepad
+#define RGB_DI_PIN PD3
 #ifdef RGB_DI_PIN
 #undef RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 4

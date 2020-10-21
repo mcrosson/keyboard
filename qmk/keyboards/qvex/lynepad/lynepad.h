@@ -28,18 +28,10 @@
 #define LAYOUT( \
     K00, K01, K02, K03,           \
     K10, K11, K12, K13,           \
-                             K25, \
-    K30, K31, K32,                \
-                        K44,      \
-                   K53, K54, K55, \
-                        K64      \
+    K20, K21, K22                 \
 ) \
 { \
-    { K00,   K01,   K02,   K03,   KC_NO, KC_NO }, \
-    { K10,   K11,   K12,   K13,   KC_NO, KC_NO }, \
-    { KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, K25 }, \
-    { K30,   K31,   K32,   KC_NO, KC_NO, KC_NO }, \
-    { KC_NO, KC_NO, KC_NO, KC_NO, K44,   KC_NO }, \
-    { KC_NO, KC_NO, KC_NO, K53,   K54,   K55 }, \
-    { KC_NO, KC_NO, KC_NO, KC_NO, K64,   KC_NO } \
+    { K00,   K01,   K02,   K03   }, \
+    { K10,   K11,   K12,   K13   }, \
+    { K20,   K21,   K22,   KC_NO }  \
 }
