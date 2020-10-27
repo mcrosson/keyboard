@@ -4,10 +4,6 @@
 
 #include QMK_KEYBOARD_H
 
-#define HSV_KMN_ORANGE 10,255, 95
-#define HSV_KMN_CYAN 128, 255, 95
-#define HSV_KMN_PURPLE 191, 255, 95
-
 keymap_config_t keymap_config;
 
 uint8_t cur_dance(qk_tap_dance_state_t *state);
@@ -51,6 +47,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                      KC_LCTL, KC_NO, TG(2), KC_NO, TG(2), KC_NO, KC_NO, KC_NO, KC_NO),
 };
 
+// Customized HSV values for layer highlights
+#define HSV_KMN_ORANGE 10,255, RGBLIGHT_LIMIT_VAL
+#define HSV_KMN_CYAN 128, 255, RGBLIGHT_LIMIT_VAL
+#define HSV_KMN_PURPLE 191, 255, RGBLIGHT_LIMIT_VAL
+#define LED_UNDERGLOW_NUMBER 16
+
+// Standard layout == Layer 0 == Orange
+const rgblight_segment_t PROGMEM led_underglow_orange[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, LED_UNDERGLOW_NUMBER, HSV_KMN_ORANGE}
+);
+// Modifiers == Layer 1 == Cyan
+const rgblight_segment_t PROGMEM led_underglow_cyan[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, LED_UNDERGLOW_NUMBER, HSV_KMN_CYAN}
+);
+// Mouse keys == Layer 3 == Purple
+const rgblight_segment_t PROGMEM led_underglow_purple[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, LED_UNDERGLOW_NUMBER, HSV_KMN_PURPLE}
+);
+
+// Array of layers for management
+const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    led_underglow_orange,
+    led_underglow_cyan,
+    led_underglow_purple
+);
+
+// Layer color init
+void keyboard_post_init_user(void) {
+    rgblight_layers = my_rgb_layers;
+}
+
+// Adjust layers based on which is active
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state, 0));
+    rgblight_set_layer_state(1, layer_state_cmp(state, 1));
+    rgblight_set_layer_state(2, layer_state_cmp(state, 2));
+    return state;
+}
+
 // Runs just one time when the keyboard initializes.
 void matrix_init_user(void) {
 };
@@ -58,24 +93,6 @@ void matrix_init_user(void) {
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
 };
-
-// Override standard rgb colorization stuff
-void rgb_matrix_indicators_user(void) {
-  // assign colors if the matrix is on and the current mode
-  // is SOLID COLORS => No animations running
-  uint8_t layer = biton32(layer_state);
-  switch (layer) {
-    case 0:
-      rgblight_sethsv(HSV_KMN_ORANGE);
-      break;
-    case 1:
-      rgblight_sethsv(HSV_KMN_CYAN);
-      break;
-    case 2:
-      rgblight_sethsv(HSV_KMN_PURPLE);
-      break;
-  }
-}
 
 uint8_t cur_dance(qk_tap_dance_state_t *state) {
     if (state->count == 1) {
