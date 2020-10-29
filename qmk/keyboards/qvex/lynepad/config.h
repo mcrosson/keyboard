@@ -61,3 +61,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_LIMIT_VAL 240
 #define RGBLIGHT_SLEEP
 #endif
+
+// Definitions for encoder tilt/press support
+#define ENC_TILT_THRESHOLD 3 // 0 - 1023 per the analogReadPin docs -- higher == more tilt
+
+#define PIN_TW_SW PD2 // Center
+#define PIN_RJ_SW PC6 // Center
+#define PIN_RJ_DIR_A PD4 // Up
+#define PIN_RJ_DIR_B PD7 // Left
+#define PIN_RJ_DIR_C PB6 // Down
+#define PIN_RJ_DIR_D PB4 // Right
+
+extern int16_t enc1Center;
+extern int16_t enc1CenterPrev;
+extern int16_t enc2Center;
+extern int16_t enc2CenterPrev;
+extern int16_t enc2Up;
+extern int16_t enc2UpPrev;
+extern int16_t enc2Down;
+extern int16_t enc2DownPrev;
+extern int16_t enc2Left;
+extern int16_t enc2LeftPrev;
+extern int16_t enc2Right;
+extern int16_t enc2RightPrev;
