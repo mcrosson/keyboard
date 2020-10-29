@@ -24,9 +24,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------------------------|
    */
 [0] = LAYOUT(
-  KC_NO, KC_MS_BTN2, KC_MS_UP,   KC_MS_BTN1,
-  KC_NO, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT,
-  KC_NO, KC_NO,      KC_NO
+  KC_MS_BTN4,   KC_MS_BTN2,   KC_MS_UP,    KC_MS_BTN1,
+  KC_MS_BTN5,   KC_MS_LEFT,   KC_MS_DOWN,  KC_MS_RIGHT,
+  KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2
   )
 };
 
@@ -35,9 +35,9 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     // Process encoder rotational movements
     if (index == 0) { /* First encoder */
         if (clockwise) {
-            tap_code(KC_MS_WH_RIGHT);
+            tap_code(KC_AUDIO_VOL_UP);
         } else {
-            tap_code(KC_MS_WH_LEFT);
+            tap_code(KC_AUDIO_VOL_UP);
         }
     } else if (index == 1) { /* Second encoder */
         if (clockwise) {
@@ -70,34 +70,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     if (enc2Up != enc2UpPrev) {
         if (enc2Up < ENC_TILT_THRESHOLD) {
-            register_code16(KC_UP);
+            register_code16(RGB_VAI);
         }
         else {
-            unregister_code16(KC_UP);
+            unregister_code16(RGB_VAI);
         }
     }
     if (enc2Down != enc2DownPrev) {
         if (enc2Down < ENC_TILT_THRESHOLD) {
-            register_code16(KC_DOWN);
+            register_code16(RGB_VAD);
         }
         else {
-            unregister_code16(KC_DOWN);
+            unregister_code16(RGB_VAD);
         }
     }
     if (enc2Left != enc2LeftPrev) {
         if (enc2Left < ENC_TILT_THRESHOLD) {
-            register_code16(KC_LEFT);
+            register_code16(RGB_TOG);
         }
         else {
-            unregister_code16(KC_LEFT);
+            unregister_code16(RGB_TOG);
         }
     }
     if (enc2Right != enc2RightPrev) {
         if (enc2Right < ENC_TILT_THRESHOLD) {
-            register_code16(KC_DOWN);
+            register_code16(RGB_MODE_FORWARD);
         }
         else {
-            unregister_code16(KC_DOWN);
+            unregister_code16(RGB_MODE_FORWARD);
         }
     }
 

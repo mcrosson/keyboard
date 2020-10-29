@@ -63,7 +63,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 // Definitions for encoder tilt/press support
-#define ENC_TILT_THRESHOLD 3 // 0 - 1023 per the analogReadPin docs -- higher == more tilt
+#define ENC_TILT_THRESHOLD 0 // 0 - 1023 per the analogReadPin docs -- higher == more tilt
+                             // Encoder is digital so this can be 0 as anything > 0 == press/tilt
 
 #define PIN_TW_SW PD2 // Center
 #define PIN_RJ_SW PC6 // Center
