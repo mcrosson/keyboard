@@ -5,19 +5,20 @@ Various sources and information on how KemoNine has setup their keyboards and ma
 ## Organization
 
 - The ```firmware``` folder has pre-compiled firmware as well as screen shots of the board layout
-- The ```mdloader``` folder has a copy of the ```mdloader 1.0.3``` release that's been patched to work with more keyboard chip ids than massdrop provides
 - The ```keyboards``` folder has KemoNine's keyboard/macro pad setups
 
 ## Source Tweaks
 
 - The ```qmk``` sources have KemoNine's massdrop alt configuration/keymap
-- The ```mdloader``` code has had the following chip id's added so others don't have to add them
-  - ```0x60060006```
-  - ```0x60060305```
-  - ```0x60060306```
-  - ```0x60060005```
+- The ```qmk``` sources have KemoNine's port of QMK for the Qvex Lynepad
+
+## mdloader
+
+Given Drop *finally* updated their mdloader sources for more recent keyboard revisions the fork that was previously hosted here has been removed. Please use the upstream sources and builds.
 
 ## Building mdloader on Windows
+
+*Please note:* This section has been retained for those who may need/want to build mdloader from the official sources.
 
 1. Install Chocolatey
     * See https://chocolatey.org/install for details on how to install Chocolatey
@@ -25,10 +26,6 @@ Various sources and information on how KemoNine has setup their keyboards and ma
     - make : for the Makefile included with mdloader
     - mingw : for gcc, the compiler used to build mdloader binaries
     - gnuwin32-coreutils.portable : for rm, used by the Makefile included with mdloader
-
-## Using mdloader
-
-To work with this repo's fork of mdloader, build and run the ```mdloader``` tool with ```--list```. I have patched the code to show *all* of the chip ids for boards found. Once you have the chip id, edit ```mdloader_common.c``` and change the chip id as necessary. Rebuild the tool and run per the standard documentation.
 
 ## Licensing
 
