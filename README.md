@@ -4,8 +4,9 @@ Various sources and information on how KemoNine has setup their keyboards and ma
 
 ## Organization
 
-- The ```firmware``` folder has pre-compiled firmware as well as screen shots of the board layout
+- The ```notes``` folder has various notes KemoNine has taken while working on keyboard stuff
 - The ```keyboards``` folder has KemoNine's keyboard/macro pad setups
+- The ```qmk``` folder has KemoNine's QMK work (see below section for more information)
 
 ## Source Tweaks
 
