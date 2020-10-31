@@ -15,6 +15,8 @@
  */
 #include QMK_KEYBOARD_H
 
+#include <print.h>
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap (Base Layer) Default Layer
    * |----------------------------|
@@ -23,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * | 9 | 10 | 11 |              |
    * |----------------------------|
    */
-[0] = LAYOUT(
+[0] = LAYOUT_Lynepad(
   KC_MS_BTN4,   KC_MS_BTN2,   KC_MS_UP,    KC_MS_BTN1,
   KC_MS_BTN5,   KC_MS_LEFT,   KC_MS_DOWN,  KC_MS_RIGHT,
   KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2
@@ -35,29 +37,42 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     // Process encoder rotational movements
     if (index == 0) { /* First encoder */
         if (clockwise) {
-            tap_code(KC_AUDIO_VOL_UP);
+            tap_code(KC_AUDIO_VOL_DOWN);
         } else {
             tap_code(KC_AUDIO_VOL_UP);
         }
     } else if (index == 1) { /* Second encoder */
         if (clockwise) {
-            tap_code(KC_MS_WH_DOWN);
-        } else {
             tap_code(KC_MS_WH_UP);
+        } else {
+            tap_code(KC_MS_WH_DOWN);
         }
     }
 }
 
 // Encoder press / tilt event handling
-// the core lynepad implementation will trigger a matrix event if a push/tilt 
-//     happens on the encoders so we can process it in the standard areas for handling key codes
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+// the core lynepad implementation will update the below variables on each matrix scan
+// Update the various codes below for customizing the tilt / push config
+
+extern int16_t enc1Center;
+extern int16_t enc1CenterPrev;
+extern int16_t enc2Center;
+extern int16_t enc2CenterPrev;
+extern int16_t enc2Up;
+extern int16_t enc2UpPrev;
+extern int16_t enc2Down;
+extern int16_t enc2DownPrev;
+extern int16_t enc2Left;
+extern int16_t enc2LeftPrev;
+extern int16_t enc2Right;
+extern int16_t enc2RightPrev;
+
+void matrix_scan_user(void) {
     if (enc1Center != enc1CenterPrev) {
         if (enc1Center < ENC_TILT_THRESHOLD) {
-            register_code16(RESET);
         }
         else {
-            unregister_code16(RESET);
+            reset_keyboard();
         }
     }
     if (enc2Center != enc2CenterPrev) {
@@ -67,6 +82,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         else {
             unregister_code16(KC_MS_BTN3);
         }
+        /*
+         * Encoder sets ALL values when center is pressed so bail out at this point\
+         * to avoid the rest of the encoder buttons registering events
+         */
+        return;
     }
     if (enc2Up != enc2UpPrev) {
         if (enc2Up < ENC_TILT_THRESHOLD) {
@@ -100,7 +120,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             unregister_code16(RGB_MODE_FORWARD);
         }
     }
-
-    // Ensure standard handling happens as we're ignoring the keycode/record values passed
-    return true;
 }
