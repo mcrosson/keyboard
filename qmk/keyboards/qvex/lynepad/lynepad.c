@@ -12,6 +12,13 @@ void keyboard_pre_init_kb(void) {
     setPinInput(PIN_RJ_DIR_D);
 }
 
+// void keyboard_post_init_user(void) {
+//   debug_enable=true;
+//   debug_matrix=true;
+//   debug_keyboard=true;
+//   debug_mouse=true;
+// }
+
 int16_t enc1Center = 1;
 int16_t enc1CenterPrev = 1;
 int16_t enc2Center = 1;
