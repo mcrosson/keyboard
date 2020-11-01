@@ -15,8 +15,6 @@
  */
 #include QMK_KEYBOARD_H
 
-#include <print.h>
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap (Base Layer) Default Layer
    * |----------------------------|
@@ -26,26 +24,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------------------------|
    */
 [0] = LAYOUT_Lynepad(
-  KC_MS_BTN4,   KC_MS_BTN2,   KC_MS_UP,    KC_MS_BTN1,
-  KC_MS_BTN5,   KC_MS_LEFT,   KC_MS_DOWN,  KC_MS_RIGHT,
+  KC_NO,   KC_MS_BTN2,   KC_MS_UP,    KC_MS_BTN1,
+  KC_NO,   KC_MS_LEFT,   KC_MS_DOWN,  KC_MS_RIGHT,
   KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2
   )
 };
+
+// Customized HSV values for layer highlights
+#define HSV_KMN_PURPLE 191, 255, 120
+
+const rgblight_segment_t PROGMEM led_underglow_purple[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, RGBLED_NUM, HSV_KMN_PURPLE}
+);
+
+// Array of layers for management
+const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    led_underglow_purple
+);
+
+// Layer color init
+void keyboard_post_init_user(void) {
+    rgblight_layers = my_rgb_layers;
+    rgblight_sethsv_noeeprom(HSV_KMN_PURPLE);
+}
+
+// Adjust layers based on which is active
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state, 0));
+    return state;
+}
 
 // Standard encoder functionality
 void encoder_update_user(uint8_t index, bool clockwise) {
     // Process encoder rotational movements
     if (index == 0) { /* First encoder */
         if (clockwise) {
-            tap_code(KC_AUDIO_VOL_DOWN);
-        } else {
-            tap_code(KC_AUDIO_VOL_UP);
-        }
-    } else if (index == 1) { /* Second encoder */
-        if (clockwise) {
             tap_code(KC_MS_WH_UP);
         } else {
             tap_code(KC_MS_WH_DOWN);
+        }
+    } else if (index == 1) { /* Second encoder */
+        if (clockwise) {
+            tap_code(KC_AUDIO_VOL_DOWN);
+        } else {
+            tap_code(KC_AUDIO_VOL_UP);
         }
     }
 }
@@ -72,15 +94,13 @@ void matrix_scan_user(void) {
         if (enc1Center < ENC_TILT_THRESHOLD) {
         }
         else {
-            reset_keyboard();
         }
     }
     if (enc2Center != enc2CenterPrev) {
         if (enc2Center < ENC_TILT_THRESHOLD) {
-            register_code16(KC_MS_BTN3);
         }
         else {
-            unregister_code16(KC_MS_BTN3);
+            reset_keyboard();
         }
         /*
          * Encoder sets ALL values when center is pressed so bail out at this point\
@@ -90,34 +110,26 @@ void matrix_scan_user(void) {
     }
     if (enc2Up != enc2UpPrev) {
         if (enc2Up < ENC_TILT_THRESHOLD) {
-            register_code16(RGB_VAI);
         }
         else {
-            unregister_code16(RGB_VAI);
         }
     }
     if (enc2Down != enc2DownPrev) {
         if (enc2Down < ENC_TILT_THRESHOLD) {
-            register_code16(RGB_VAD);
         }
         else {
-            unregister_code16(RGB_VAD);
         }
     }
     if (enc2Left != enc2LeftPrev) {
         if (enc2Left < ENC_TILT_THRESHOLD) {
-            register_code16(RGB_TOG);
         }
         else {
-            unregister_code16(RGB_TOG);
         }
     }
     if (enc2Right != enc2RightPrev) {
         if (enc2Right < ENC_TILT_THRESHOLD) {
-            register_code16(RGB_MODE_FORWARD);
         }
         else {
-            unregister_code16(RGB_MODE_FORWARD);
         }
     }
 }
