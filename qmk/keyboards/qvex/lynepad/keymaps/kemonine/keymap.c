@@ -110,14 +110,18 @@ void matrix_scan_user(void) {
     }
     if (enc2Up != enc2UpPrev) {
         if (enc2Up < ENC_TILT_THRESHOLD) {
+            register_code16(KC_MS_WH_UP);
         }
         else {
+            unregister_code16(KC_MS_WH_UP);
         }
     }
     if (enc2Down != enc2DownPrev) {
         if (enc2Down < ENC_TILT_THRESHOLD) {
+            register_code16(KC_MS_WH_DOWN);
         }
         else {
+            unregister_code16(KC_MS_WH_DOWN);
         }
     }
     if (enc2Left != enc2LeftPrev) {
