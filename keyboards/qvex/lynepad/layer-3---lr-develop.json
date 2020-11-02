@@ -1,19 +1,17 @@
 [
   {
-    "backcolor": "#00f3ff",
+    "backcolor": "#fff200",
     "name": "Layer 3 - LR Develop",
     "author": "KemoNine"
   },
   [
     {
-      "a": 0,
       "f": 5,
       "w": 2,
       "h": 2
     },
-    "Go to Library module\nCtrl + Alt + 1\n\n\nMOD(1)",
+    "Go to Library module\nCtrl + Alt + 1",
     {
-      "a": 4,
       "w": 2,
       "h": 2
     },
@@ -56,35 +54,35 @@
       "w": 3.25,
       "h": 3.25
     },
-    "Zoom in\nZoom out\nCtrl + =\nCtrl + -\n\n\n&larr;\n&rarr;\n&uarr;\nSlider Small Increments (+/-)\n&darr;"
+    "\n\n\n\n\n\n&larr;\n&rarr;\nShift + Up Arrow\n<i class='fa fa-retweet'></i> Slider +/-\nShift + Down Arrow"
   ],
   [
     {
       "y": 1,
-      "w": 2,
-      "h": 2
-    },
-    "Flag photo as a reject and go to next photo\nShift + X",
-    {
       "a": 7,
       "w": 2,
       "h": 2
     },
-    "",
+    "Layer 0",
     {
       "w": 2,
       "h": 2
     },
-    ""
+    "Layer 1",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Layer 2"
   ],
   [
     {
       "y": 1,
       "x": 6,
-      "a": 5,
+      "a": 4,
       "w": 4,
       "h": 4
     },
-    "Increase/decrease selected slider in larger increments\nShift + Up Arrow / Shift + Down Arrow\n\n\n\n\n<i class='fa fa-retweet'></i>"
+    "\nCtrl + =\n\nCtrl + -\n\n\n\n\n\n<i class='fa fa-retweet'></i> Esc\nZoom"
   ]
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "backcolor": "#00f3ff",
+    "backcolor": "#00ff5a",
     "name": "Layer 2 - LR Library",
     "author": "KemoNine"
   },
@@ -61,21 +61,21 @@
   [
     {
       "y": 1,
-      "w": 2,
-      "h": 2
-    },
-    "Layer Down",
-    {
-      "w": 2,
-      "h": 2
-    },
-    "Layer Up",
-    {
       "a": 7,
       "w": 2,
       "h": 2
     },
-    ""
+    "Layer 0",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Layer 1",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Layer 2"
   ],
   [
     {
@@ -85,6 +85,6 @@
       "w": 4,
       "h": 4
     },
-    "Increase/decrease rating by one star\n] / [\n\n\n\n\n<i class='fa fa-retweet'></i>"
+    "Increase/decrease rating by one star\n] / [\n\n\n\n\n<i class='fa fa-retweet'></i> Esc"
   ]
 ]

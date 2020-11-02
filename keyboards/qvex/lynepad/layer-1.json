@@ -8,13 +8,13 @@
     {
       "a": 7
     },
-    "",
+    "Ctl+Alt + Tab",
     "Right Click",
     "Up",
     "Left Click"
   ],
   [
-    "",
+    "GUI + Down",
     "Left",
     "Down",
     "Right"
@@ -23,22 +23,20 @@
     {
       "y": -0.5,
       "x": 4.5,
-      "a": 4,
+      "a": 5,
       "w": 1.25,
       "h": 1.25
     },
-    "\n\n\n\n\n\n&larr;\n&rarr;\n&uarr;\n<i class='fa fa-retweet'></i>\n&darr;"
+    "Whl Up\nWhl Dn\n\n\n\n\n<i class='fa fa-retweet'></i> Vol"
   ],
   [
     {
-      "y": -0.5
-    },
-    "Layer Down",
-    "Layer Up",
-    {
+      "y": -0.5,
       "a": 7
     },
-    ""
+    "Layer 0",
+    "Layer 1",
+    "Layer 2"
   ],
   [
     {
@@ -48,6 +46,6 @@
       "w": 2,
       "h": 2
     },
-    "Mouse Wheel\n\n\n\n\n\n\n\n\n<i class='fa fa-retweet'></i>"
+    "Esc\n\n\n\n\n\n\n\n\n<i class='fa fa-retweet'></i> Wheel"
   ]
 ]

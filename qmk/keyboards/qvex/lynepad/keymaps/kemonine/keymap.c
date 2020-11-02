@@ -23,34 +23,60 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * | 9 | 10 | 11 |              |
    * |----------------------------|
    */
-[0] = LAYOUT_Lynepad(
-  KC_NO,   KC_MS_BTN2,   KC_MS_UP,    KC_MS_BTN1,
-  KC_NO,   KC_MS_LEFT,   KC_MS_DOWN,  KC_MS_RIGHT,
-  KC_MS_ACCEL0, KC_MS_ACCEL1, KC_MS_ACCEL2
-  )
+    [0] = LAYOUT_Lynepad(
+        LCTL(LALT(KC_TAB)),  KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,
+        LGUI(KC_DOWN),       KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT,
+        TO(0), TO(1), TO(2)
+    ),
+    [1] = LAYOUT_Lynepad(
+        LCTL(LALT(KC_2)),  LCTL(KC_BSPACE),  LSFT(KC_X),  LSFT(KC_P),
+        LSFT(KC_TAB),   KC_G,             KC_E,        KC_C,
+        TO(0), TO(1), TO(2)
+    ),
+    [2] = LAYOUT_Lynepad(
+        LCTL(LALT(KC_1)),  LCTL(KC_LBRACKET),  LCTL(KC_RBRACKET),  KC_W,
+        LSFT(KC_TAB),      KC_Q,               LCTL(LALT(KC_R)),   KC_R,
+        TO(0), TO(1), TO(2)
+    )
 };
 
 // Customized HSV values for layer highlights
 #define HSV_KMN_PURPLE 191, 255, 120
+#define HSV_KMN_GREEN 85, 255, 120
+#define HSV_KMN_YELLOW 43, 255, 120
 
 const rgblight_segment_t PROGMEM led_underglow_purple[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, RGBLED_NUM, HSV_KMN_PURPLE}
 );
 
+const rgblight_segment_t PROGMEM led_underglow_green[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, RGBLED_NUM, HSV_KMN_GREEN}
+);
+
+const rgblight_segment_t PROGMEM led_underglow_yellow[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, RGBLED_NUM, HSV_KMN_YELLOW}
+);
+
 // Array of layers for management
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    led_underglow_purple
+    led_underglow_purple,
+    led_underglow_green,
+    led_underglow_yellow
 );
 
 // Layer color init
 void keyboard_post_init_user(void) {
     rgblight_layers = my_rgb_layers;
+    layer_clear();
+    layer_on(0);
     rgblight_sethsv_noeeprom(HSV_KMN_PURPLE);
 }
 
 // Adjust layers based on which is active
 layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(0, layer_state_cmp(state, 0));
+    rgblight_set_layer_state(1, layer_state_cmp(state, 1));
+    rgblight_set_layer_state(2, layer_state_cmp(state, 2));
     return state;
 }
 
@@ -59,15 +85,65 @@ void encoder_update_user(uint8_t index, bool clockwise) {
     // Process encoder rotational movements
     if (index == 0) { /* First encoder */
         if (clockwise) {
-            tap_code(KC_MS_WH_UP);
+            if (layer_state_is(0)) {
+                tap_code(KC_MS_WH_UP);
+            }
+            else if (layer_state_is(1)) {
+                tap_code(KC_LBRACKET);
+            }
+            else if (layer_state_is(2)) {
+                register_code16(KC_LCTRL);
+                register_code16(KC_MINUS);
+                unregister_code16(KC_MINUS);
+                unregister_code16(KC_LCTRL);
+            }
         } else {
-            tap_code(KC_MS_WH_DOWN);
+            if (layer_state_is(0)) {
+                tap_code(KC_MS_WH_DOWN);
+            }
+            else if (layer_state_is(1)) {
+                tap_code(KC_RBRACKET);
+            }
+            else if (layer_state_is(2)) {
+                register_code16(KC_LCTRL);
+                register_code16(KC_EQUAL);
+                unregister_code16(KC_EQUAL);
+                unregister_code16(KC_LCTRL);
+            }
         }
     } else if (index == 1) { /* Second encoder */
         if (clockwise) {
-            tap_code(KC_AUDIO_VOL_DOWN);
+            if (layer_state_is(0)) {
+                tap_code(KC_AUDIO_VOL_DOWN);
+            }
+            else if (layer_state_is(1)) {
+                register_code16(KC_LCTRL);
+                register_code16(KC_MINUS);
+                unregister_code16(KC_MINUS);
+                unregister_code16(KC_LCTRL);
+            }
+            else if (layer_state_is(2)) {
+                register_code16(KC_LSFT);
+                register_code16(KC_UP);
+                unregister_code16(KC_UP);
+                unregister_code16(KC_LSFT);
+            }
         } else {
-            tap_code(KC_AUDIO_VOL_UP);
+            if (layer_state_is(0)) {
+                tap_code(KC_AUDIO_VOL_UP);
+            }
+            else if (layer_state_is(1)) {
+                register_code16(KC_LCTRL);
+                register_code16(KC_EQUAL);
+                unregister_code16(KC_EQUAL);
+                unregister_code16(KC_LCTRL);
+            }
+            else if (layer_state_is(2)) {
+                register_code16(KC_LSFT);
+                register_code16(KC_DOWN);
+                unregister_code16(KC_DOWN);
+                unregister_code16(KC_LSFT);
+            }
         }
     }
 }
@@ -92,15 +168,19 @@ extern int16_t enc2RightPrev;
 void matrix_scan_user(void) {
     if (enc1Center != enc1CenterPrev) {
         if (enc1Center < ENC_TILT_THRESHOLD) {
+            register_code16(KC_ESC);
         }
         else {
+            unregister_code16(KC_ESC);
         }
     }
     if (enc2Center != enc2CenterPrev) {
         if (enc2Center < ENC_TILT_THRESHOLD) {
         }
         else {
-            reset_keyboard();
+            if (layer_state_is(0)) {
+                reset_keyboard();
+            }
         }
         /*
          * Encoder sets ALL values when center is pressed so bail out at this point\
@@ -110,30 +190,62 @@ void matrix_scan_user(void) {
     }
     if (enc2Up != enc2UpPrev) {
         if (enc2Up < ENC_TILT_THRESHOLD) {
-            register_code16(KC_MS_WH_UP);
+            if (layer_state_is(0)) {
+                register_code16(KC_MS_WH_UP);
+            }
+            else if (layer_state_is(1)) {
+                register_code16(KC_UP);
+            }
         }
         else {
-            unregister_code16(KC_MS_WH_UP);
+            if (layer_state_is(0)) {
+                unregister_code16(KC_MS_WH_UP);
+            }
+            else if (layer_state_is(1)) {
+                unregister_code16(KC_UP);
+            }
         }
     }
     if (enc2Down != enc2DownPrev) {
         if (enc2Down < ENC_TILT_THRESHOLD) {
-            register_code16(KC_MS_WH_DOWN);
+            if (layer_state_is(0)) {
+                register_code16(KC_MS_WH_DOWN);
+            }
+            else if (layer_state_is(1)) {
+                register_code16(KC_DOWN);
+            }
         }
         else {
-            unregister_code16(KC_MS_WH_DOWN);
+            if (layer_state_is(0)) {
+                unregister_code16(KC_MS_WH_DOWN);
+            }
+            else if (layer_state_is(1)) {
+                unregister_code16(KC_DOWN);
+            }
         }
     }
     if (enc2Left != enc2LeftPrev) {
         if (enc2Left < ENC_TILT_THRESHOLD) {
+            if (layer_state_is(1) || layer_state_is(2)) {
+                register_code16(KC_LEFT);
+            }
         }
         else {
+            if (layer_state_is(1) || layer_state_is(2)) {
+                unregister_code16(KC_LEFT);
+            }
         }
     }
     if (enc2Right != enc2RightPrev) {
         if (enc2Right < ENC_TILT_THRESHOLD) {
+            if (layer_state_is(1) || layer_state_is(2)) {
+                register_code16(KC_RIGHT);
+            }
         }
         else {
+            if (layer_state_is(1) || layer_state_is(2)) {
+                unregister_code16(KC_RIGHT);
+            }
         }
     }
 }
