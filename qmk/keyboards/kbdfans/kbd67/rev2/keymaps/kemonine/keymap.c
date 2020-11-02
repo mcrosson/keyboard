@@ -40,11 +40,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,
                                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MEDIA_PLAY_PAUSE, KC_RSFT, KC_VOLU, KC_MUTE,
                                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_VAD, KC_VOLD, RGB_VAI),
-        [2] = LAYOUT_65_ansi(KC_ESC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                     KC_NO, KC_NO, KC_NO, KC_MS_UP, KC_NO, KC_NO, KC_NO, KC_MS_WH_UP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                     KC_NO, KC_NO, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_NO, KC_NO, KC_MS_BTN1, KC_MS_BTN2, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                     KC_LSFT, KC_NO, KC_X, KC_C, KC_V, KC_NO, KC_NO, KC_MS_WH_DOWN, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                     KC_LCTL, KC_NO, TG(2), KC_NO, TG(2), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO),
+        [2] = LAYOUT_65_ansi(KC_ESC, KC_ESC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                                     KC_NO, LCTL(LALT(KC_TAB)), KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_NO, KC_NO, KC_MS_WH_UP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                                     KC_NO, LGUI(KC_DOWN), KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_NO, KC_NO, KC_MS_BTN1, KC_MS_BTN2, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+                                     KC_LSFT, KC_NO, KC_X, KC_C, KC_V, KC_NO, KC_NO, KC_MS_WH_DOWN, KC_NO, KC_NO, KC_NO, KC_RSFT, KC_NO, KC_NO,
+                                     KC_LCTL, KC_NO, TG(2), KC_NO, TG(2), KC_RALT, KC_RCTL, KC_NO, KC_NO, KC_NO),
 };
 
 // Customized HSV values for layer highlights
