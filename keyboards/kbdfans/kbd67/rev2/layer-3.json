@@ -85,14 +85,8 @@
     },
     "",
     "",
-    {
-      "a": 6
-    },
-    "Left Click",
-    "Right Click",
-    {
-      "a": 7
-    },
+    "Wheel Left",
+    "Wheel Right",
     "",
     "",
     "",
