@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_Lynepad(
         LCTL(LALT(KC_TAB)),  KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,
         LGUI(KC_DOWN),       KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT,
-        TO(0), TO(1), TO(2)
+        KC_MS_BTN3, TO(1), TO(2)
     ),
     [1] = LAYOUT_Lynepad(
         LCTL(LALT(KC_2)),  LCTL(KC_BSPACE),  LSFT(KC_X),  LSFT(KC_P),
@@ -226,24 +226,36 @@ void matrix_scan_user(void) {
     }
     if (enc2Left != enc2LeftPrev) {
         if (enc2Left < ENC_TILT_THRESHOLD) {
-            if (layer_state_is(1) || layer_state_is(2)) {
+            if (layer_state_is(0)) {
+                register_code16(KC_MS_WH_LEFT);
+            }
+            else if (layer_state_is(1) || layer_state_is(2)) {
                 register_code16(KC_LEFT);
             }
         }
         else {
-            if (layer_state_is(1) || layer_state_is(2)) {
+            if (layer_state_is(0)) {
+                unregister_code16(KC_MS_WH_LEFT);
+            }
+            else if (layer_state_is(1) || layer_state_is(2)) {
                 unregister_code16(KC_LEFT);
             }
         }
     }
     if (enc2Right != enc2RightPrev) {
         if (enc2Right < ENC_TILT_THRESHOLD) {
-            if (layer_state_is(1) || layer_state_is(2)) {
+            if (layer_state_is(0)) {
+                register_code16(KC_MS_WH_RIGHT);
+            }
+            else if (layer_state_is(1) || layer_state_is(2)) {
                 register_code16(KC_RIGHT);
             }
         }
         else {
-            if (layer_state_is(1) || layer_state_is(2)) {
+            if (layer_state_is(0)) {
+                unregister_code16(KC_MS_WH_RIGHT);
+            }
+            else if (layer_state_is(1) || layer_state_is(2)) {
                 unregister_code16(KC_RIGHT);
             }
         }
