@@ -1,0 +1,46 @@
+[
+  {
+    "backcolor": "#ba00ff",
+    "name": "Layer 1 - Mouse",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "x": 1,
+      "a": 7
+    },
+    "TG(1)",
+    "Boot",
+    ""
+  ],
+  [
+    "Ctrl + Alt + Tab",
+    "GUI + Down",
+    "",
+    "Vol Up"
+  ],
+  [
+    "Left Click",
+    "Up",
+    "Right Click",
+    "Vol Down"
+  ],
+  [
+    "Left",
+    "Down",
+    "Right",
+    "Mouse 3"
+  ],
+  [
+    {
+      "a": 5
+    },
+    "W Up\nW Dn\n\n\n\n\nEnc",
+    {
+      "a": 7
+    },
+    "W Left",
+    "W Right",
+    "Esc"
+  ]
+]
