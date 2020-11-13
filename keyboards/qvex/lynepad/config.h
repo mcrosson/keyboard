@@ -16,7 +16,8 @@
 
 #pragma once
 
-// place overrides here
+#define TAPPING_TERM 200
+
 #undef RGBLIGHT_ANIMATIONS
 #define RGBLIGHT_LAYERS
 
@@ -29,3 +30,4 @@
 #define MOUSEKEY_WHEEL_INTERVAL 50
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 20
 #define MOUSEKEY_WHEEL_MAX_SPEED 10
+#define MK_COMBINED

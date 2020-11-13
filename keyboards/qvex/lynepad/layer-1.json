@@ -34,9 +34,9 @@
       "y": -0.5,
       "a": 7
     },
-    "Mouse Btn 3",
-    "Layer 1",
-    "Layer 2"
+    "Accel",
+    "Layer 1\n\n\n\nBoot",
+    "Esc"
   ],
   [
     {
@@ -46,6 +46,6 @@
       "w": 2,
       "h": 2
     },
-    "Esc\n\n\n\n\n\n\n\n\n<i class='fa fa-retweet'></i> Wheel"
+    "Accel Mode\n\n\n\n\n\n\n\n\n<i class='fa fa-retweet'></i> Wheel"
   ]
 ]

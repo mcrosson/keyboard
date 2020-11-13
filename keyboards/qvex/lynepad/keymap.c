@@ -15,6 +15,44 @@
  */
 #include QMK_KEYBOARD_H
 
+enum {
+    ACCEL_0 = 0,
+    ACCEL_1 = 1,
+    ACCEL_2 = 2,
+};
+static uint8_t acceleration_level = ACCEL_0;
+
+void change_accel(void) {
+    acceleration_level++;
+    if (acceleration_level > ACCEL_2) {
+        acceleration_level = ACCEL_0;
+    }
+}
+
+// Custom key codes
+enum {
+    ACCEL = SAFE_RANGE,
+};
+
+// Tap Dance declarations
+enum {
+    TD_LAYER_BOOT,
+};
+
+void dance_layer_boot_finished(qk_tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        layer_on(1);
+    } else {
+        reset_keyboard();
+    }
+}
+
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [TD_LAYER_BOOT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_layer_boot_finished, NULL),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap (Base Layer) Default Layer
    * |----------------------------|
@@ -26,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_Lynepad(
         LCTL(LALT(KC_TAB)),  KC_MS_BTN2,  KC_MS_UP,    KC_MS_BTN1,
         LGUI(KC_DOWN),       KC_MS_LEFT,  KC_MS_DOWN,  KC_MS_RIGHT,
-        KC_MS_BTN3, TO(1), TO(2)
+        ACCEL, TD(TD_LAYER_BOOT), KC_ESC
     ),
     [1] = LAYOUT_Lynepad(
         LCTL(LALT(KC_2)),  LCTL(KC_BSPACE),  LSFT(KC_X),  LSFT(KC_P),
@@ -78,6 +116,40 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(1, layer_state_cmp(state, 1));
     rgblight_set_layer_state(2, layer_state_cmp(state, 2));
     return state;
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case ACCEL:
+      if (record->event.pressed) {
+        switch(acceleration_level) {
+            case ACCEL_0:
+                register_code16(KC_ACL0);
+                break;
+            case ACCEL_1:
+                register_code16(KC_ACL1);
+                break;
+            case ACCEL_2:
+                register_code16(KC_ACL2);
+                break;
+        }
+      } else {
+        switch(acceleration_level) {
+            case ACCEL_0:
+                unregister_code16(KC_ACL0);
+                break;
+            case ACCEL_1:
+                unregister_code16(KC_ACL1);
+                break;
+            case ACCEL_2:
+                unregister_code16(KC_ACL2);
+                break;
+        }
+      }
+      return false; // Skip all further processing of this key
+    default:
+      return true; // Process all other keycodes normally
+  }
 }
 
 // Standard encoder functionality
@@ -168,19 +240,15 @@ extern int16_t enc2RightPrev;
 void matrix_scan_user(void) {
     if (enc1Center != enc1CenterPrev) {
         if (enc1Center < ENC_TILT_THRESHOLD) {
-            register_code16(KC_ESC);
-        }
-        else {
-            unregister_code16(KC_ESC);
+            if (layer_state_is(0)) {
+                change_accel();
+            }
         }
     }
     if (enc2Center != enc2CenterPrev) {
         if (enc2Center < ENC_TILT_THRESHOLD) {
         }
         else {
-            if (layer_state_is(0)) {
-                reset_keyboard();
-            }
         }
         /*
          * Encoder sets ALL values when center is pressed so bail out at this point\
