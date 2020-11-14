@@ -21,6 +21,23 @@ enum {
     DOUBLE_TAP
 };
 
+enum {
+    ACCEL_0 = 0,
+    ACCEL_1 = 1,
+    ACCEL_2 = 2,
+};
+enum {
+    ACCEL = SAFE_RANGE,
+    ACCEL_ADJ,
+};
+static uint8_t acceleration_level = ACCEL_0;
+void change_accel(void) {
+    acceleration_level++;
+    if (acceleration_level > ACCEL_2) {
+        acceleration_level = ACCEL_0;
+    }
+}
+
 enum td_keycodes {
     LAYERS // Our example key: `MOD(1)` when held, `TG(2)` when tapped. Add additional keycodes for each tapdance.
 };
@@ -43,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         [2] = LAYOUT_65_ansi(KC_ESC, KC_ESC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                                      KC_NO, LCTL(LALT(KC_TAB)), KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_NO, KC_NO, KC_MS_WH_UP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                                      KC_NO, LGUI(KC_DOWN), KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_NO, KC_NO, KC_MS_WH_LEFT, KC_MS_WH_RIGHT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                     KC_LSFT, KC_NO, KC_X, KC_C, KC_V, KC_NO, KC_NO, KC_MS_WH_DOWN, KC_NO, KC_NO, KC_NO, KC_RSFT, KC_NO, KC_NO,
-                                     KC_LCTL, KC_NO, TG(2), KC_NO, TG(2), KC_RALT, KC_RCTL, KC_NO, KC_NO, KC_NO),
+                                     ACCEL, KC_NO, KC_ESC, KC_NO, KC_NO, KC_NO, KC_NO, KC_MS_WH_DOWN, KC_NO, KC_NO, KC_NO, KC_RSFT, KC_NO, KC_NO,
+                                     KC_LCTL, KC_NO, KC_LALT, ACCEL_ADJ, TG(2), KC_RALT, KC_RCTL, KC_NO, KC_NO, KC_NO),
 };
 
 // Customized HSV values for layer highlights
@@ -92,6 +109,46 @@ void matrix_init_user(void) {
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case ACCEL:
+      if (record->event.pressed) {
+        switch(acceleration_level) {
+            case ACCEL_0:
+                register_code16(KC_ACL0);
+                break;
+            case ACCEL_1:
+                register_code16(KC_ACL1);
+                break;
+            case ACCEL_2:
+                register_code16(KC_ACL2);
+                break;
+        }
+      } else {
+        switch(acceleration_level) {
+            case ACCEL_0:
+                unregister_code16(KC_ACL0);
+                break;
+            case ACCEL_1:
+                unregister_code16(KC_ACL1);
+                break;
+            case ACCEL_2:
+                unregister_code16(KC_ACL2);
+                break;
+        }
+      }
+      return false; // Skip all further processing of this key
+    case ACCEL_ADJ:
+        if (record->event.pressed) {
+        }
+        else {
+            change_accel();
+        }
+    default:
+      return true; // Process all other keycodes normally
+  }
+}
 
 uint8_t cur_dance(qk_tap_dance_state_t *state) {
     if (state->count == 1) {

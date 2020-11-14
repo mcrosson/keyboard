@@ -45,6 +45,23 @@ enum {
     DOUBLE_TAP
 };
 
+enum {
+    ACCEL_0 = 0,
+    ACCEL_1 = 1,
+    ACCEL_2 = 2,
+};
+enum {
+    ACCEL = SAFE_RANGE,
+    ACCEL_ADJ,
+};
+static uint8_t acceleration_level = ACCEL_0;
+void change_accel(void) {
+    acceleration_level++;
+    if (acceleration_level > ACCEL_2) {
+        acceleration_level = ACCEL_0;
+    }
+}
+
 enum td_keycodes {
     LAYERS // Our example key: `MOD(1)` when held, `TG(2)` when tapped. Add additional keycodes for each tapdance.
 };
@@ -73,8 +90,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         [2] = LAYOUT_65_ansi_blocker(KC_ESC, KC_ESC, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                                      KC_NO, LCTL(LALT(KC_TAB)), KC_MS_BTN2, KC_MS_UP, KC_MS_BTN1, KC_NO, KC_NO, KC_MS_WH_UP, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
                                      KC_NO, LGUI(KC_DOWN), KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, KC_NO, KC_NO, KC_MS_WH_LEFT, KC_MS_WH_RIGHT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-                                     KC_LSFT, KC_NO, KC_X, KC_C, KC_V, KC_NO, KC_NO, KC_MS_WH_DOWN, KC_NO, KC_NO, KC_NO, KC_RSFT, KC_NO, KC_NO,
-                                     KC_LCTL, KC_NO, TG(2), KC_NO, TG(2), KC_NO, KC_NO, KC_NO, KC_NO),
+                                     ACCEL, KC_NO, KC_ESC, KC_NO, KC_NO, KC_NO, KC_NO, KC_MS_WH_DOWN, KC_NO, KC_NO, KC_NO, KC_RSFT, KC_NO, KC_NO,
+                                     KC_LCTL, KC_NO, KC_LALT, ACCEL_ADJ, TG(2), KC_NO, KC_NO, KC_NO, KC_NO),
 };
 
 const uint8_t PROGMEM ledcolors[][DRIVER_LED_TOTAL][3] = {
@@ -94,8 +111,8 @@ const uint8_t PROGMEM ledcolors[][DRIVER_LED_TOTAL][3] = {
         {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
         {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
         {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
-        {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
-        {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
+        {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
+        {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR}, {RGB_KMN_NO_COLOR},
         // Underglow == 38 LEDS
         {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, 
         {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, {RGB_KMN_PRPL}, 
@@ -116,6 +133,46 @@ void matrix_init_user(void) {
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case ACCEL:
+      if (record->event.pressed) {
+        switch(acceleration_level) {
+            case ACCEL_0:
+                register_code16(KC_ACL0);
+                break;
+            case ACCEL_1:
+                register_code16(KC_ACL1);
+                break;
+            case ACCEL_2:
+                register_code16(KC_ACL2);
+                break;
+        }
+      } else {
+        switch(acceleration_level) {
+            case ACCEL_0:
+                unregister_code16(KC_ACL0);
+                break;
+            case ACCEL_1:
+                unregister_code16(KC_ACL1);
+                break;
+            case ACCEL_2:
+                unregister_code16(KC_ACL2);
+                break;
+        }
+      }
+      return false; // Skip all further processing of this key
+    case ACCEL_ADJ:
+        if (record->event.pressed) {
+        }
+        else {
+            change_accel();
+        }
+    default:
+      return true; // Process all other keycodes normally
+  }
+}
 
 uint8_t cur_dance(qk_tap_dance_state_t *state) {
     if (state->count == 1) {
@@ -206,82 +263,4 @@ void rgb_matrix_indicators_user(void) {
   if (host_keyboard_leds() & (1<<USB_LED_CAPS_LOCK)) {
     rgb_matrix_set_color(CAPS_LED, RGB_KMN_CYAN_HILIGHT);
   }
-}
-
-#define MODS_SHIFT  (get_mods() & MOD_BIT(KC_LSHIFT) || get_mods() & MOD_BIT(KC_RSHIFT))
-#define MODS_CTRL  (get_mods() & MOD_BIT(KC_LCTL) || get_mods() & MOD_BIT(KC_RCTRL))
-#define MODS_ALT  (get_mods() & MOD_BIT(KC_LALT) || get_mods() & MOD_BIT(KC_RALT))
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    static uint32_t key_timer;
-
-    switch (keycode) {
-        case U_T_AUTO:
-            if (record->event.pressed && MODS_SHIFT && MODS_CTRL) {
-                TOGGLE_FLAG_AND_PRINT(usb_extra_manual, "USB extra port manual mode");
-            }
-            return false;
-        case U_T_AGCR:
-            if (record->event.pressed && MODS_SHIFT && MODS_CTRL) {
-                TOGGLE_FLAG_AND_PRINT(usb_gcr_auto, "USB GCR auto mode");
-            }
-            return false;
-        case DBG_TOG:
-            if (record->event.pressed) {
-                TOGGLE_FLAG_AND_PRINT(debug_enable, "Debug mode");
-            }
-            return false;
-        case DBG_MTRX:
-            if (record->event.pressed) {
-                TOGGLE_FLAG_AND_PRINT(debug_matrix, "Debug matrix");
-            }
-            return false;
-        case DBG_KBD:
-            if (record->event.pressed) {
-                TOGGLE_FLAG_AND_PRINT(debug_keyboard, "Debug keyboard");
-            }
-            return false;
-        case DBG_MOU:
-            if (record->event.pressed) {
-                TOGGLE_FLAG_AND_PRINT(debug_mouse, "Debug mouse");
-            }
-            return false;
-        case MD_BOOT:
-            if (record->event.pressed) {
-                key_timer = timer_read32();
-            } else {
-                if (timer_elapsed32(key_timer) >= 500) {
-                    reset_keyboard();
-                }
-            }
-            return false;
-        case RGB_TOG:
-            if (record->event.pressed) {
-              switch (rgb_matrix_get_flags()) {
-                case LED_FLAG_ALL: {
-                    rgb_matrix_set_flags(LED_FLAG_KEYLIGHT);
-                    rgb_matrix_set_color_all(0, 0, 0);
-                  }
-                  break;
-                case LED_FLAG_KEYLIGHT: {
-                    rgb_matrix_set_flags(LED_FLAG_UNDERGLOW);
-                    rgb_matrix_set_color_all(0, 0, 0);
-                  }
-                  break;
-                case LED_FLAG_UNDERGLOW: {
-                    rgb_matrix_set_flags(LED_FLAG_NONE);
-                    rgb_matrix_disable_noeeprom();
-                  }
-                  break;
-                default: {
-                    rgb_matrix_set_flags(LED_FLAG_ALL);
-                    rgb_matrix_enable_noeeprom();
-                  }
-                  break;
-              }
-            }
-            return false;
-        default:
-            return true; //Process all other keycodes normally
-    }
 }
