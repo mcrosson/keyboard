@@ -20,16 +20,31 @@
 
 enum custom_keycodes {
   PROG = SAFE_RANGE,
+  ACCEL,
+  ACCEL_ADJ,
 };
+
+enum {
+    ACCEL_0 = 0,
+    ACCEL_1 = 1,
+    ACCEL_2 = 2,
+};
+static uint8_t acceleration_level = ACCEL_0;
+void change_accel(void) {
+    acceleration_level++;
+    if (acceleration_level > ACCEL_2) {
+        acceleration_level = ACCEL_0;
+    }
+}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Base layer (numpad)
   [0] = LAYOUT(
-                      TO(1),         PROG,           KC_NO, \
-  LCTL(LALT(KC_TAB)), LGUI(KC_DOWN), KC_NO,          KC_AUDIO_VOL_UP, \
-  KC_MS_BTN1,         KC_MS_UP,      KC_MS_BTN2,     KC_AUDIO_VOL_DOWN, \
-  KC_MS_LEFT,         KC_MS_DOWN,    KC_MS_RIGHT,    KC_MS_BTN3, \
-  KC_NO,              KC_MS_WH_LEFT, KC_MS_WH_RIGHT, KC_ESC  \
+                 TO(1),      PROG,           KC_AUDIO_VOL_UP, \
+  KC_MS_WH_LEFT, KC_NO,      KC_MS_WH_RIGHT, KC_AUDIO_VOL_DOWN, \
+  KC_MS_BTN1,    KC_MS_UP,   KC_MS_BTN2,     LCTL(LALT(KC_TAB)), \
+  KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT,    LGUI(KC_DOWN), \
+  KC_NO,         KC_ESC,     ACCEL_ADJ,      ACCEL  \
   ),
 
   // Function layer (numpad)
@@ -52,10 +67,43 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         rgblight_disable_noeeprom();
         bootloader_jump(); //jump to bootloader
       }
-    break;
-
+      break;
+    case ACCEL:
+      if (record->event.pressed) {
+        switch(acceleration_level) {
+            case ACCEL_0:
+                register_code16(KC_ACL0);
+                break;
+            case ACCEL_1:
+                register_code16(KC_ACL1);
+                break;
+            case ACCEL_2:
+                register_code16(KC_ACL2);
+                break;
+        }
+      } else {
+        switch(acceleration_level) {
+            case ACCEL_0:
+                unregister_code16(KC_ACL0);
+                break;
+            case ACCEL_1:
+                unregister_code16(KC_ACL1);
+                break;
+            case ACCEL_2:
+                unregister_code16(KC_ACL2);
+                break;
+        }
+      }
+      return false; // Skip all further processing of this key
+    case ACCEL_ADJ:
+        if (record->event.pressed) {
+        }
+        else {
+            change_accel();
+        }
+        return false; // Skip all further processing of this key
     default:
-    break;
+      break;
   }
   return true;
 }

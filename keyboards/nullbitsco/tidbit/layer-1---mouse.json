@@ -11,36 +11,36 @@
     },
     "TG(1)",
     "Boot",
-    ""
+    "Vol Up"
   ],
   [
-    "Ctrl + Alt + Tab",
-    "GUI + Down",
+    "Wheel Left",
     "",
-    "Vol Up"
+    "Wheel Right",
+    "Vol Down"
   ],
   [
     "Left Click",
     "Up",
     "Right Click",
-    "Vol Down"
+    "Ctrl + Alt + Tab"
   ],
   [
     "Left",
     "Down",
     "Right",
-    "Mouse 3"
+    "GUI + Down"
   ],
   [
     {
       "a": 5
     },
-    "W Up\nW Dn\n\n\n\n\nEnc",
+    "W Up\nW Dn",
     {
       "a": 7
     },
-    "W Left",
-    "W Right",
-    "Esc"
+    "Esc",
+    "Accel Mode",
+    "Accel"
   ]
 ]
