@@ -29,6 +29,7 @@ enum {
 enum {
     ACCEL = SAFE_RANGE,
     ACCEL_ADJ,
+    PROG,
 };
 static uint8_t acceleration_level = ACCEL_0;
 void change_accel(void) {
@@ -53,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                      KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_END,
                                      KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, TD(LAYERS), KC_RALT, KC_RCTL, KC_LEFT, KC_DOWN, KC_RGHT),
         [1] = LAYOUT_65_ansi(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_DEL, KC_DEL,
-                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RESET, KC_INS,
+                                     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, PROG, KC_INS,
                                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,
                                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MEDIA_PLAY_PAUSE, KC_RSFT, KC_VOLU, KC_MUTE,
                                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_VAD, KC_VOLD, RGB_VAI),
@@ -145,6 +146,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         else {
             change_accel();
         }
+    case PROG:
+      if (record->event.pressed) {
+        rgblight_disable_noeeprom();
+        reset_keyboard();
+      }
     default:
       return true; // Process all other keycodes normally
   }

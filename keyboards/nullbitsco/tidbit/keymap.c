@@ -65,7 +65,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         set_bitc_LED(LED_ON);
         rgblight_disable_noeeprom();
-        bootloader_jump(); //jump to bootloader
+        reset_keyboard();
       }
       break;
     case ACCEL:
@@ -126,13 +126,6 @@ void encoder_update_user(uint8_t index, bool clockwise) {
   }  
 }
 
-void led_set_kb(uint8_t usb_led) {
-  if (usb_led & (1<<USB_LED_NUM_LOCK))
-    set_bitc_LED(LED_ON);
-  else
-    set_bitc_LED(LED_DIM);
-}
-
 // Customized HSV values for layer highlights
 #define HSV_KMN_PURPLE 191, 255, 120
 #define HSV_KMN_GREEN 85, 255, 120
@@ -154,6 +147,7 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
 // Layer color init
 void keyboard_post_init_user(void) {
     rgblight_layers = my_rgb_layers;
+    set_bitc_LED(LED_DIM);
     layer_clear();
     layer_on(0);
     rgblight_sethsv_noeeprom(HSV_KMN_PURPLE);

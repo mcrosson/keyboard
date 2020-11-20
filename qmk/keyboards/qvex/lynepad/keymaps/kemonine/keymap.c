@@ -43,6 +43,7 @@ void dance_layer_boot_finished(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
         layer_on(1);
     } else {
+        rgblight_disable_noeeprom();
         reset_keyboard();
     }
 }
@@ -107,6 +108,7 @@ void keyboard_post_init_user(void) {
     rgblight_layers = my_rgb_layers;
     layer_clear();
     layer_on(0);
+    rgblight_enable();
     rgblight_sethsv_noeeprom(HSV_KMN_PURPLE);
 }
 
