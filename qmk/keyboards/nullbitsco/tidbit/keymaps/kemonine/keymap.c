@@ -128,14 +128,14 @@ void encoder_update_user(uint8_t index, bool clockwise) {
 
 // Customized HSV values for layer highlights
 #define HSV_KMN_PURPLE 191, 255, 120
-#define HSV_KMN_GREEN 85, 255, 120
+#define HSV_KMN_ORANGE 10,255, 120
 
 const rgblight_segment_t PROGMEM led_underglow_purple[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, RGBLED_NUM, HSV_KMN_PURPLE}
 );
 
 const rgblight_segment_t PROGMEM led_underglow_green[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, RGBLED_NUM, HSV_KMN_GREEN}
+    {0, RGBLED_NUM, HSV_KMN_ORANGE}
 );
 
 // Array of layers for management
