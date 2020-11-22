@@ -82,7 +82,7 @@ bash -c "$(wget https://zmkfirmware.dev/setup.sh -O -)" '' --wget
 <TabItem value="PowerShell">
 
 ```
-iex ((New-Object System.Net.WebClient).DownloadString('https://zmkfirmware.dev/setup.ps1'))"
+iex ((New-Object System.Net.WebClient).DownloadString('https://zmkfirmware.dev/setup.ps1'))
 ```
 
 </TabItem>
@@ -105,7 +105,7 @@ Pick an MCU board:
 :::note
 If you are building firmware for a new keyboard shield that is not included in the built-in
 list of shields, you can choose any shield from the list that is similar to yours to generate the repository,
-and edit / add necessary files according to the [guide for adding new keyboard shield](./dev-guide-new-shield.md).
+and edit / add necessary files according to the [guide for adding new keyboard shield](./development/new-shield).
 :::
 
 When prompted, enter the number for the corresponding keyboard shield you would like to target:
