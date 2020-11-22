@@ -2,4 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 config SHIELD_TIDBIT
-	def_bool $(shields_list_contains,tidbit)
+	def_bool $(shields_list_contains,tidbit_default)
+
+config SHIELD_TIDBIT_19
+	def_bool $(shields_list_contains,tidbit_19keys)
