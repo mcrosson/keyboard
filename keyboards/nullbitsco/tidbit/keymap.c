@@ -40,20 +40,20 @@ void change_accel(void) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Base layer (numpad)
   [0] = LAYOUT(
-                 TO(1),      PROG,           KC_AUDIO_VOL_UP, \
-  KC_MS_WH_LEFT, KC_NO,      KC_MS_WH_RIGHT, KC_AUDIO_VOL_DOWN, \
-  KC_MS_BTN1,    KC_MS_UP,   KC_MS_BTN2,     LCTL(LALT(KC_TAB)), \
-  KC_MS_LEFT,    KC_MS_DOWN, KC_MS_RIGHT,    LGUI(KC_DOWN), \
-  KC_NO,         KC_ESC,     ACCEL_ADJ,      ACCEL  \
+                 TO(1),             PROG,            KC_NO, \
+  KC_MS_BTN1,    KC_MS_UP,          KC_MS_BTN2,      LCTL(LALT(KC_TAB)), \
+  KC_MS_LEFT,    KC_MS_DOWN,        KC_MS_RIGHT,     LGUI(KC_DOWN), \
+  KC_ESC,        KC_MS_WH_LEFT,     KC_MS_WH_RIGHT,  ACCEL, \
+  KC_AUDIO_MUTE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, ACCEL_ADJ  \
   ),
 
   // Function layer (numpad)
   [1] = LAYOUT(
-             TO(0),   PROG,      KC_KP_SLASH,
-    KC_KP_7, KC_KP_8, KC_KP_9,   KC_KP_ASTERISK,
-    KC_KP_4, KC_KP_5, KC_KP_6,   KC_KP_MINUS,
-    KC_KP_1, KC_KP_2, KC_KP_3,   KC_KP_PLUS,
-    KC_NO,   KC_KP_0, KC_KP_DOT, KC_KP_ENTER
+                   TO(0),   PROG,      KC_KP_SLASH,
+    KC_KP_7,       KC_KP_8, KC_KP_9,   KC_KP_ASTERISK,
+    KC_KP_4,       KC_KP_5, KC_KP_6,   KC_KP_MINUS,
+    KC_KP_1,       KC_KP_2, KC_KP_3,   KC_KP_PLUS,
+    KC_AUDIO_MUTE, KC_KP_0, KC_KP_DOT, KC_KP_ENTER
   ),
 };
 
@@ -127,8 +127,8 @@ void encoder_update_user(uint8_t index, bool clockwise) {
 }
 
 // Customized HSV values for layer highlights
-#define HSV_KMN_PURPLE 191, 255, 120
-#define HSV_KMN_ORANGE 10,255, 120
+#define HSV_KMN_PURPLE 191, 255, 180
+#define HSV_KMN_ORANGE 10,255, 180
 
 const rgblight_segment_t PROGMEM led_underglow_purple[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, RGBLED_NUM, HSV_KMN_PURPLE}
@@ -154,15 +154,15 @@ void keyboard_post_init_user(void) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    switch (get_highest_layer(state)) {
-    case 1:
-        register_code(KC_NLCK);
-        rgblight_set_layer_state(1, layer_state_cmp(state, 1));
-        break;
-    default: //  for any other layers, or the default layer
-        unregister_code(KC_NLCK);
-        rgblight_set_layer_state(0, layer_state_cmp(state, 0));
-        break;
-    }
+  rgblight_set_layer_state(1, layer_state_cmp(state, 1));
+  rgblight_set_layer_state(0, layer_state_cmp(state, 0));
+  switch (get_highest_layer(state)) {
+  case 1:
+      register_code(KC_NLCK);
+      break;
+  case 0:
+      unregister_code(KC_NLCK);
+      break;
+  }
   return state;
 }

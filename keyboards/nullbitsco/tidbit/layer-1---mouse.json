@@ -11,13 +11,7 @@
     },
     "TG(1)",
     "Boot",
-    "Vol Up"
-  ],
-  [
-    "Wheel Left",
-    "",
-    "Wheel Right",
-    "Vol Down"
+    ""
   ],
   [
     "Left Click",
@@ -32,15 +26,21 @@
     "GUI + Down"
   ],
   [
+    "Esc",
+    "Wheel Left",
+    "Wheel Right",
+    "Accel"
+  ],
+  [
     {
       "a": 5
     },
-    "W Up\nW Dn",
+    "W Up\nW Dn\n\n\n\n\nMute",
     {
       "a": 7
     },
-    "Esc",
-    "Accel Mode",
-    "Accel"
+    "Vol Down",
+    "Vol Up",
+    "Accel Mode"
   ]
 ]
