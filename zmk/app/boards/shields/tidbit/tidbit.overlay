@@ -5,7 +5,3 @@
  */
 
 #include "tidbit.dtsi"
-
-&encoder_1_top_row {
-    status = "okay";
-};
