@@ -63,7 +63,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch(keycode) {
     case PROG:
       if (record->event.pressed) {
-        set_bitc_LED(LED_ON);
+        set_bitc_LED(LED_DIM);
         rgblight_disable_noeeprom();
         reset_keyboard();
       }
@@ -147,7 +147,7 @@ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
 // Layer color init
 void keyboard_post_init_user(void) {
     rgblight_layers = my_rgb_layers;
-    set_bitc_LED(LED_DIM);
+    set_bitc_LED(LED_OFF);
     layer_clear();
     layer_on(0);
     rgblight_sethsv_noeeprom(HSV_KMN_PURPLE);
