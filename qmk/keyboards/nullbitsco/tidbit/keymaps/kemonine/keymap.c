@@ -158,10 +158,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   rgblight_set_layer_state(0, layer_state_cmp(state, 0));
   switch (get_highest_layer(state)) {
   case 1:
-      register_code(KC_NLCK);
+      tap_code(KC_NLCK);
       break;
   case 0:
-      unregister_code(KC_NLCK);
+      tap_code(KC_NLCK);
       break;
   }
   return state;

@@ -27,6 +27,8 @@
                 &none           &kp KP_NUMBER_0 &kp KP_DOT      &kp KP_ENTER
             >;
 
+            layer-bindings = <&layer_rgb RGB_BLUE &layer_lock NUMLOCK>;
+
             sensor-bindings = <&inc_dec_kp K_VOLUME_UP K_VOLUME_DOWN>;
         };
 
