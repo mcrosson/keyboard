@@ -1,0 +1,46 @@
+[
+  {
+    "backcolor": "#00f3ff",
+    "name": "Layer 3 - ZMK",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "x": 1,
+      "a": 7
+    },
+    "TG(0)",
+    "Reset",
+    "Boot"
+  ],
+  [
+    "Out Tog",
+    "Out USB",
+    "Out BLE",
+    ""
+  ],
+  [
+    "RGB Tog",
+    "BT Prev",
+    "BT next",
+    "BT Clear"
+  ],
+  [
+    "Ext Pwr Tog",
+    "BT Sel 4",
+    "BT Sel 5",
+    "BT Sel 6"
+  ],
+  [
+    {
+      "a": 5
+    },
+    "Vol Up\nVol Dn\n\n\n\n\nMute",
+    {
+      "a": 7
+    },
+    "BT Sel 1",
+    "BT Sel 2",
+    "BT Sel 3"
+  ]
+]
