@@ -33,7 +33,7 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                           &tog  1           &bootloader     &none
+                           &tog 1            &bootloader     &none
                 &none      &none             &none           &kp LC(LA(TAB))
                 &none      &none             &none           &kp LG(DOWN_ARROW)
                 &kp ESCAPE &none             &none           &none
