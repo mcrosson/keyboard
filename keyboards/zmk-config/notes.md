@@ -1,5 +1,7 @@
 # Test notes
 
+development/guides/tests
+
 cd app
 west test tests/to-layer/normal
 
@@ -19,6 +21,12 @@ https://github.com/nuxiom/zmk/tree/60split
 # Sleep / Blank
 
 Also apply to underglow if Pete doesn't get there first
+
+# Docker container use less instead of more
+
+- need to install 'less' package
+- need to set PAGER env var to 'less'
+- submit as pr to zmk-docker repo AFTER testing locally
 
 # Local github CI actions run
 
@@ -45,17 +53,6 @@ Container tests
 - west build -d build/ -t ram_report
 - west build -t menuconfig
 
-# Keycode for setting hsv of underglow
-
-Prior to dynamic layers, implement a behavior that can set the hsv values for underglow
-
-&rgb_ug sethsv (h,s,v) # this is the general behavior format
-
-see bt behavior definitions for how to fake / fudge the optional 2nd parm
-
-sethsv and sethsb defines so they are the same to end users
-    https://discord.com/channels/719497620560543766/719565084208398406/786814476048400424
-
 # Dyanmic Layer Actions
 
 - look at hold tap implementation for inspiration (keymap file poprtion)
@@ -75,6 +72,10 @@ sethsv and sethsb defines so they are the same to end users
 			>;
 		};
 	};
+
+# Workspace documentation
+
+finalize devcontainer-setupworkspace branch, may have existing PR open
 
 # Mouse Keys
 
