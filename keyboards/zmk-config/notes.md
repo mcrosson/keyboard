@@ -11,6 +11,7 @@
 - Convert to nice!nano boards
 - Convert to have encoder on each side
 - Use 14500 battery setup
+- Consider adding smallest track pad as well as encoders ; maybe mid sized depending on thumb cluster spacing
 
 ## Pocket Type
 
@@ -23,8 +24,10 @@
 - Adafruit itsybitsy nrf
 	- https://github.com/nuxiom/zmk/tree/60split
 - ItsyBitsy lipo backpack
+	- pins like nice!nano for quick swap of battery / removal of battery
 - 110mAh battery
-- Pick one of the track pads ordered
+	- soldered to short mill max socket for hot swap / removal from lipo backpack
+- Largest trackpad ordered
 - Blue led indicate charging status (same as nice!nano)
 - Dotstar red if unpaired
 - Dotstar yellow if disconnected
@@ -32,6 +35,11 @@
 - Dotstar blue if pairing
 - Push and hold button to clear BT profile
 - Tap button to connect to default BT profile
+
+# VS Code Documentation
+
+- Command Pallet -> Run Task -> npm -> Shows list of npm build tasks for the docs
+- code @ the container command line will open a file directly within code on the main machine
 
 # Dyanmic Layer Actions
 
