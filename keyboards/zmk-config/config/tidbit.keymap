@@ -29,6 +29,10 @@
 		sensors = <&encoder_4>;
 	};
 
+// Purple : &rgb_ug RGB_COLOR_HSB(275, 100, 50)
+// Orange : &rgb_ug RGB_COLOR_HSB(35, 100, 50)
+// Blue   : &rgb_ug RGB_COLOR_HSB(215, 100, 50)
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
