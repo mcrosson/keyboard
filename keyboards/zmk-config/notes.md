@@ -1,6 +1,37 @@
-# ItsyBitsy Bring Up
+# Hardware To Do / Notes
 
-https://github.com/nuxiom/zmk/tree/60split
+## Tidbit
+
+- Setup to use oled same way as original
+- Setup to use nice!nano same way as original
+- Setup to use 14500 same way as original
+
+## Lilly's
+
+- Convert to nice!nano boards
+- Convert to have encoder on each side
+- Use 14500 battery setup
+
+## Pocket Type
+
+- SparkFun pro micro compat board
+- 110mAh LiPo
+- Add OLED somehow
+
+## Mini mouse pad / track pad
+
+- Adafruit itsybitsy nrf
+	- https://github.com/nuxiom/zmk/tree/60split
+- ItsyBitsy lipo backpack
+- 110mAh battery
+- Pick one of the track pads ordered
+- Blue led indicate charging status (same as nice!nano)
+- Dotstar red if unpaired
+- Dotstar yellow if disconnected
+- Dotstar green if connected
+- Dotstar blue if pairing
+- Push and hold button to clear BT profile
+- Tap button to connect to default BT profile
 
 # Dyanmic Layer Actions
 
