@@ -2,10 +2,6 @@
 
 https://github.com/nuxiom/zmk/tree/60split
 
-# Local github CI actions run
-
-See https://github.com/nektos/act as a potential way to run local GH actions ahead of opening a PR
-
 # Dyanmic Layer Actions
 
 - look at hold tap implementation for inspiration (keymap file poprtion)
