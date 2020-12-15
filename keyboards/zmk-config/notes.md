@@ -2,15 +2,6 @@
 
 https://github.com/nuxiom/zmk/tree/60split
 
-# Docker container use less instead of more
-
-- need to install 'less' package
-- need to set PAGER env var to 'less'
-- submit as pr to zmk-docker repo AFTER testing locally
-- add less to testing page of docs
-	- less --help
-	- git log uses less instead of more
-
 # Local github CI actions run
 
 See https://github.com/nektos/act as a potential way to run local GH actions ahead of opening a PR
