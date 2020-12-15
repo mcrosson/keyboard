@@ -1,57 +1,19 @@
-# Test notes
-
-development/guides/tests
-
-cd app
-west test tests/to-layer/normal
-
-add to app/tests/[folder]
-
-fill in behavior_keymap.dtsi with appropriate keymap for testing
-setup native_posix.keymap for the order of events you want to run (these will spit out events that become the test case)
-fill in keycode_events.snapshot with the proper values after running the native_posix.keymap with appropriate output for the events expected
-	remove the "+" prefix from the lines in the snapshot (should read like kp_pressed: and kp_released: on each line)
-	you need a new line at the end of the snapshot file
-
-
 # ItsyBitsy Bring Up
 
 https://github.com/nuxiom/zmk/tree/60split
-
-# Sleep / Blank
-
-Also apply to underglow if Pete doesn't get there first
 
 # Docker container use less instead of more
 
 - need to install 'less' package
 - need to set PAGER env var to 'less'
 - submit as pr to zmk-docker repo AFTER testing locally
+- add less to testing page of docs
+	- less --help
+	- git log uses less instead of more
 
 # Local github CI actions run
 
 See https://github.com/nektos/act as a potential way to run local GH actions ahead of opening a PR
-
-# Documentation ideas
-
-Container tests
-- west update
-- git status
-- nano -w .git/config
-- cd docs
-- npm ci
-- npm run prettier:format
-- npm run prettier:check
-- npm run lint
-- npm run build
-- npm run start # Verify this works with http://localhost:3000
-- cd ../app
-- clang-format -i app/**/*.c
-- clang-format -i app/**/*.h
-- west build --board nice_nano -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
-- west build -d build/ -t rom_report
-- west build -d build/ -t ram_report
-- west build -t menuconfig
 
 # Dyanmic Layer Actions
 
