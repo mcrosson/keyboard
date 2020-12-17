@@ -36,6 +36,10 @@
 - Push and hold button to clear BT profile
 - Tap button to connect to default BT profile
 
+# Generating settings reset images
+
+west build --board nice_nano -d build/settings_reset -- -DSHIELD=settings_reset
+
 # VS Code Documentation
 
 - Command Pallet -> Run Task -> npm -> Shows list of npm build tasks for the docs
