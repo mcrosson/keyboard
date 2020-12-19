@@ -1,4 +1,4 @@
-# ZMK Notes for Tidbit
+# ZMK Notes
 
 ## Docker Volume
 
@@ -9,5 +9,9 @@ Need to have the `zmk-config` directory mounted at `/workspaces/zmk-config` in D
 ``` sh
 
 west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
+
+west build --board nice_nano -d build/lily58/left -- -DSHIELD=lily58_left -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
+
+west build --board nice_nano -d build/lily58/right -- -DSHIELD=lily58_right -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
 ```
