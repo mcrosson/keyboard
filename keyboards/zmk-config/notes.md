@@ -8,15 +8,12 @@
 
 ## Lilly's
 
-- Convert to nice!nano boards
-- Convert to have encoder on each side
 - Use 14500 battery setup
-- Consider adding smallest track pad as well as encoders ; maybe mid sized depending on thumb cluster spacing
 
 ## Pocket Type
 
 - SparkFun pro micro compat board
-- 110mAh LiPo
+- 110mAh LiPo via jst
 - Add OLED somehow
 
 ## Mini mouse pad / track pad
