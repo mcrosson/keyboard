@@ -1,0 +1,65 @@
+[
+  {
+    "name": "PocketType!",
+    "author": "Layer Default"
+  },
+  [
+    {
+      "a": 7
+    },
+    "Esc",
+    "Q",
+    "W",
+    "E",
+    "R",
+    "T",
+    "Y",
+    "U",
+    "I",
+    "O",
+    "P",
+    "Bksp"
+  ],
+  [
+    "Tab",
+    "A",
+    "S",
+    "D",
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "L",
+    ";",
+    "Enter"
+  ],
+  [
+    "Shift",
+    "Z",
+    "X",
+    "C",
+    "V",
+    "B",
+    "N",
+    "M",
+    ",",
+    ".",
+    "'",
+    "Shift"
+  ],
+  [
+    "Ctrl",
+    "GUI / CMD",
+    "Alt",
+    "Caps",
+    "MO(1)",
+    "Del",
+    "Space",
+    "MO(2)",
+    "Left",
+    "Up",
+    "Down",
+    "Right"
+  ]
+]

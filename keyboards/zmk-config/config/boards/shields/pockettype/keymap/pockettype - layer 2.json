@@ -1,0 +1,80 @@
+[
+  {
+    "name": "PocketType!",
+    "author": "Layer 2 / Raise"
+  },
+  [
+    {
+      "a": 5
+    },
+    "Print\n\n\n\n\n\nScreen",
+    {
+      "a": 7
+    },
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Pg Up",
+    "Up",
+    "Pg Dn",
+    "",
+    ""
+  ],
+  [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Home",
+    "Left",
+    "Down",
+    "Right",
+    "End",
+    ""
+  ],
+  [
+    {
+      "a": 5
+    },
+    "Ctrl\n\n\n\n\n\nZ",
+    "Ctrl\n\n\n\n\n\nX",
+    "Ctrl\n\n\n\n\n\nC",
+    "Ctrl\n\n\n\n\n\nV",
+    {
+      "a": 7
+    },
+    "",
+    "",
+    "",
+    "",
+    "",
+    {
+      "a": 5
+    },
+    "Vol\n\n\n\n\n\nUp",
+    "Vol\n\n\n\n\n\nDown",
+    {
+      "a": 7
+    },
+    "Play / Pause"
+  ],
+  [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ]
+]
