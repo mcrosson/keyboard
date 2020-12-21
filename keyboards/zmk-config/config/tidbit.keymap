@@ -37,7 +37,7 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                           &to 1            &bootloader     &none
+                           &tog 1            &bootloader     &none
                 &none      &none             &none           &kp LC(LA(TAB))
                 &none      &none             &none           &kp LG(DOWN_ARROW)
                 &kp ESCAPE &none             &none           &none
@@ -48,7 +48,7 @@
         };
         num_pad_layer {
             bindings = <
-                                &to 2          &kp KP_NUMLOCK  &kp KP_SLASH
+                                &tog 2          &kp KP_NUMLOCK  &kp KP_SLASH
                 &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 &kp KP_ASTERISK
                 &kp KP_NUMBER_4 &kp KP_NUMBER_5 &kp KP_NUMBER_6 &kp KP_MINUS
                 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp KP_PLUS
@@ -60,7 +60,7 @@
 
          func_layer {
              bindings = <
-                                &to 0          &reset          &bootloader
+                                &tog 0          &reset          &bootloader
                 &out OUT_TOG    &out OUT_USB    &out OUT_BLE    &none
                 &rgb_ug RGB_TOG &bt BT_PRV      &bt BT_NXT      &bt BT_CLR
                 &ext_power EXT_POWER_TOGGLE_CMD &bt BT_SEL 4    &bt BT_SEL 5    &bt BT_SEL 6
