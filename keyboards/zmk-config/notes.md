@@ -1,3 +1,32 @@
+# Split Keyboard FAQ / Notes
+
+- TRRS IS DANGEROUS IF BOTH HALVES HAVE BATTERIES
+  - TRRS will provide power to peripheral half and that can cause battery overheats, failures, fires
+- BOTH HALVES SHOULD BE POWERED INDEPENDENTLY
+- Halves communicate via ble
+- Both halves should be powered independently of each other
+- ONLY the central half should be paired to a computer via BT
+- Central half is the only half that has to be plugged into usb for usb hid support
+
+# Dyanmic Layer Actions
+
+- look at hold tap implementation for inspiration (keymap file poprtion)
+
+- hooks for BOTH activate and de-activate
+
+- change underglow color
+- fire key press
+
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+			activate-behaviors = <
+	            &rgb_ug sethsv (128, 255, 64) &kp NUM_LOCK
+			>;
+		};
+	};
+
 # Hardware To Do / Notes
 
 ## Tidbit
@@ -8,13 +37,15 @@
 
 ## Lilly's
 
-- Use 14500 battery setup
+- Mini neo pixel on extra pins under mcu for faux underglow
+	- Or just below oled zone
 
 ## Pocket Type
 
-- SparkFun pro micro compat board
-- 110mAh LiPo via jst
+- Nice!Nano + magnetic usb-c
+- 110mAh LiPo under MCU
 - Add OLED somehow
+- Add neopixel on spare pins (if present)
 
 ## Mini mouse pad / track pad
 
@@ -41,26 +72,6 @@ west build --board nice_nano -d build/settings_reset -- -DSHIELD=settings_reset
 
 - Command Pallet -> Run Task -> npm -> Shows list of npm build tasks for the docs
 - code @ the container command line will open a file directly within code on the main machine
-
-# Dyanmic Layer Actions
-
-- look at hold tap implementation for inspiration (keymap file poprtion)
-
-- hooks for BOTH activate and de-activate
-
-- change underglow color
-- fire key press
-
-
-	keymap {
-		compatible = "zmk,keymap";
-
-		default_layer {
-			activate-behaviors = <
-	            &rgb_ug sethsv (128, 255, 64) &kp NUM_LOCK
-			>;
-		};
-	};
 
 # Workspace documentation
 
