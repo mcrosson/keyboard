@@ -35,11 +35,6 @@
 - Setup to use nice!nano same way as original
 - Setup to use 14500 same way as original
 
-## Lilly's
-
-- Mini neo pixel on extra pins under mcu for faux underglow
-	- Or just below oled zone
-
 ## Pocket Type
 
 - Nice!Nano + magnetic usb-c
