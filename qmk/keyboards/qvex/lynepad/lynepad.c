@@ -1,6 +1,17 @@
+/*
+Copyright 2020 KemoNine
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
 #include "lynepad.h"
-
-#include <print.h>
 
 void keyboard_pre_init_kb(void) {
     // Encoder pins
@@ -10,14 +21,9 @@ void keyboard_pre_init_kb(void) {
     setPinInput(PIN_RJ_DIR_C);
     setPinInput(PIN_RJ_DIR_B);
     setPinInput(PIN_RJ_DIR_D);
-}
 
-// void keyboard_post_init_user(void) {
-//   debug_enable=true;
-//   debug_matrix=true;
-//   debug_keyboard=true;
-//   debug_mouse=true;
-// }
+    keyboard_pre_init_user();
+}
 
 int16_t enc1Center = 1;
 int16_t enc1CenterPrev = 1;
