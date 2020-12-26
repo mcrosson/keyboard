@@ -29,18 +29,21 @@
 
 # Hardware To Do / Notes
 
+## Pockettype
+
+- Setup as the 'nice' dongle
+
+## 40%
+
+- Setup as the 'naked' dongle
+- Standard ZMK port with nice!nano
+- Figure out underglow
+
 ## Tidbit
 
 - Setup to use oled same way as original
 - Setup to use nice!nano same way as original
 - Setup to use 14500 same way as original
-
-## Pocket Type
-
-- Nice!Nano + magnetic usb-c
-- 110mAh LiPo under MCU
-- Add OLED somehow
-- Add neopixel on spare pins (if present)
 
 ## Mini mouse pad / track pad
 
