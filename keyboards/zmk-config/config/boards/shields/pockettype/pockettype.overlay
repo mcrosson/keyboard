@@ -6,11 +6,19 @@
 
 #include <dt-bindings/zmk/matrix-transform.h>
 
-// TODO: LEDs
-//    pro micro A3
-//    pro micro A2
-
 / {
+	leds {
+		compatible = "gpio-leds";
+		act_led: led_a {
+			gpios = <&pro_micro_a 3 GPIO_ACTIVE_HIGH>;
+			label = "ACT LED";
+		};
+		power_led: led_p {
+			gpios = <&pro_micro_a 2 GPIO_ACTIVE_HIGH>;
+			label = "PWR LED";
+		};
+	};
+
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		label = "KSCAN";
