@@ -29,14 +29,8 @@
 
 # Hardware To Do / Notes
 
-## Pockettype
-
-- Setup as the 'nice' dongle
-
 ## 40%
 
-- Setup as the 'naked' dongle
-- Standard ZMK port with nice!nano
 - Figure out underglow
 
 ## Tidbit

@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix-transform.h>
+
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+	};
+
+	kscan0: kscan_0 {
+		compatible = "zmk,kscan-gpio-direct";
+
+		label = "KSCAN";
+
+		input-gpios
+			= <&gpio1 0 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>
+			;
+
+	};
+};
