@@ -6,11 +6,24 @@ if SHIELD_AZARASHI64_LEFT
 config ZMK_KEYBOARD_NAME
     default "Azarashi64 Left"
 
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+
 endif
 
 if SHIELD_AZARASHI64_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "Azarashi64 Right"
+
+config USB
+	default y
+
+endif
+
+if SHIELD_AZARASHI64_LEFT || SHIELD_AZARASHI64_RIGHT
+
+config ZMK_SPLIT
+	default y
 
 endif
