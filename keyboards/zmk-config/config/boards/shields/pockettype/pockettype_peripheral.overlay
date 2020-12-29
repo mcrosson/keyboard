@@ -4,9 +4,5 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "pockettype.dtsi"
+#include "pockettype.overlay"
 #include "pockettype.keymap"
-
-&default_transform {
-	col-offset = <0>;
-};
