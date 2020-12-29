@@ -8,6 +8,10 @@
 - ONLY the central half should be paired to a computer via BT
 - Central half is the only half that has to be plugged into usb for usb hid support
 
+# Generating settings reset images
+
+west build --board nice_nano -d build/settings_reset -- -DSHIELD=settings_reset
+
 # User Behaviors
 
 Needs documentation, see pockettype and mdk dongle for ideas -- specifically the LED code and CMakeLists.txt
@@ -72,10 +76,6 @@ Generic behavior for led on/off via gpio (see pocket type / mdk personal sources
 - Dotstar blue if pairing
 - Push and hold button to clear BT profile
 - Tap button to connect to default BT profile
-
-# Generating settings reset images
-
-west build --board nice_nano -d build/settings_reset -- -DSHIELD=settings_reset
 
 # VS Code Documentation
 
