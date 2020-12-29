@@ -8,6 +8,14 @@
 - ONLY the central half should be paired to a computer via BT
 - Central half is the only half that has to be plugged into usb for usb hid support
 
+# User Behaviors
+
+Needs documentation, see pockettype and mdk dongle for ideas -- specifically the LED code and CMakeLists.txt
+
+# LEDs
+
+Generic behavior for led on/off via gpio (see pocket type / mdk personal sources for ideas)
+
 # Dyanmic Layer Actions
 
 - look at hold tap implementation for inspiration (keymap file poprtion)
@@ -29,8 +37,17 @@
 
 # Hardware To Do / Notes
 
+## Dongles
+
+- Setup user buttons via user code to trip boot loader / other things
+	- Can do `zmk-config/config/boards/shields/CMakeLists.txt`
+- Setup dedicated mdk dongle shield
+- Remove local tg4x / pockettype dongle configs
+- Part of readme shows the necessary conf tweaks/items that need to be added to zmk-config for a board
+
 ## 40%
 
+- Reconcile against main zmk repo and submit appropriate PRs
 - Figure out underglow
 
 ## Tidbit
