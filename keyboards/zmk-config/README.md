@@ -12,13 +12,9 @@ west build --board nrf52840_mdk_dongle -d build/mdk_dongle -- -DSHIELD=mdk_dongl
 
 west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
-west build --board nice_nano -d build/pockettype/default -- -DSHIELD=pockettype -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
+west build --board nice_nano -d build/pockettype -- -DSHIELD=pockettype -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
-west build --board nice_nano -d build/pockettype/peripheral -- -DSHIELD=pockettype_peripheral -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
-
-west build --board nice_nano -d build/tg4x/default -- -DSHIELD=tg4x -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
-
-west build --board nice_nano -d build/tg4x/peripheral -- -DSHIELD=tg4x_peripheral -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
+west build --board nice_nano -d build/tg4x -- -DSHIELD=tg4x -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
 west build --board nice_nano -d build/lily58/left -- -DSHIELD=lily58_left -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 

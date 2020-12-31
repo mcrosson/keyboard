@@ -4,4 +4,3 @@
 #
 
 target_sources(app PRIVATE pockettype_pwr_led.c)
-target_sources(app PRIVATE mdk_pwr_led.c)

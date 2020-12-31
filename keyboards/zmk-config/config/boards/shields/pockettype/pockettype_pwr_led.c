@@ -9,7 +9,7 @@
 #include <devicetree.h>
 #include <drivers/gpio.h>
 
-#define PWR_LED_NODE DT_ALIAS(led_p)
+#define PWR_LED_NODE DT_ALIAS(powerled)
 
 #if DT_NODE_HAS_STATUS(PWR_LED_NODE, okay)
 #define PWR_LED DT_GPIO_LABEL(PWR_LED_NODE, gpios)
@@ -22,25 +22,17 @@
 #define FLAGS 0
 #endif
 
-static int pwr_led_init(const struct device *_arg) {
-	ARG_UNUSED(_arg);    
-
-	const struct device *dev;
-	int ret;
-
+static int pwr_led_init(const struct device *dev) {
 	dev = device_get_binding(PWR_LED);
 	if (dev == NULL) {
-		return;
+		return -EIO;
 	}
 
-	ret = gpio_pin_configure(dev, PWR_LED_PIN, GPIO_OUTPUT_ACTIVE);
-	if (ret < 0) {
-		return;
+	if (gpio_pin_configure(dev, PWR_LED_PIN, GPIO_OUTPUT) < 0) {
+		return -EIO;
 	}
 
-	gpio_pin_set(dev, PIN, (int)true);
-
-	return 0;
+	return gpio_pin_set(dev, PIN, (int)true);
 }
 
 SYS_INIT(pwr_led_init, APPLICATION, CONFIG_APPLICATION_INIT_PRIORITY);
