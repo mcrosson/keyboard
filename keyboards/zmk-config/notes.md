@@ -1,17 +1,3 @@
-# Split Keyboard FAQ / Notes
-
-- TRRS IS DANGEROUS IF BOTH HALVES HAVE BATTERIES
-  - TRRS will provide power to peripheral half and that can cause battery overheats, failures, fires
-- BOTH HALVES SHOULD BE POWERED INDEPENDENTLY
-- Halves communicate via ble
-- Both halves should be powered independently of each other
-- ONLY the central half should be paired to a computer via BT
-- Central half is the only half that has to be plugged into usb for usb hid support
-
-# Generating settings reset images
-
-west build --board nice_nano -d build/settings_reset -- -DSHIELD=settings_reset
-
 # User Behaviors
 
 Needs documentation, see pockettype and mdk dongle for ideas -- specifically the LED code and CMakeLists.txt
@@ -19,6 +5,12 @@ Needs documentation, see pockettype and mdk dongle for ideas -- specifically the
 # LEDs
 
 Generic behavior for led on/off via gpio (see pocket type / mdk personal sources for ideas)
+
+# Peripheral Over USB
+
+Figure out how to setup the code to allow the peripheral half of a board to work over USB
+
+Per Pete Johnson : Mostly build tweaks
 
 # Dyanmic Layer Actions
 
@@ -41,8 +33,13 @@ Generic behavior for led on/off via gpio (see pocket type / mdk personal sources
 
 # Hardware To Do / Notes
 
+## MDK Dongle
+
+Submit to upstream zephyr
+
 ## Dongles
 
+- Remove need to have kscan defined for the dongle portion of a build
 - Setup user buttons via user code to trip boot loader / other things
 	- Can do `zmk-config/config/boards/shields/CMakeLists.txt`
 - Setup dedicated mdk dongle shield

@@ -8,17 +8,15 @@ Need to have the `zmk-config` directory mounted at `/workspaces/zmk-config` in D
 
 ``` sh
 
+west build --board nrf52840_mdk_dongle -d build/mdk_dongle -- -DSHIELD=mdk_dongle -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
+
 west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
 west build --board nice_nano -d build/pockettype/default -- -DSHIELD=pockettype -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
-west build --board nrf52840_mdk -d build/pockettype/mdk -- -DSHIELD=pockettype_mdk -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
-
 west build --board nice_nano -d build/pockettype/peripheral -- -DSHIELD=pockettype_peripheral -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
 west build --board nice_nano -d build/tg4x/default -- -DSHIELD=tg4x -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
-
-west build --board nrf52840_mdk -d build/tg4x/mdk -- -DSHIELD=tg4x_mdk -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
 west build --board nice_nano -d build/tg4x/peripheral -- -DSHIELD=tg4x_peripheral -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
