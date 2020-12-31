@@ -9,12 +9,23 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+	behaviors {
+		ht: hold_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "Hold Tap";
+			#binding-cells = <2>;
+			tapping_term_ms = <150>;
+			flavor = "tap-preferred";
+			bindings = <&bootloader>, <&reset>;
+		};
+	};
+
 	keymap {
 		compatible = "zmk,keymap";
 		
 		default_layer {
 			bindings = <
-				&kp Z
+				&ht B R
 			>;
 		};
 	};
