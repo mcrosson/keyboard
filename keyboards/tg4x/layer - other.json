@@ -1,13 +1,12 @@
 [
   {
     "name": "TG4X",
-    "author": "Layer 2"
+    "author": "Layer - Other"
   },
   [
     {
       "a": 7
     },
-    "`",
     "F1",
     "F2",
     "F3",
@@ -19,6 +18,9 @@
     "F9",
     "F10",
     "F11",
+    {
+      "w": 2
+    },
     "F12"
   ],
   [
@@ -33,22 +35,21 @@
     "",
     "",
     "",
+    "",
+    "",
+    "",
     {
-      "a": 5
-    },
-    "Vol\n\n\n\n\n\nUp",
-    "Vol\n\n\n\n\n\nDown",
-    "Play\n\n\n\n\n\nPause",
-    {
-      "a": 7,
       "w": 1.5
     },
-    ""
+    "Insert"
   ],
   [
     {
-      "a": 5,
       "w": 1.75
+    },
+    "",
+    {
+      "a": 5
     },
     "BT\n\n\n\n\n\nClear",
     "BT\n\n\n\n\n\nPrev",
@@ -60,13 +61,12 @@
     "",
     "",
     "",
-    "",
     "Boot",
     "Reset",
     {
       "w": 2.25
     },
-    ""
+    "Print Screen"
   ],
   [
     {
@@ -93,8 +93,11 @@
       "w": 1.25
     },
     "",
-    "",
-    "",
-    ""
+    {
+      "a": 5
+    },
+    "Vol\n\n\n\n\n\nUp",
+    "Vol\n\n\n\n\n\nDn",
+    "Play\n\n\n\n\n\nPause"
   ]
 ]
