@@ -1,7 +1,3 @@
-# User Behaviors
-
-Needs documentation, see pockettype and mdk dongle for ideas -- specifically the LED code and CMakeLists.txt
-
 # LEDs
 
 Generic behavior for led on/off via gpio (see pocket type / mdk personal sources for ideas)
@@ -36,20 +32,6 @@ Per Pete Johnson : Mostly build tweaks
 ## MDK Dongle
 
 Submit to upstream zephyr
-
-## Dongles
-
-- Remove need to have kscan defined for the dongle portion of a build
-- Setup user buttons via user code to trip boot loader / other things
-	- Can do `zmk-config/config/boards/shields/CMakeLists.txt`
-- Setup dedicated mdk dongle shield
-- Remove local tg4x / pockettype dongle configs
-- Part of readme shows the necessary conf tweaks/items that need to be added to zmk-config for a board
-
-## 40%
-
-- Reconcile against main zmk repo and submit appropriate PRs
-- Figure out underglow
 
 ## Tidbit
 
