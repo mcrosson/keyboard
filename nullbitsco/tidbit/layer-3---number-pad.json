@@ -1,7 +1,7 @@
 [
   {
     "backcolor": "#ffa100",
-    "name": "Layer 2 - Number Pad",
+    "name": "Layer 3 - Number Pad",
     "author": "KemoNine"
   },
   [
@@ -9,8 +9,8 @@
       "x": 1,
       "a": 7
     },
-    "TG(0)",
-    "Boot",
+    "TO(0)",
+    "Num Lock",
     "/"
   ],
   [

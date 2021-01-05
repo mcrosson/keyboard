@@ -9,9 +9,9 @@
       "x": 1,
       "a": 7
     },
-    "TG(1)",
-    "Boot",
-    ""
+    "TO(1)",
+    "TO(2)",
+    "TO(3)"
   ],
   [
     "Left Click",
@@ -39,8 +39,8 @@
     {
       "a": 7
     },
-    "Vol Down",
     "Vol Up",
+    "Vol Down",
     "Accel Mode"
   ]
 ]
