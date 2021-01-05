@@ -56,7 +56,7 @@
                 &kp PG_UP  &kp UP   &kp PG_DN &none
                 &kp LEFT   &kp DOWN &kp RIGHT &kp END
                 &kp HOME   &none    &none     &kp ENTER
-                &kp C_MUTE &none    &none     &none
+                &kp C_MUTE &none    &none     &kp LA(F4)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
