@@ -8,7 +8,7 @@ Need to have the `zmk-config` directory mounted at `/workspaces/zmk-config` in D
 
 ``` sh
 
-west build --board nrf52840_mdk_dongle -d build/mdk_dongle -- -DSHIELD=mdk_dongle -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
+west build --board nice_nano -d build/m60 -- -DSHIELD=m60 -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
 west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
@@ -23,6 +23,8 @@ west build --board nice_nano -d build/tg4x -- -DSHIELD=tg4x -DZMK_CONFIG=/worksp
 west build --board nice_nano -d build/lily58/left -- -DSHIELD=lily58_left -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
 west build --board nice_nano -d build/lily58/right -- -DSHIELD=lily58_right -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
+
+west build --board nrf52840_mdk_dongle -d build/mdk_dongle -- -DSHIELD=mdk_dongle -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
 west build --board itsybitsy_nrf52840 -d build/azarashi64/left -- -DSHIELD=azarashi64_left -DZMK_CONFIG=/workspaces/zmk-config/keyboards/zmk-config/config
 
