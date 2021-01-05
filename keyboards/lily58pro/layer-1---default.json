@@ -1,6 +1,7 @@
 [
   {
-    "name": "Default",
+    "backcolor": "#ffa100",
+    "name": "Layer 1 - Default",
     "author": "KemoNine"
   },
   [
@@ -38,7 +39,7 @@
     "I",
     "O",
     "P",
-    "\\"
+    "'"
   ],
   [
     "SHIFT",
@@ -71,7 +72,7 @@
     ",",
     ".",
     "/",
-    "'"
+    "\\"
   ],
   [
     {
@@ -79,11 +80,11 @@
     },
     "ALT",
     "GUI",
-    "LOW",
-    "`",
-    "SPC",
-    "RAISE",
     "-",
+    "=",
+    "SPC",
+    "MO(1)",
+    "`",
     "CTRL"
   ]
 ]

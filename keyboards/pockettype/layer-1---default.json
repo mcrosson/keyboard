@@ -1,7 +1,8 @@
 [
   {
-    "name": "PocketType!",
-    "author": "Layer Default"
+    "backcolor": "#ffa100",
+    "name": "Layer 1 - Default",
+    "author": "KemoNine"
   },
   [
     {
@@ -57,9 +58,9 @@
     "Del",
     "Space",
     "MO(2)",
-    "Left",
-    "Up",
-    "Down",
-    "Right"
+    "←",
+    "↓",
+    "↑",
+    "→"
   ]
 ]

@@ -1,0 +1,105 @@
+[
+  {
+    "backcolor": "#00f3ff",
+    "name": "Layer 2 - Function",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "a": 7
+    },
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    {
+      "x": 2
+    },
+    "F7",
+    "F8",
+    "F9",
+    "F10",
+    "F11",
+    "F12"
+  ],
+  [
+    "",
+    "",
+    "Pg Up",
+    "↑",
+    "Pg Dn",
+    "",
+    {
+      "x": 2
+    },
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Del"
+  ],
+  [
+    "",
+    "Home",
+    "←",
+    "↓",
+    "→",
+    "End",
+    {
+      "x": 2
+    },
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Insert"
+  ],
+  [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    {
+      "a": 5
+    },
+    "BT\n\n\n\n\n\nNext",
+    "Vol\n\n\n\n\n\nUp",
+    {
+      "a": 7
+    },
+    "",
+    "",
+    "",
+    "Loader",
+    "Reset",
+    {
+      "a": 5
+    },
+    "Print\n\n\n\n\n\nScreen"
+  ],
+  [
+    {
+      "x": 3
+    },
+    "EXT\n\n\n\n\n\nOn",
+    "EXT\n\n\n\n\n\nOff",
+    "BT\n\n\n\n\n\nClear",
+    "BT\n\n\n\n\n\nPrev",
+    "Vol\n\n\n\n\n\nDown",
+    {
+      "a": 7
+    },
+    "",
+    "Mute",
+    {
+      "a": 5
+    },
+    "Play\n\n\n\n\n\nPause"
+  ]
+]

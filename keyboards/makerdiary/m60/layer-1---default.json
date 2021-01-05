@@ -1,7 +1,7 @@
 [
   {
     "backcolor": "#ffa100",
-    "name": "Layer 1",
+    "name": "Layer 1 - Default",
     "author": "KemoNine"
   },
   [
@@ -26,10 +26,12 @@
   ],
   [
     {
-      "a": 4,
       "w": 1.5
     },
     "Tab",
+    {
+      "a": 4
+    },
     "Q",
     "W",
     "E",
@@ -111,12 +113,11 @@
     },
     "Alt",
     {
-      "a": 5,
+      "a": 7,
       "w": 6.25
     },
-    "HT(1)\n\n\n\n\n\nSpace",
+    "Space",
     {
-      "a": 7,
       "w": 1.25
     },
     "MO(1)",

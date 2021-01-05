@@ -1,0 +1,78 @@
+[
+  {
+    "backcolor": "#5F9EA0",
+    "name": "Layer 3 - Other",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "a": 7
+    },
+    "",
+    "",
+    "Pg Up",
+    "↑",
+    "Pg Dn",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Del"
+  ],
+  [
+    "",
+    "Home",
+    "←",
+    "↓",
+    "→",
+    "End",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Insert"
+  ],
+  [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Loader",
+    "Reset",
+    {
+      "a": 5
+    },
+    "Print\n\n\n\n\n\nScreen"
+  ],
+  [
+    "BT\n\n\n\n\n\nClear",
+    "BT\n\n\n\n\n\nNext",
+    "BT\n\n\n\n\n\nPrev",
+    {
+      "a": 7
+    },
+    "",
+    "",
+    "",
+    "",
+    "",
+    {
+      "a": 5
+    },
+    "Play\n\n\n\n\n\nPause",
+    "Vol\n\n\n\n\n\nUp",
+    "Vol\n\n\n\n\n\nDn",
+    {
+      "a": 7
+    },
+    "Mute"
+  ]
+]
