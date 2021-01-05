@@ -1,7 +1,7 @@
 [
   {
-    "backcolor": "#00f3ff",
-    "name": "Layer 3 - ZMK",
+    "backcolor": "#5F9EA0",
+    "name": "Layer 4 - ZMK",
     "author": "KemoNine"
   },
   [
@@ -9,7 +9,7 @@
       "x": 1,
       "a": 7
     },
-    "TG(0)",
+    "TO(0)",
     "Reset",
     "Boot"
   ],
