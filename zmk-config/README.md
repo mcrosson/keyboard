@@ -4,6 +4,27 @@
 
 Need to have the `zmk-config` directory mounted at `/workspaces/zmk-config` in Docker container
 
+## git commit linting setup
+
+Issue 575 on GitHub
+
+``` sh
+# cd /path/to/zmk
+npm install --save-dev @commitlint/{cli,config-conventional}
+echo "module.exports = {extends: ['@commitlint/config-conventional']};" > commitlint.config.js
+npm install --save-dev husky@next
+npm install pinst --save-dev
+npx husky install
+npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
+npx commitlint --from HEAD~1 --to HEAD --verbose
+touch foo
+git commit -m "foo: this will fail"
+git commit -m "chore: lint on commitmsg"
+git reset HEAD~1
+rm foo
+
+```
+
 ## Building
 
 ``` sh
