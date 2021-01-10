@@ -38,11 +38,19 @@
         navigation_layer {
             // &rgb_ug RGB_COLOR_HSB(215, 100, 50)
             label = "Nav";
+            // activate-behaviors = <
+	        //     &rgb_ug RGB_COLOR_HSB(215, 100, 50)
+			// >;
+
+            // deactivate-behaviors = <
+            //     &rgb_ug RGB_COLOR_HSB(0, 100, 50)
+            // >;
+
             bindings = <
                            &to 1    &to 2     &to 3
                 &kp PG_UP  &kp UP   &kp PG_DN &none
-                &kp LEFT   &kp DOWN &kp RIGHT &kp END
-                &kp HOME   &none    &kp BSPC  &kp ENTER
+                &kp LEFT   &kp DOWN &kp RIGHT &trans
+                &kp HOME   &kp BSPC &kp END   &kp ENTER
                 &kp C_MUTE &none    &none     &kp LA(F4)
             >;
 
@@ -53,7 +61,7 @@
             label = "Mouse";
             bindings = <
                            &to 0             &to 2           &to 3
-                &none      &none             &none           &kp LC(LA(TAB))
+                &rgb_ug RGB_COLOR_HSB(215, 100, 50)      &rgb_ug RGB_COLOR_HSB(275, 100, 50)             &none           &kp LC(LA(TAB))
                 &none      &none             &none           &kp LG(DOWN_ARROW)
                 &kp ESCAPE &none             &none           &none
                 &kp C_MUTE &kp C_VOLUME_DOWN &kp C_VOLUME_UP &none
