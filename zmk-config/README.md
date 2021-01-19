@@ -33,6 +33,8 @@ west build --board nice_nano -d build/m60 -- -DSHIELD=m60 -DZMK_CONFIG=/workspac
 
 west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
+west build --board nice_nano -d build/nibble -- -DSHIELD=nibble -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
+
 west build --board nice_nano -d build/pockettype/default -- -DSHIELD=pockettype -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
 west build --board nrf52840_mdk_dongle -d build/pockettype/central -- -DSHIELD=pockettype_central -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
