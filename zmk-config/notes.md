@@ -29,16 +29,6 @@ Per Pete Johnson : Mostly build tweaks
 
 # Hardware To Do / Notes
 
-## MDK Dongle
-
-Submit to upstream zephyr
-
-## Tidbit
-
-- Setup to use oled same way as original
-- Setup to use nice!nano same way as original
-- Setup to use 14500 same way as original
-
 ## Mini mouse pad / track pad
 
 - Adafruit itsybitsy nrf
