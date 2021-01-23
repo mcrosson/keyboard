@@ -1,7 +1,7 @@
 [
   {
     "backcolor": "#00f3ff",
-    "name": "Layer 2 - Navigation",
+    "name": "Layer 1 - Navigation",
     "author": "KemoNine"
   },
   [
@@ -23,12 +23,12 @@
     "←",
     "↓",
     "→",
-    "End"
+    "Gui + E"
   ],
   [
     "Home",
-    "",
     "Bksp",
+    "End",
     "Enter"
   ],
   [

@@ -14,22 +14,22 @@
     "Boot"
   ],
   [
-    "Out Tog",
-    "Out USB",
-    "Out BLE",
+    "RGB Hue Down",
+    "RGB Hue Up",
+    "RGB Bright Down",
+    "RGB Bright Up"
+  ],
+  [
+    "",
+    "",
+    "",
     ""
   ],
   [
-    "RGB Tog",
-    "BT Prev",
-    "BT next",
-    "BT Clear"
-  ],
-  [
     "Ext Pwr Tog",
-    "BT Sel 4",
-    "BT Sel 5",
-    "BT Sel 6"
+    "RGB Toggle",
+    "Output Toggle",
+    ""
   ],
   [
     {
@@ -39,8 +39,8 @@
     {
       "a": 7
     },
-    "BT Sel 1",
-    "BT Sel 2",
-    "BT Sel 3"
+    "BT Prev",
+    "BT Next",
+    "BT Clear"
   ]
 ]
