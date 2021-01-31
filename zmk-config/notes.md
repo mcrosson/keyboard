@@ -1,12 +1,24 @@
+# Boards to Shelve
+
+Keep "handy"
+
+- lily58 pro
+- m60
+- lynepad
+
+# Chording/Steno
+
+Start with tidbit
+ARTSEY: https://www.artsey.io/_FILES/images/ARTSEY.jpg
+Beluga board : https://github.com/keyboard-magpie/belugaboard
+Mod beluga for tilt encoder + thumb switch?
+ASETNIOP
+	http://asetniop.com/layouts/
+	http://asetniop.com/combinations/
+
 # LEDs
 
 Generic behavior for led on/off via gpio (see pocket type / mdk personal sources for ideas)
-
-# Peripheral Over USB
-
-Figure out how to setup the code to allow the peripheral half of a board to work over USB
-
-Per Pete Johnson : Mostly build tweaks
 
 # Dyanmic Layer Actions
 
