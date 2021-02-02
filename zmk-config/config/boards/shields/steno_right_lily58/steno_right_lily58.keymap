@@ -1,0 +1,72 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+// ARTS Row
+#define KEY_A 13
+#define KEY_R 14
+#define KEY_T 15
+#define KEY_S 16
+// EYIO Row
+#define KEY_E 7
+#define KEY_Y 8
+#define KEY_I 9
+#define KEY_O 10
+
+#include "../../../artsey.dtsi"
+
+/ {
+	keymap {
+        compatible = "zmk,keymap";
+        base {
+            label = "Base";
+            bindings = <
+                &none &none &none &none &none &none &none
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS A    &kp R     &kp T     &layer_numbers_kp LAYER_ID_NUMBERS S
+				&layer_symbols_kp LAYER_ID_SYMBOLS E                  &kp Y     &kp I     &layer_navigation_kp LAYER_ID_NAVIGATION O
+				&none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+		numbers {
+            label = "Numbers";
+            bindings = < /* TODO: NEED TO SETUP Fn LEADER KEY(S) */
+                &none &none &none &none &none &none &none
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1   &kp N2    &kp N3    &layer_base_none LAYER_ID_BASE 0
+				&layer_symbols_kp LAYER_ID_SYMBOLS N4                 &kp N5    &kp N6    &layer_navigation_none LAYER_ID_NAVIGATION 0
+                &none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+		symbols {
+            label = "Symbols";
+            bindings = <
+                &none &none &none &none &none &none &none
+				&layer_parentheticals_none LAYER_ID_PARENTHETICALS 0  &kp BSLH  &kp SEMI  &layer_numbers_kp LAYER_ID_NUMBERS GRAVE
+				&layer_base_none LAYER_ID_BASE 0                      &kp MINUS &kp EQUAL &layer_navigation_none LAYER_ID_NAVIGATION 0
+                &none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+		parentheticals {
+            label = "Paren";
+            bindings = <
+                &none &none &none &none &none &none &none
+				&layer_base_none LAYER_ID_BASE 0                      &kp LPAR  &kp RPAR  &layer_numbers_kp LAYER_ID_NUMBERS LBRC
+				&layer_symbols_none LAYER_ID_SYMBOLS 0                &kp LBKT  &kp RBKT  &layer_navigation_kp LAYER_ID_NAVIGATION RBRC
+                &none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+		navigation {
+            label = "Nav";
+            bindings = <
+                &none &none &none &none &none &none &none
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS HOME &kp UP    &kp END   &layer_numbers_none LAYER_ID_NUMBERS 0
+				&layer_symbols_kp LAYER_ID_SYMBOLS LEFT               &kp DOWN  &kp RIGHT &layer_base_none LAYER_ID_BASE 0
+                &none &none &none &none &none &none &none &none &none &none &none &none &none
+            >;
+        };
+    };
+};
