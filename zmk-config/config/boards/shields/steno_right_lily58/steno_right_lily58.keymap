@@ -22,56 +22,76 @@
 
 / {
 	keymap {
-        compatible = "zmk,keymap";
-        base {
-            label = "Base";
-            bindings = <
-                &none &none &none &none &none &none &none
+		compatible = "zmk,keymap";
+		base {
+			label = "Base";
+			bindings = <
+				&none &none &none &none &none &none &none
 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS A    &kp R     &kp T     &layer_numbers_kp LAYER_ID_NUMBERS S
-                &none &none
+				&none &none
 				&layer_symbols_kp LAYER_ID_SYMBOLS E                  &kp Y     &kp I     &layer_navigation_kp LAYER_ID_NAVIGATION O
 				&none &none &none &none &none &none &none &none &none &none &none
-            >;
-        };
+			>;
+		};
 		numbers {
-            label = "Numbers";
-            bindings = < /* TODO: NEED TO SETUP Fn LEADER KEY(S) */
-                &none &none &none &none &none &none &none
-				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1   &kp N2    &kp N3    &layer_base_none LAYER_ID_BASE 0
-                &none &none
-				&layer_symbols_kp LAYER_ID_SYMBOLS N4                 &kp N5    &kp N6    &layer_navigation_none LAYER_ID_NAVIGATION 0
-                &none &none &none &none &none &none &none &none &none &none &none
-            >;
-        };
+			label = "Numbers";
+			bindings = <
+				&none &none &none &none &none &none &none
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1   &kp N2    &kp N3    &layer_base_sl LAYER_ID_BASE LAYER_ID_F_ONE_SIX
+				&none &none
+				&layer_symbols_kp LAYER_ID_SYMBOLS N4                 &kp N5    &kp N6    &layer_navigation_sl LAYER_ID_NAVIGATION LAYER_ID_F_SEVEN_TWELVE
+				&none &none &none &none &none &none &none &none &none &none &none
+			>;
+		};
 		symbols {
-            label = "Symbols";
-            bindings = <
-                &none &none &none &none &none &none &none
+			label = "Symbols";
+			bindings = <
+				&none &none &none &none &none &none &none
 				&layer_parentheticals_none LAYER_ID_PARENTHETICALS 0  &kp BSLH  &kp SEMI  &layer_numbers_kp LAYER_ID_NUMBERS GRAVE
-                &none &none
+				&none &none
 				&layer_base_none LAYER_ID_BASE 0                      &kp MINUS &kp EQUAL &layer_navigation_none LAYER_ID_NAVIGATION 0
-                &none &none &none &none &none &none &none &none &none &none &none
-            >;
-        };
+				&none &none &none &none &none &none &none &none &none &none &none
+			>;
+		};
 		parentheticals {
-            label = "Paren";
-            bindings = <
-                &none &none &none &none &none &none &none
+			label = "Paren";
+			bindings = <
+				&none &none &none &none &none &none &none
 				&layer_base_none LAYER_ID_BASE 0                      &kp LPAR  &kp RPAR  &layer_numbers_kp LAYER_ID_NUMBERS LBRC
-                &none &none
+				&none &none
 				&layer_symbols_none LAYER_ID_SYMBOLS 0                &kp LBKT  &kp RBKT  &layer_navigation_kp LAYER_ID_NAVIGATION RBRC
-                &none &none &none &none &none &none &none &none &none &none &none
-            >;
-        };
+				&none &none &none &none &none &none &none &none &none &none &none
+			>;
+		};
 		navigation {
-            label = "Nav";
-            bindings = <
-                &none &none &none &none &none &none &none
+			label = "Nav";
+			bindings = <
+				&none &none &none &none &none &none &none
 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS HOME &kp UP    &kp END   &layer_numbers_none LAYER_ID_NUMBERS 0
-                &none &none
+				&none &none
 				&layer_symbols_kp LAYER_ID_SYMBOLS LEFT               &kp DOWN  &kp RIGHT &layer_base_none LAYER_ID_BASE 0
-                &none &none &none &none &none &none &none &none &none &none &none
-            >;
-        };
-    };
+				&none &none &none &none &none &none &none &none &none &none &none
+			>;
+		};
+		f_one_to_six{
+			label = "F1-F6";
+			bindings = <
+				&none &none &none &none &none &none &none
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F1   &kp F2    &kp F3    &layer_numbers_none LAYER_ID_NUMBERS 0
+				&none &none
+				&layer_symbols_kp LAYER_ID_SYMBOLS F4                 &kp F5    &kp F6    &layer_navigation_none LAYER_ID_NAVIGATION 0
+				&none &none &none &none &none &none &none &none &none &none &none
+			>;
+		};
+		f_seven_to_twelve {
+			label = "F7-F12";
+			bindings = <
+				&none &none &none &none &none &none &none
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F7   &kp F8    &kp F9    &layer_numbers_none LAYER_ID_NUMBERS 0
+				&none &none
+				&layer_symbols_kp LAYER_ID_SYMBOLS F10                &kp F11   &kp F12   &layer_navigation_none LAYER_ID_NAVIGATION 0
+				&none &none &none &none &none &none &none &none &none &none &none
+			>;
+		};
+	};
 };
