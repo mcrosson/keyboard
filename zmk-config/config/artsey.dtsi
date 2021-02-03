@@ -23,9 +23,10 @@
  *     - To have the SAME layers defined as this keymap
  *     - Take the commented layers from below and place the values into your boards keymap in 'the right spots'
  *   - YOU MUST SET THE FOLLOWING CONFIG VALUES FOR THIS SETUP TO WORK PROPERLY
- *     - COMBO_MAX_COMBOS_PER_KEY=16
- *     - COMBO_MAX_KEYS_PER_COMBO=8
- *     - COMBO_MAX_PRESSED_COMBOS=8
+ *     - CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=16
+ *     - CONFIG_ZMK_COMBO_MAX_LAYER_FILTERS_PER_COMBO=16
+ *     - CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO=8
+ *     - CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=8
  *****************************************/
 
 
@@ -74,24 +75,24 @@
 / {
 	combos {
 		compatible = "zmk,combos";
-		chord_b { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_O>; bindings = <&kp B>; };
-		chord_m { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I KEY_O>; bindings = <&kp M>; };
-		chord_c { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y>; bindings = <&kp C>; };
-		chord_n { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_I KEY_O>; bindings = <&kp N>; };
-		chord_d { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_T>; bindings = <&kp D>; };
-		chord_p { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_I KEY_O>; bindings = <&kp P>; };
-		chord_f { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R>; bindings = <&kp F>; };
-		chord_q { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_T KEY_S>; bindings = <&kp Q>; };
-		chord_g { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T>; bindings = <&kp G>; };
-		chord_u { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I>; bindings = <&kp U>; };
-		chord_h { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_I>; bindings = <&kp H>; };
-		chord_v { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_S>; bindings = <&kp V>; };
-		chord_j { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_T KEY_S>; bindings = <&kp J>; };
-		chord_w { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_S>; bindings = <&kp W>; };
-		chord_k { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_O>; bindings = <&kp K>; };
-		chord_x { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T KEY_S>; bindings = <&kp X>; };
-		chord_l { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y KEY_I>; bindings = <&kp L>; };
-		chord_z { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_T KEY_S>; bindings = <&kp Z>; };
+		chord_b { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_O>; bindings = <&kp B>; };
+		chord_m { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I KEY_O>; bindings = <&kp M>; };
+		chord_c { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y>; bindings = <&kp C>; };
+		chord_n { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_I KEY_O>; bindings = <&kp N>; };
+		chord_d { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_T>; bindings = <&kp D>; };
+		chord_p { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_I KEY_O>; bindings = <&kp P>; };
+		chord_f { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R>; bindings = <&kp F>; };
+		chord_q { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_T KEY_S>; bindings = <&kp Q>; };
+		chord_g { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T>; bindings = <&kp G>; };
+		chord_u { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I>; bindings = <&kp U>; };
+		chord_h { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_I>; bindings = <&kp H>; };
+		chord_v { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_S>; bindings = <&kp V>; };
+		chord_j { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_T KEY_S>; bindings = <&kp J>; };
+		chord_w { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_S>; bindings = <&kp W>; };
+		chord_k { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_O>; bindings = <&kp K>; };
+		chord_x { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T KEY_S>; bindings = <&kp X>; };
+		chord_l { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y KEY_I>; bindings = <&kp L>; };
+		chord_z { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_T KEY_S>; bindings = <&kp Z>; };
 		chord_enter { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_E>; bindings = <&kp ENTER>; };
 		chord_esc { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_O>; bindings = <&kp ESC>; };
 		chord_single_quote { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y KEY_I>; bindings = <&kp SQT>; };
@@ -105,20 +106,12 @@
 		chord_backspace { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R>; bindings = <&kp BACKSPACE>; };
 		chord_shift { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R KEY_T KEY_S>; bindings = <&kp LSHFT>; };
 		chord_space { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y KEY_I KEY_O>; bindings = <&kp SPACE>; };
-		/* Needs to be fixed */
+		/* Needs to be fixed / changed to caps */
 		//chord_shift_lock { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y KEY_I KEY_O>; bindings = <&none>; };
-		 /* Only on number layer */
-		 /* TODO: Needs to be fixed */
-		//chord_seven { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R>; bindings = <&none>; };
-		 /* Only on number layer */
-		 /* TODO: Needs to be fixed */
-		//chord_eight { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T>; bindings = <&none>; };
-		 /* Only on number layer */
-		 /* TODO: Needs to be fixed */
-		//chord_nine { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y>; bindings = <&none>; };
-		 /* Only on number layer */
-		 /* TODO: Needs to be fixed */
-		//chord_zero { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I>; bindings = <&none>; };
+		chord_seven { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R>; bindings = <&kp N7>; };
+		chord_eight { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T>; bindings = <&kp N8>; };
+		chord_nine { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y>; bindings = <&kp N9>; };
+		chord_zero { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I>; bindings = <&kp N0>; };
 		/* TODO: Setup/Enable once Mouse Keys feature(s) are added to ZMK */
 		//chord_mouse { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_T KEY_Y>; bindings = <&none>; };
 	};
