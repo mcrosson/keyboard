@@ -97,13 +97,13 @@
 		chord_single_quote { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y KEY_I>; bindings = <&kp SQT>; };
 		chord_tab { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_T KEY_O>; bindings = <&kp TAB>; };
 		chord_dot { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y>; bindings = <&kp PERIOD>; };
-		chord_control { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_S>; bindings = <&kp LCTRL>; };
+		chord_control { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_S>; bindings = <&sk LCTRL>; };
 		chord_comma { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_I>; bindings = <&kp COMMA>; };
-		chord_gui { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_S>; bindings = <&kp LGUI>; };
+		chord_gui { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_S>; bindings = <&sk LGUI>; };
 		chord_slash { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_O>; bindings = <&kp SLASH>; };
-		chord_alt { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_I KEY_S>; bindings = <&kp LALT>; };
+		chord_alt { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_I KEY_S>; bindings = <&sk LALT>; };
 		chord_backspace { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R>; bindings = <&kp BACKSPACE>; };
-		chord_shift { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R KEY_T KEY_S>; bindings = <&kp LSHFT>; };
+		chord_shift { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R KEY_T KEY_S>; bindings = <&sk LSHFT>; };
 		chord_space { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y KEY_I KEY_O>; bindings = <&kp SPACE>; };
 		chord_shift_lock { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y KEY_I KEY_O>; bindings = <&kp CAPS>; };
 		chord_seven { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R>; bindings = <&kp N7>; };
