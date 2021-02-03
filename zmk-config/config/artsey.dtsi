@@ -105,8 +105,7 @@
 		chord_backspace { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R>; bindings = <&kp BACKSPACE>; };
 		chord_shift { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R KEY_T KEY_S>; bindings = <&kp LSHFT>; };
 		chord_space { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y KEY_I KEY_O>; bindings = <&kp SPACE>; };
-		/* Needs to be fixed / changed to caps */
-		//chord_shift_lock { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y KEY_I KEY_O>; bindings = <&none>; };
+		chord_shift_lock { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y KEY_I KEY_O>; bindings = <&kp CAPS>; };
 		chord_seven { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R>; bindings = <&kp N7>; };
 		chord_eight { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T>; bindings = <&kp N8>; };
 		chord_nine { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y>; bindings = <&kp N9>; };
