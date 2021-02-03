@@ -24,7 +24,6 @@
  *     - Take the commented layers from below and place the values into your boards keymap in 'the right spots'
  *   - YOU MUST SET THE FOLLOWING CONFIG VALUES FOR THIS SETUP TO WORK PROPERLY
  *     - CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=16
- *     - CONFIG_ZMK_COMBO_MAX_LAYER_FILTERS_PER_COMBO=16
  *     - CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO=8
  *     - CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=8
  *****************************************/
