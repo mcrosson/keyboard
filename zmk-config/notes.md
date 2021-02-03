@@ -7,36 +7,6 @@
 - asetniop chording
 - setup thumb button for mouse key toggle (future)
 
-
-Okke
-:
-layers=<1,2,3>
-[
-11:47 AM
-]
-Okke
-:
-there is a ticket somewhere, not sure how much is described there
-[
-11:49 AM
-]
-Okke
-:
-I think the easiest is to add the filtering for layers in  setup_candidates_for_first_keypress
-[
-11:49 AM
-]
-Okke
-:
-you can't get the layer number from context there, so you'll have to request the current layer from the core layer code
-[
-11:52 AM
-]
-Okke
-:
-you don't have to touch a lot though. struct combo_cfg, the COMBO_INST macro and setup_candidates_for_first_keypress is everything you need to change (and the zmk,combos.yaml)
-
-
 # LEDs
 
 Generic behavior for led on/off via gpio (see pocket type / mdk personal sources for ideas)
