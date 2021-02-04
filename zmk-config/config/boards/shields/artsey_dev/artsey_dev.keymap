@@ -1,0 +1,76 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+// ARTS Row
+#define KEY_A 4
+#define KEY_R 5
+#define KEY_T 6
+#define KEY_S 7
+// EYIO Row
+#define KEY_E 0
+#define KEY_Y 1
+#define KEY_I 2
+#define KEY_O 3
+
+#include "../../../artsey.dtsi"
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+		base {
+			label = "Base";
+			bindings = <
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS A    &kp R     &kp T     &layer_numbers_kp LAYER_ID_NUMBERS S
+				&layer_symbols_kp LAYER_ID_SYMBOLS E                  &kp Y     &kp I     &layer_navigation_kp LAYER_ID_NAVIGATION O
+			>;
+		};
+		numbers {
+			label = "Numbers";
+			bindings = <
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1   &kp N2    &kp N3    &layer_base_sl LAYER_ID_BASE LAYER_ID_F_ONE_SIX
+				&layer_symbols_kp LAYER_ID_SYMBOLS N4                 &kp N5    &kp N6    &layer_navigation_sl LAYER_ID_NAVIGATION LAYER_ID_F_SEVEN_TWELVE
+			>;
+		};
+		symbols {
+			label = "Symbols";
+			bindings = <
+				&layer_parentheticals_none LAYER_ID_PARENTHETICALS 0  &kp BSLH  &kp SEMI  &layer_numbers_kp LAYER_ID_NUMBERS GRAVE
+				&layer_base_none LAYER_ID_BASE 0                      &kp MINUS &kp EQUAL &layer_navigation_none LAYER_ID_NAVIGATION 0
+			>;
+		};
+		parentheticals {
+			label = "Paren";
+			bindings = <
+				&layer_base_none LAYER_ID_BASE 0                      &kp LPAR  &kp RPAR  &layer_numbers_kp LAYER_ID_NUMBERS LBRC
+				&layer_symbols_none LAYER_ID_SYMBOLS 0                &kp LBKT  &kp RBKT  &layer_navigation_kp LAYER_ID_NAVIGATION RBRC
+			>;
+		};
+		navigation {
+			label = "Nav";
+			bindings = <
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS HOME &kp UP    &kp END   &layer_numbers_none LAYER_ID_NUMBERS 0
+				&layer_symbols_kp LAYER_ID_SYMBOLS LEFT               &kp DOWN  &kp RIGHT &layer_base_none LAYER_ID_BASE 0
+			>;
+		};
+		f_one_to_six{
+			label = "F1-F6";
+			bindings = <
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F1   &kp F2    &kp F3    &layer_numbers_none LAYER_ID_NUMBERS 0
+				&layer_symbols_kp LAYER_ID_SYMBOLS F4                 &kp F5    &kp F6    &layer_navigation_none LAYER_ID_NAVIGATION 0
+			>;
+		};
+		f_seven_to_twelve {
+			label = "F7-F12";
+			bindings = <
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F7   &kp F8    &kp F9    &layer_numbers_none LAYER_ID_NUMBERS 0
+				&layer_symbols_kp LAYER_ID_SYMBOLS F10                &kp F11   &kp F12   &layer_navigation_none LAYER_ID_NAVIGATION 0
+			>;
+		};
+	};
+};
