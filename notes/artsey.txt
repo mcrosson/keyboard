@@ -1,0 +1,33 @@
+- See ZMK implementation for possible re-jigger of 3 taps to lock layer
+    - Default is hold to toggle layer
+    - Hold same position that turns on layer to turn it off
+    - Basically layer toggles by default
+    - THIS MAY NOT BE SMART FOR ALL LAYERS
+
+- Note Control, Gui, Alt, Shift are LEFT by default (at least they should be...)
+- Rename Shift (Lock) to Caps Lock
+- Make Enter be ARTS
+- Make Z AYIO
+- Make Caps Lock AE
+- Adjust Function Key setup (F1-12)
+    - S == Tap for F1-6 (mapped onto ART/EYI)
+    - O == Tap for F7-12 (mapped onto ART/EYI)
+- Move PgUp/PgDn to Nav layer in same position
+- Replace PgUp/PgDn on mouse layer to Wheel Up/Dn
+- Add Special Keys Layer
+    - A == Mute
+    - R == Insert
+    - T == Right Control
+    - S == Volume Up
+    - E == Right Shift
+    - Y == Print Screen
+    - I == Right Alt
+    - O == Volume Down
+- Enhance text for "One Shot Key"
+    - Press and relase key to toggle it on
+    - Press another key to do taht one shot + other key
+    - If pressed and 1s later nothing is tapped the one shot is sent as a keypress
+
+
+Wikipedia has a raesonable list of the top 100 words in English, can this be a 'mode' of sorts to do basic stenography?
+    https://en.wikipedia.org/wiki/Most_common_words_in_English
