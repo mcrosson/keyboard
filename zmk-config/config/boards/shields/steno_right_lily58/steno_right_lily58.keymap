@@ -24,7 +24,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 		base {
-			label = "Base";
+			label = "ARTSEY";
 			bindings = <
 				&none &none &none &none &none &none &none
 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS A    &kp R     &kp T     &layer_numbers_kp LAYER_ID_NUMBERS S
@@ -34,7 +34,7 @@
 			>;
 		};
 		numbers {
-			label = "Numbers";
+			label = "Number";
 			bindings = <
 				&none &none &none &none &none &none &none
 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1   &kp N2    &kp N3    &layer_base_sl LAYER_ID_BASE LAYER_ID_F_ONE_SIX
@@ -44,7 +44,7 @@
 			>;
 		};
 		symbols {
-			label = "Symbols";
+			label = "Symbol";
 			bindings = <
 				&none &none &none &none &none &none &none
 				&layer_parentheticals_none LAYER_ID_PARENTHETICALS 0  &kp BSLH  &kp SEMI  &layer_numbers_kp LAYER_ID_NUMBERS GRAVE
