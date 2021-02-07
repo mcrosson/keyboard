@@ -293,8 +293,8 @@
 // 		navigation {
 // 			label = "Nav";
 // 			bindings = <
-// 				&layer_numbers_none LAYER_ID_NUMBERS 0                           &kp HOME  &kp UP    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS END
-// 				&layer_base_none LAYER_ID_BASE LEFT                              &kp DOWN  &kp RIGHT &layer_symbols_kp LAYER_ID_SYMBOLS 0
+// 				&layer_numbers_kp LAYER_ID_NUMBERS PG_UP                         &kp HOME  &kp UP    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS END
+// 				&layer_base_kp LAYER_ID_BASE PG_DN                               &kp LEFT  &kp DOWN  &layer_symbols_kp LAYER_ID_SYMBOLS RIGHT
 // 			>;
 // 		};
 // 		f_one_to_six{
