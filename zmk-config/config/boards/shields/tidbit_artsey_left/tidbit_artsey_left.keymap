@@ -14,10 +14,10 @@
 #define KEY_T 6
 #define KEY_S 5
 // EYIO Row
-#define KEY_E 14
-#define KEY_Y 13
-#define KEY_I 12
-#define KEY_O 11
+#define KEY_E 13
+#define KEY_Y 12
+#define KEY_I 11
+#define KEY_O 10
 
 #include "../../../artsey.dtsi"
 
