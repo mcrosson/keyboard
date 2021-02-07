@@ -39,6 +39,8 @@ west build --board nice_nano -d build/pockettype/peripheral -- -DSHIELD=pocketty
 
 west build --board nice_nano -d build/tg4x -- -DSHIELD=tg4x -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
+west build --board nice_nano -d build/tidbit_artsey_left -- -DSHIELD=tidbit_artsey_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
+
 west build --board nice_nano -d build/steno_right_lily58 -- -DSHIELD=steno_right_lily58 -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
 west build --board nice_nano -d build/steno_left_lily58 -- -DSHIELD=steno_left_lily58 -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config

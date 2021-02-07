@@ -1,0 +1,109 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+// ARTS Row
+#define KEY_A 8
+#define KEY_R 7
+#define KEY_T 6
+#define KEY_S 5
+// EYIO Row
+#define KEY_E 14
+#define KEY_Y 13
+#define KEY_I 12
+#define KEY_O 11
+
+#include "../../../artsey.dtsi"
+
+/ {
+	behaviors {
+		bootreset: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BOOT_RESET";
+            #binding-cells = <2>;
+            tapping_term_ms = <1000>;
+            flavor = "tap-preferred";
+            bindings = <&bootloader>, <&reset>;
+        };
+	};
+
+	keymap {
+		compatible = "zmk,keymap";
+		base {
+			label = "ARTSEY";
+			bindings = <
+				&none &none &none &none &none
+				&layer_numbers_kp LAYER_ID_NUMBERS S &kp T &kp R &layer_parentheticals_kp LAYER_ID_PARENTHETICALS A
+				&none
+				&layer_navigation_kp LAYER_ID_NAVIGATION O &kp I &kp Y &layer_symbols_kp LAYER_ID_SYMBOLS E
+				&none &bt BT_CLR &bt BT_PRV &bt BT_NXT &bootreset 0 0
+			>;
+		};
+		numbers {
+			label = "Number";
+			bindings = <
+				&none &none &none &none &none
+				&layer_base_sl LAYER_ID_BASE LAYER_ID_F_ONE_SIX &kp N3 &kp N2 &layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1
+				&none
+				&layer_navigation_sl LAYER_ID_NAVIGATION LAYER_ID_F_SEVEN_TWELVE &kp N6 &kp N5 &layer_symbols_kp LAYER_ID_SYMBOLS N4
+				&none &none &none &none &none
+			>;
+		};
+		symbols {
+			label = "Symbol";
+			bindings = <
+				&none &none &none &none &none
+				&layer_numbers_kp LAYER_ID_NUMBERS GRAVE &kp SEMI &kp BSLH &layer_parentheticals_none LAYER_ID_PARENTHETICALS 0
+				&none
+				&layer_navigation_none LAYER_ID_NAVIGATION 0 &kp EQUAL &kp MINUS &layer_base_none LAYER_ID_BASE 0
+				&none &none &none &none &none
+			>;
+		};
+		parentheticals {
+			label = "Paren";
+			bindings = <
+				&none &none &none &none &none
+				&layer_numbers_kp LAYER_ID_NUMBERS LBRC &kp LPAR &kp RPAR &layer_base_none LAYER_ID_BASE 0
+				&none
+				&layer_navigation_kp LAYER_ID_NAVIGATION RBRC &kp LBKT &kp RBKT &layer_symbols_none LAYER_ID_SYMBOLS 0
+				&none &none &none &none &none
+			>;
+		};
+		navigation {
+			label = "Nav";
+			bindings = <
+				&none &none &none &none &none
+				&layer_numbers_none LAYER_ID_NUMBERS 0 &kp HOME &kp UP &layer_parentheticals_kp LAYER_ID_PARENTHETICALS END
+				&none
+				&layer_base_none LAYER_ID_BASE LEFT &kp DOWN  &kp RIGHT &layer_symbols_kp LAYER_ID_SYMBOLS 0
+				&none &none &none &none &none
+			>;
+		};
+		f_one_to_six{
+			label = "F1-F6";
+			bindings = <
+				&none &none &none &none &none
+				&layer_numbers_none LAYER_ID_NUMBERS 0 &kp F3 &kp F2 &layer_parentheticals_kp LAYER_ID_PARENTHETICALS F1
+				&none
+				&layer_navigation_none LAYER_ID_NAVIGATION 0 &kp F6 &kp F5 &layer_symbols_kp LAYER_ID_SYMBOLS F4
+				&none &none &none &none &none
+			>;
+		};
+		f_seven_to_twelve {
+			label = "F7-F12";
+			bindings = <
+				&none &none &none &none &none
+				&layer_numbers_none LAYER_ID_NUMBERS 0 &kp F9 &kp F8 &layer_parentheticals_kp LAYER_ID_PARENTHETICALS F7
+				&none
+				&layer_navigation_none LAYER_ID_NAVIGATION 0 &kp F12 &kp F11 &layer_symbols_kp LAYER_ID_SYMBOLS F10
+				&none &none &none &none &none
+			>;
+		};
+	};
+};
