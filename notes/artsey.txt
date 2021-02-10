@@ -9,6 +9,7 @@
 - Make Enter be ARTS
 - Make Z AYIO
 - Make Caps Lock AE
+- Add question mark to symbols layer?
 - Adjust Function Key setup (F1-12)
     - S == Tap for F1-6 (mapped onto ART/EYI)
     - O == Tap for F7-12 (mapped onto ART/EYI)

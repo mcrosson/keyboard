@@ -19,7 +19,21 @@
 #define KEY_I 8
 #define KEY_O 7
 
-#include "../../../artsey.dtsi"
+// Thumb buttons (used for BT combos)
+#define THUMB_1 18
+#define THUMB_2 19
+#define THUMB_3 20
+
+/ {
+	combos {
+		compatible = "zmk,combos";
+		chord_bt_clr { key-positions = <THUMB_1 THUMB_3>; bindings = <&bt BT_CLR>; };
+		chord_bt_prv { key-positions = <THUMB_1 THUMB_2>; bindings = <&bt BT_PRV>; };
+		chord_bt_nxt { key-positions = <THUMB_2 THUMB_3>; bindings = <&bt BT_NXT>; };
+        };
+};
+
+#include "../../../artsey_v0_7.dtsi"
 
 / {
 	keymap {
@@ -31,8 +45,7 @@
 				&layer_numbers_kp LAYER_ID_NUMBERS S &kp T &kp R &layer_parentheticals_kp LAYER_ID_PARENTHETICALS A
 				&none &none
 				&layer_navigation_kp LAYER_ID_NAVIGATION O &kp I &kp Y &layer_symbols_kp LAYER_ID_SYMBOLS E
-				&none &none &none &none &none &none &none
-				&bt BT_CLR &bt BT_PRV &bt BT_NXT
+				&none &none &none &none &none &none &none &none &none &none
 			>;
 		};
 		numbers {
