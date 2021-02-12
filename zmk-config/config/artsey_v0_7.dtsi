@@ -8,30 +8,54 @@
 #include <dt-bindings/zmk/keys.h>
 
 /*****************************************
+ * Macros for filling in "&none" in the right places in the keymap for re-use needs
+ *****************************************/
+#define NONE0(X)
+#define NONE1(X) X
+#define NONE2(X) NONE1(X) X
+#define NONE3(X) NONE2(X) X
+#define NONE4(X) NONE3(X) X
+#define NONE5(X) NONE4(X) X
+#define NONE6(X) NONE5(X) X
+#define NONE7(X) NONE6(X) X
+#define NONE8(X) NONE7(X) X
+#define NONE9(X) NONE8(X) X
+#define NONE10(X) NONE9(X) X
+
+#define NONE(HUNDREDS,TENS,ONES) \
+  NONE##HUNDREDS(NONE10(NONE10(&none))) \
+  NONE##TENS(NONE10(&none)) \
+  NONE##ONES(&none)
+
+/*****************************************
  * ARTSEY website : https://www.artsey.io
  * Primary reference : https://www.artsey.io/_FILES/images/ARTSEY.jpg
 *****************************************/
 
 /*****************************************
- * Setting up ARTSEY chording
+ * Setting up ARTSEY comboing
+ *   - Enabled right OR left handed orientation
  *   - Please note: A/E key positions should be on your INDEX finger
  *     - The online reference is for right handed use
  *     - When using the ARTSEY layout left handed you'll want to ensure your keypositions are flipped along the Y axis
  *   - Update/adjust the key positions using your boards keymap 
  *     - See below for additional details
- *   - Adjust your boards keymap layers...
- *     - To have the SAME layers defined as this keymap
- *     - Take the commented layers from below and place the values into your boards keymap in 'the right spots'
- *   - YOU MUST SET THE FOLLOWING CONFIG VALUES FOR THIS SETUP TO WORK PROPERLY
+ *   - YOU MUST SET THE FOLLOWING CONFIG VALUES FOR THIS SETUP TO WORK PROPERLY IN YOUR BOARDS .conf FILE
  *     - CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY=16
  *     - CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO=8
  *     - CONFIG_ZMK_COMBO_MAX_PRESSED_COMBOS=8
  *****************************************/
 
+/*****************************************
+ * Define which layout you want to use
+ *  ONLY ENABLE ONE OF THESE
+*****************************************/
+//#define ARTSEY_RIGHT 1
+//#define ARTSEY_LEFT 1
 
 /*****************************************
- * Define key positions used for chording
- * These definitions are used to define the various ARTSEY chords (combos)
+ * Define key positions used for combos
+ * These definitions are used to define the various ARTSEY combos
  * 
  * Please see the documentation on "combos" for details on how to find the proper key positions
  *
@@ -50,6 +74,16 @@
 // #define KEY_O 7
 
 /*****************************************
+ * Define key position offsets in main keymap
+ *
+ * In order to make this keymap flexible, you must setup the number of &none "offsets" to use
+ * The defines below should be set in your LOCAL keymap and using the above "NONE([hundreds],[tens],[ones])" macro for filling in the gaps
+*****************************************/
+// #define LEADING_NONES NONE(0,1,0)
+// #define MIDDLE_NONES NONE(0, 0, 3)
+// #define TRAILING_NONES NONE(0, 1, 0)
+
+/*****************************************
  * Layer IDs used by the ARTSEY keymap
  * Do NOT change these and do NOT change the order of the layers as shown below
  *****************************************/
@@ -63,11 +97,11 @@
 #define LAYER_ID_MOUSE 7
 
 /*****************************************
- * Define how long it takes for the chords/holds to 'time out'
+ * Define how long it takes for the combos/holds to 'time out'
  * See documentation on "combos" for more detail
  *****************************************/
-#define TIMEOUT_CHORD 125
-#define TIMEOUT_LAYER_HOLD 250
+#define TIMEOUT_COMBO 250
+#define TIMEOUT_LAYER_HOLD 500
 &sk {
 	release-after-ms = <1000>;
 };
@@ -76,50 +110,50 @@
 };
 
 /*****************************************
- * Standard ARTSEY chord definitions
+ * Standard ARTSEY combo definitions
  * These should NOT be changed and are global in scope
  *****************************************/
 / {
 	combos {
 		compatible = "zmk,combos";
-		chord_b { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_O>; bindings = <&kp B>; };
-		chord_m { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I KEY_O>; bindings = <&kp M>; };
-		chord_c { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y>; bindings = <&kp C>; };
-		chord_n { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_I KEY_O>; bindings = <&kp N>; };
-		chord_d { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_T>; bindings = <&kp D>; };
-		chord_p { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_I KEY_O>; bindings = <&kp P>; };
-		chord_f { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R>; bindings = <&kp F>; };
-		chord_q { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_T KEY_S>; bindings = <&kp Q>; };
-		chord_g { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T>; bindings = <&kp G>; };
-		chord_u { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I>; bindings = <&kp U>; };
-		chord_h { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_I>; bindings = <&kp H>; };
-		chord_v { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_S>; bindings = <&kp V>; };
-		chord_j { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_T KEY_S>; bindings = <&kp J>; };
-		chord_w { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_S>; bindings = <&kp W>; };
-		chord_k { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_O>; bindings = <&kp K>; };
-		chord_x { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T KEY_S>; bindings = <&kp X>; };
-		chord_l { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y KEY_I>; bindings = <&kp L>; };
-		chord_z { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_T KEY_S>; bindings = <&kp Z>; };
-		chord_enter { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_E>; bindings = <&kp ENTER>; };
-		chord_esc { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_O>; bindings = <&kp ESC>; };
-		chord_single_quote { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y KEY_I>; bindings = <&kp SQT>; };
-		chord_tab { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R KEY_T KEY_O>; bindings = <&kp TAB>; };
-		chord_dot { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y>; bindings = <&kp PERIOD>; };
-		chord_control { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_S>; bindings = <&sk LCTRL>; };
-		chord_comma { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_I>; bindings = <&kp COMMA>; };
-		chord_gui { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_S>; bindings = <&sk LGUI>; };
-		chord_slash { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_O>; bindings = <&kp SLASH>; };
-		chord_alt { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_I KEY_S>; bindings = <&sk LALT>; };
-		chord_backspace { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R>; bindings = <&kp BACKSPACE>; };
-		chord_shift { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_R KEY_T KEY_S>; bindings = <&sk LSHFT>; };
-		chord_space { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y KEY_I KEY_O>; bindings = <&kp SPACE>; };
-		chord_shift_lock { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_Y KEY_I KEY_O>; bindings = <&kp CAPS>; };
-		chord_seven { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_R>; bindings = <&kp N7>; };
-		chord_eight { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_R KEY_T>; bindings = <&kp N8>; };
-		chord_nine { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_E KEY_Y>; bindings = <&kp N9>; };
-		chord_zero { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_Y KEY_I>; bindings = <&kp N0>; };
+		combo_b { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_O>; bindings = <&kp B>; };
+		combo_m { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_Y KEY_I KEY_O>; bindings = <&kp M>; };
+		combo_c { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_Y>; bindings = <&kp C>; };
+		combo_n { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_I KEY_O>; bindings = <&kp N>; };
+		combo_d { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_R KEY_T>; bindings = <&kp D>; };
+		combo_p { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_I KEY_O>; bindings = <&kp P>; };
+		combo_f { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_R>; bindings = <&kp F>; };
+		combo_q { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_T KEY_S>; bindings = <&kp Q>; };
+		combo_g { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_R KEY_T>; bindings = <&kp G>; };
+		combo_u { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_Y KEY_I>; bindings = <&kp U>; };
+		combo_h { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_I>; bindings = <&kp H>; };
+		combo_v { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_R KEY_S>; bindings = <&kp V>; };
+		combo_j { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_T KEY_S>; bindings = <&kp J>; };
+		combo_w { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_S>; bindings = <&kp W>; };
+		combo_k { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_Y KEY_O>; bindings = <&kp K>; };
+		combo_x { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_R KEY_T KEY_S>; bindings = <&kp X>; };
+		combo_l { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_Y KEY_I>; bindings = <&kp L>; };
+		combo_z { layers = <LAYER_ID_BASE>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_R KEY_T KEY_S>; bindings = <&kp Z>; };
+		combo_enter { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_E>; bindings = <&kp ENTER>; };
+		combo_esc { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_R KEY_O>; bindings = <&kp ESC>; };
+		combo_single_quote { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_Y KEY_I>; bindings = <&kp SQT>; };
+		combo_tab { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_R KEY_T KEY_O>; bindings = <&kp TAB>; };
+		combo_dot { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_Y>; bindings = <&kp PERIOD>; };
+		combo_control { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_S>; bindings = <&sk LCTRL>; };
+		combo_comma { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_I>; bindings = <&kp COMMA>; };
+		combo_gui { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_Y KEY_S>; bindings = <&sk LGUI>; };
+		combo_slash { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_O>; bindings = <&kp SLASH>; };
+		combo_alt { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_I KEY_S>; bindings = <&sk LALT>; };
+		combo_backspace { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_R>; bindings = <&kp BACKSPACE>; };
+		combo_shift { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_R KEY_T KEY_S>; bindings = <&sk LSHFT>; };
+		combo_space { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_Y KEY_I KEY_O>; bindings = <&kp SPACE>; };
+		combo_shift_lock { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_Y KEY_I KEY_O>; bindings = <&kp CAPS>; };
+		combo_seven { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_R>; bindings = <&kp N7>; };
+		combo_eight { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_R KEY_T>; bindings = <&kp N8>; };
+		combo_nine { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_E KEY_Y>; bindings = <&kp N9>; };
+		combo_zero { layers = <LAYER_ID_NUMBERS>; timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_Y KEY_I>; bindings = <&kp N0>; };
 		/* TODO: Setup/Enable once Mouse Keys feature(s) are added to ZMK */
-		//chord_mouse { timeout-ms = <TIMEOUT_CHORD>; key-positions = <KEY_A KEY_T KEY_Y>; bindings = <&none>; };
+		//combo_mouse { timeout-ms = <TIMEOUT_COMBO>; key-positions = <KEY_A KEY_T KEY_Y>; bindings = <&none>; };
 	};
 };
 
@@ -187,129 +221,178 @@
 };
 
 /*****************************************
- * Standard ARTSEY layer definitions !!!!!!!!!! FOR RIGHT HANDED USE !!!!!!!!!!
- * These SHOULD BE CHANGED and adjusted according to your boards transform
- * Use "&none" to fill in gaps
- * This section is commented to avoid conflicts with downstream board definitions
+ * Standard ARTSEY layer definitions 
+ * !!!!!!!!!! FOR RIGHT HANDED USE !!!!!!!!!!
  *****************************************/
-// / {
-// 	keymap {
-// 		compatible = "zmk,keymap";
-// 		base {
-// 			label = "ARTSEY";
-// 			bindings = <
-// 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS A    &kp R     &kp T     &layer_numbers_kp LAYER_ID_NUMBERS S
-// 				&layer_symbols_kp LAYER_ID_SYMBOLS E                  &kp Y     &kp I     &layer_navigation_kp LAYER_ID_NAVIGATION O
-// 			>;
-// 		};
-// 		numbers {
-// 			label = "Number";
-// 			bindings = < /* TODO: NEED TO SETUP Fn LEADER KEY(S) */
-// 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1   &kp N2    &kp N3    &layer_base_sl LAYER_ID_BASE LAYER_ID_F_ONE_SIX
-// 				&layer_symbols_kp LAYER_ID_SYMBOLS N4                 &kp N5    &kp N6    &layer_navigation_sl LAYER_ID_NAVIGATION LAYER_ID_F_SEVEN_TWELVE
-// 			>;
-// 		};
-// 		symbols {
-// 			label = "Symbol";
-// 			bindings = <
-// 				&layer_parentheticals_none LAYER_ID_PARENTHETICALS 0  &kp BSLH  &kp SEMI  &layer_numbers_kp LAYER_ID_NUMBERS GRAVE
-// 				&layer_base_none LAYER_ID_BASE 0                      &kp MINUS &kp EQUAL &layer_navigation_none LAYER_ID_NAVIGATION 0
-// 			>;
-// 		};
-// 		parentheticals {
-// 			label = "Paren";
-// 			bindings = <
-// 				&layer_base_none LAYER_ID_BASE 0                      &kp LPAR  &kp RPAR  &layer_numbers_kp LAYER_ID_NUMBERS LBRC
-// 				&layer_symbols_none LAYER_ID_SYMBOLS 0                &kp LBKT  &kp RBKT  &layer_navigation_kp LAYER_ID_NAVIGATION RBRC
-// 			>;
-// 		};
-// 		navigation {
-// 			label = "Nav";
-// 			bindings = <
-// 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS HOME &kp UP    &kp END   &layer_numbers_none LAYER_ID_NUMBERS PG_UP
-// 				&layer_symbols_kp LAYER_ID_SYMBOLS LEFT               &kp DOWN  &kp RIGHT &layer_base_none LAYER_ID_BASE PG_DN
-// 			>;
-// 		};
-// 		f_one_to_six{
-// 			label = "F1-F6";
-// 			bindings = <
-// 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F1   &kp F2    &kp F3    &layer_numbers_none LAYER_ID_NUMBERS 0
-// 				&layer_symbols_kp LAYER_ID_SYMBOLS F4                 &kp F5    &kp F6    &layer_navigation_none LAYER_ID_NAVIGATION 0
-// 			>;
-// 		};
-// 		f_seven_to_twelve {
-// 			label = "F7-F12";
-// 			bindings = <
-// 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F7   &kp F8    &kp F9    &layer_numbers_none LAYER_ID_NUMBERS 0
-// 				&layer_symbols_kp LAYER_ID_SYMBOLS F10                &kp N11   &kp F12   &layer_navigation_none LAYER_ID_NAVIGATION 0
-// 			>;
-// 		};
-// 		mouse { /* TODO: Not implemented yet, needs mouse keys in upstream */
-// 			label = "Mouse";
-// 			bindings = <
-// 				&none                                                 &none     &none     &none
-// 				&none                                                 &none     &none     &none
-// 			>;
-// 		};
-// };
+#if defined ARTSEY_RIGHT
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+		base {
+			label = "ARTSEY";
+			bindings = <
+				LEADING_NONES
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS A    &kp R     &kp T     &layer_numbers_kp LAYER_ID_NUMBERS S
+				MIDDLE_NONES
+				&layer_symbols_kp LAYER_ID_SYMBOLS E                  &kp Y     &kp I     &layer_navigation_kp LAYER_ID_NAVIGATION O
+				TRAILING_NONES
+			>;
+		};
+		numbers {
+			label = "Number";
+			bindings = <
+				LEADING_NONES
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1   &kp N2    &kp N3    &layer_base_sl LAYER_ID_BASE LAYER_ID_F_ONE_SIX
+				MIDDLE_NONES
+				&layer_symbols_kp LAYER_ID_SYMBOLS N4                 &kp N5    &kp N6    &layer_navigation_sl LAYER_ID_NAVIGATION LAYER_ID_F_SEVEN_TWELVE
+				TRAILING_NONES
+			>;
+		};
+		symbols {
+			label = "Symbol";
+			bindings = <
+				LEADING_NONES
+				&layer_parentheticals_none LAYER_ID_PARENTHETICALS 0  &kp BSLH  &kp SEMI  &layer_numbers_kp LAYER_ID_NUMBERS GRAVE
+				MIDDLE_NONES
+				&layer_base_none LAYER_ID_BASE 0                      &kp MINUS &kp EQUAL &layer_navigation_none LAYER_ID_NAVIGATION 0
+				TRAILING_NONES
+			>;
+		};
+		parentheticals {
+			label = "Paren";
+			bindings = <
+				LEADING_NONES
+				&layer_base_none LAYER_ID_BASE 0                      &kp LPAR  &kp RPAR  &layer_numbers_kp LAYER_ID_NUMBERS LBRC
+				MIDDLE_NONES
+				&layer_symbols_none LAYER_ID_SYMBOLS 0                &kp LBKT  &kp RBKT  &layer_navigation_kp LAYER_ID_NAVIGATION RBRC
+				TRAILING_NONES
+			>;
+		};
+		navigation {
+			label = "Nav";
+			bindings = <
+				LEADING_NONES
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS HOME &kp UP    &kp END   &layer_numbers_none LAYER_ID_NUMBERS PG_UP
+				MIDDLE_NONES
+				&layer_symbols_kp LAYER_ID_SYMBOLS LEFT               &kp DOWN  &kp RIGHT &layer_base_none LAYER_ID_BASE PG_DN
+				TRAILING_NONES
+			>;
+		};
+		f_one_to_six{
+			label = "F1-F6";
+			bindings = <
+				LEADING_NONES
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F1   &kp F2    &kp F3    &layer_numbers_none LAYER_ID_NUMBERS 0
+				MIDDLE_NONES
+				&layer_symbols_kp LAYER_ID_SYMBOLS F4                 &kp F5    &kp F6    &layer_navigation_none LAYER_ID_NAVIGATION 0
+				TRAILING_NONES
+			>;
+		};
+		f_seven_to_twelve {
+			label = "F7-F12";
+			bindings = <
+				LEADING_NONES
+				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F7   &kp F8    &kp F9    &layer_numbers_none LAYER_ID_NUMBERS 0
+				MIDDLE_NONES
+				&layer_symbols_kp LAYER_ID_SYMBOLS F10                &kp N11   &kp F12   &layer_navigation_none LAYER_ID_NAVIGATION 0
+				TRAILING_NONES
+			>;
+		};
+		// mouse { /* TODO: Not implemented yet, needs mouse keys in upstream */
+		// 	label = "Mouse";
+		// 	bindings = <
+		// 		&none                                                 &none     &none     &none
+		// 		&none                                                 &none     &none     &none
+		// 	>;
+		// };
+};
+#endif
 
 /*****************************************
- * Standard ARTSEY layer definitions !!!!!!!!!! FOR LEFT HANDED USE !!!!!!!!!!
- * These SHOULD BE CHANGED and adjusted according to your boards transform
- * Use "&none" to fill in gaps
- * This section is commented to avoid conflicts with downstream board definitions
+ * Standard ARTSEY layer definitions 
+ * !!!!!!!!!! FOR LEFT HANDED USE !!!!!!!!!!
  *****************************************/
-// / {
-// 	keymap {
-// 		compatible = "zmk,keymap";
-// 		base {
-// 			label = "ARTSEY";
-// 			bindings = <
-// 				&layer_numbers_kp LAYER_ID_NUMBERS S                             &kp T     &kp R     &layer_parentheticals_kp LAYER_ID_PARENTHETICALS A
-// 				&layer_navigation_kp LAYER_ID_NAVIGATION O                       &kp I     &kp Y     &layer_symbols_kp LAYER_ID_SYMBOLS E
-// 			>;
-// 		};
-// 		numbers {
-// 			label = "Number";
-// 			bindings = <
-// 				&layer_base_sl LAYER_ID_BASE LAYER_ID_F_ONE_SIX                  &kp N3    &kp N2    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1
-// 				&layer_navigation_sl LAYER_ID_NAVIGATION LAYER_ID_F_SEVEN_TWELVE &kp N6    &kp N5    &layer_symbols_kp LAYER_ID_SYMBOLS N4
-// 			>;
-// 		};
-// 		symbols {
-// 			label = "Symbol";
-// 			bindings = <
-// 				&layer_numbers_kp LAYER_ID_NUMBERS GRAVE                         &kp SEMI  &kp BSLH  &layer_parentheticals_none LAYER_ID_PARENTHETICALS 0
-// 				&layer_navigation_none LAYER_ID_NAVIGATION 0                     &kp EQUAL &kp MINUS &layer_base_none LAYER_ID_BASE 0
-// 			>;
-// 		};
-// 		parentheticals {
-// 			label = "Paren";
-// 			bindings = <
-// 				&layer_numbers_kp LAYER_ID_NUMBERS LBRC                          &kp LPAR  &kp RPAR  &layer_base_none LAYER_ID_BASE 0
-// 				&layer_navigation_kp LAYER_ID_NAVIGATION RBRC                    &kp LBKT  &kp RBKT  &layer_symbols_none LAYER_ID_SYMBOLS 0
-// 			>;
-// 		};
-// 		navigation {
-// 			label = "Nav";
-// 			bindings = <
-// 				&layer_numbers_kp LAYER_ID_NUMBERS PG_UP                         &kp HOME  &kp UP    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS END
-// 				&layer_base_kp LAYER_ID_BASE PG_DN                               &kp LEFT  &kp DOWN  &layer_symbols_kp LAYER_ID_SYMBOLS RIGHT
-// 			>;
-// 		};
-// 		f_one_to_six{
-// 			label = "F1-F6";
-// 			bindings = <
-// 				&layer_numbers_none LAYER_ID_NUMBERS 0                           &kp F3    &kp F2    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS F1
-// 				&layer_navigation_none LAYER_ID_NAVIGATION 0                     &kp F6    &kp F5    &layer_symbols_kp LAYER_ID_SYMBOLS F4
-// 			>;
-// 		};
-// 		f_seven_to_twelve {
-// 			label = "F7-F12";
-// 			bindings = <
-// 				&layer_numbers_none LAYER_ID_NUMBERS 0                           &kp F9    &kp F8    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS F7
-// 				&layer_navigation_none LAYER_ID_NAVIGATION 0                     &kp F12   &kp F11   &layer_symbols_kp LAYER_ID_SYMBOLS F10
-// 			>;
-// 		};
-// 	};
-// };
+#if defined ARTSEY_LEFT
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+		base {
+			label = "ARTSEY";
+			bindings = <
+				LEADING_NONES
+				&layer_numbers_kp LAYER_ID_NUMBERS S                             &kp T     &kp R     &layer_parentheticals_kp LAYER_ID_PARENTHETICALS A
+				MIDDLE_NONES
+				&layer_navigation_kp LAYER_ID_NAVIGATION O                       &kp I     &kp Y     &layer_symbols_kp LAYER_ID_SYMBOLS E
+				TRAILING_NONES
+			>;
+		};
+		numbers {
+			label = "Number";
+			bindings = <
+				LEADING_NONES
+				&layer_base_sl LAYER_ID_BASE LAYER_ID_F_ONE_SIX                  &kp N3    &kp N2    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS N1
+				MIDDLE_NONES
+				&layer_navigation_sl LAYER_ID_NAVIGATION LAYER_ID_F_SEVEN_TWELVE &kp N6    &kp N5    &layer_symbols_kp LAYER_ID_SYMBOLS N4
+				TRAILING_NONES
+			>;
+		};
+		symbols {
+			label = "Symbol";
+			bindings = <
+				LEADING_NONES
+				&layer_numbers_kp LAYER_ID_NUMBERS GRAVE                         &kp SEMI  &kp BSLH  &layer_parentheticals_none LAYER_ID_PARENTHETICALS 0
+				MIDDLE_NONES
+				&layer_navigation_none LAYER_ID_NAVIGATION 0                     &kp EQUAL &kp MINUS &layer_base_none LAYER_ID_BASE 0
+				TRAILING_NONES
+			>;
+		};
+		parentheticals {
+			label = "Paren";
+			bindings = <
+				LEADING_NONES
+				&layer_numbers_kp LAYER_ID_NUMBERS LBRC                          &kp LPAR  &kp RPAR  &layer_base_none LAYER_ID_BASE 0
+				MIDDLE_NONES
+				&layer_navigation_kp LAYER_ID_NAVIGATION RBRC                    &kp LBKT  &kp RBKT  &layer_symbols_none LAYER_ID_SYMBOLS 0
+				TRAILING_NONES
+			>;
+		};
+		navigation {
+			label = "Nav";
+			bindings = <
+				LEADING_NONES
+				&layer_numbers_kp LAYER_ID_NUMBERS PG_UP                         &kp HOME  &kp UP    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS END
+				MIDDLE_NONES
+				&layer_base_kp LAYER_ID_BASE PG_DN                               &kp LEFT  &kp DOWN  &layer_symbols_kp LAYER_ID_SYMBOLS RIGHT
+				TRAILING_NONES
+			>;
+		};
+		f_one_to_six{
+			label = "F1-F6";
+			bindings = <
+				LEADING_NONES
+				&layer_numbers_none LAYER_ID_NUMBERS 0                           &kp F3    &kp F2    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS F1
+				MIDDLE_NONES
+				&layer_navigation_none LAYER_ID_NAVIGATION 0                     &kp F6    &kp F5    &layer_symbols_kp LAYER_ID_SYMBOLS F4
+				TRAILING_NONES
+			>;
+		};
+		f_seven_to_twelve {
+			label = "F7-F12";
+			bindings = <
+				LEADING_NONES
+				&layer_numbers_none LAYER_ID_NUMBERS 0                           &kp F9    &kp F8    &layer_parentheticals_kp LAYER_ID_PARENTHETICALS F7
+				MIDDLE_NONES
+				&layer_navigation_none LAYER_ID_NAVIGATION 0                     &kp F12   &kp F11   &layer_symbols_kp LAYER_ID_SYMBOLS F10
+				TRAILING_NONES
+			>;
+		};
+		// mouse { /* TODO: Not implemented yet, needs mouse keys in upstream */
+		// 	label = "Mouse";
+		// 	bindings = <
+		// 		&none                                                 &none     &none     &none
+		// 		&none                                                 &none     &none     &none
+		// 	>;
+		// };
+	};
+};
+#endif
