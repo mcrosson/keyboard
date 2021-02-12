@@ -1,12 +1,3 @@
-# Corne Setup
-
-- basic keymap that looks like tg4x (keep as close as possible)
-- artsey chording
-	- left and right hand versions
-- penti chording
-- asetniop chording
-- setup thumb button for mouse key toggle (future)
-
 # LEDs
 
 Generic behavior for led on/off via gpio (see pocket type / mdk personal sources for ideas)
