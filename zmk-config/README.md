@@ -35,6 +35,8 @@ west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/wo
 
 west build --board nice_nano -d build/corne_artsey_left -- -DSHIELD=corne_artsey_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
+west build --board nice_nano -d build/corne_artsey_right -- -DSHIELD=corne_artsey_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
+
 west build --board nrf52840_mdk_dongle -d build/pockettype/central -- -DSHIELD=pockettype_central -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
 west build --board nice_nano -d build/pockettype/peripheral -- -DSHIELD=pockettype_peripheral -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
@@ -42,6 +44,8 @@ west build --board nice_nano -d build/pockettype/peripheral -- -DSHIELD=pocketty
 west build --board nice_nano -d build/tg4x -- -DSHIELD=tg4x -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
 west build --board nice_nano -d build/corne_left -- -DSHIELD=corne_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
+
+west build --board nice_nano -d build/corne_right -- -DSHIELD=corne_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
 west build --board nice_nano -d build/tidbit_artsey_left -- -DSHIELD=tidbit_artsey_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
