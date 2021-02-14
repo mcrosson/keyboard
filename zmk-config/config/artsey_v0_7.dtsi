@@ -294,7 +294,7 @@
 				LEADING_NONES
 				&layer_parentheticals_kp LAYER_ID_PARENTHETICALS F7   &kp F8    &kp F9    &layer_numbers_none LAYER_ID_NUMBERS 0
 				MIDDLE_NONES
-				&layer_symbols_kp LAYER_ID_SYMBOLS F10                &kp N11   &kp F12   &layer_navigation_none LAYER_ID_NAVIGATION 0
+				&layer_symbols_kp LAYER_ID_SYMBOLS F10                &kp F11   &kp F12   &layer_navigation_none LAYER_ID_NAVIGATION 0
 				TRAILING_NONES
 			>;
 		};
@@ -305,6 +305,7 @@
 		// 		&none                                                 &none     &none     &none
 		// 	>;
 		// };
+	};
 };
 #endif
 
