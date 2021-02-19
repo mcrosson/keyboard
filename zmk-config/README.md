@@ -29,13 +29,15 @@ rm foo
 
 ``` sh
 
+-DCMAKE_EXPORT_COMPILE_COMMANDS=1
+
 west build --board nice_nano -d build/nibble -- -DSHIELD=nibble -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
 west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
-west build --board nice_nano -d build/corne_artsey_left -- -DSHIELD=corne_artsey_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
+west build --board nice_nano -d build/corne_artsey_left -- -DSHIELD=corne_artsey_left -DZMK_CONFIG=/workspaces/zmk-artsey/config
 
-west build --board nice_nano -d build/corne_artsey_right -- -DSHIELD=corne_artsey_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
+west build --board nice_nano -d build/corne_artsey_right -- -DSHIELD=corne_artsey_right -DZMK_CONFIG=/workspaces/zmk-artsey/config
 
 west build --board nrf52840_mdk_dongle -d build/pockettype/central -- -DSHIELD=pockettype_central -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
