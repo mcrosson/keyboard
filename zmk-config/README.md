@@ -33,7 +33,7 @@ rm foo
 
 west build --board nice_nano -d build/nibble -- -DSHIELD=nibble -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
 
-west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/zmk-config/config
+west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
 west build --board nice_nano -d build/corne_artsey_left -- -DSHIELD=corne_artsey_left -DZMK_CONFIG=/workspaces/zmk-artsey/config
 
