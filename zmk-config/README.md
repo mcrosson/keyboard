@@ -57,6 +57,10 @@ west build --board nrf52840_mdk_dongle -d build/mdk_dongle -- -DSHIELD=mdk_dongl
 
 west build --board nice_nano -d build/pockettype/default -- -DSHIELD=pockettype -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
+west build --board nice_nano -d build/tidbit_artsey_left -- -DSHIELD=tidbit_artsey_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+
+west build --board nice_nano -d build/tidbit_artsey_right -- -DSHIELD=tidbit_artsey_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+
 west build --board nice_nano -d build/lily58/left -- -DSHIELD=lily58_left -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
 west build --board nice_nano -d build/lily58/right -- -DSHIELD=lily58_right -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
