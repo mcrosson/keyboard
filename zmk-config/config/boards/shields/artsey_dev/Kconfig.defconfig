@@ -1,9 +1,0 @@
-# Copyright (c) 2020 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-if SHIELD_ARTSEY_DEV
-
-config ZMK_KEYBOARD_NAME
-    default "ARTSEY DEV"
-
-endif

@@ -1,5 +1,0 @@
-# Copyright (c) 2020 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-config SHIELD_STENO_RIGHT_LILY58
-	def_bool $(shields_list_contains,steno_right_lily58)
