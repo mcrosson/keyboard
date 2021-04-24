@@ -35,10 +35,10 @@
     {
       "a": 7
     },
-    "",
     "Pg Up",
+    "End",
     "Up",
-    "Pg Dn",
+    "Home",
     "",
     "",
     "",
@@ -50,7 +50,7 @@
     {
       "w": 1.5
     },
-    "",
+    "Ins",
     {
       "a": 6
     },
@@ -62,7 +62,7 @@
       "w": 1.75
     },
     "",
-    "",
+    "Pg Dn",
     "Left",
     "Down",
     "Right",
@@ -76,7 +76,7 @@
     {
       "w": 2.25
     },
-    "",
+    "Pint Screen",
     {
       "a": 6
     },
@@ -84,25 +84,28 @@
   ],
   [
     {
-      "a": 7,
+      "a": 5,
       "w": 2.25
+    },
+    "BT\n\n\n\n\n\nClear",
+    "BT\n\n\n\n\n\n0",
+    "BT\n\n\n\n\n\n1",
+    "BT\n\n\n\n\n\n2",
+    "BT\n\n\n\n\n\n3",
+    "BT\n\n\n\n\n\n4",
+    {
+      "a": 7
     },
     "",
     "",
-    "Home",
-    "",
-    "End",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
+    "Loader",
     {
       "w": 1.75
     },
-    "",
-    "",
+    "Reset",
+    "Play Pause",
     ""
   ],
   [
@@ -123,13 +126,10 @@
     },
     "",
     "",
+    "Vol Up",
+    "Vol Dn",
+    "Mute",
     "",
-    "",
-    {
-      "a": 5
-    },
-    "Media\n\n\n\n\n\nPrev",
-    "Media\n\n\n\n\n\nPly/Ps",
-    "Media\n\n\n\n\n\nNext"
+    ""
   ]
 ]
