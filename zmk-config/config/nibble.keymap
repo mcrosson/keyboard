@@ -36,7 +36,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "Default";
+            label = "ANSI";
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
