@@ -35,7 +35,9 @@ west build --board nice_nano -d build/nibble -- -DSHIELD=nibble -DZMK_CONFIG=/wo
 
 west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
-west build --board nice_nano -d build/the_paintbrush -- -DSHIELD=the_paintbrush -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+west build --board nice_nano -d build/the_paintbrush_left -- -DSHIELD=the_paintbrush_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+
+west build --board nice_nano -d build/the_paintbrush_right -- -DSHIELD=the_paintbrush_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
 
 west build --board nice_nano -d build/corne_5_col_artsey_left_big -- -DSHIELD=corne_5_col_artsey_left_big -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
 
@@ -46,6 +48,10 @@ west build --board nrf52840_mdk_dongle -d build/pockettype/central -- -DSHIELD=p
 west build --board nice_nano -d build/pockettype/peripheral -- -DSHIELD=pockettype_peripheral -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
 west build --board nice_nano -d build/tg4x -- -DSHIELD=tg4x -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
+
+west build --board nice_nano -d build/7skb_left -- -DSHIELD=7skb_left -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
+
+west build --board nice_nano -d build/7skb_right -- -DSHIELD=7skb_right -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
 west build --board nice_nano -d build/corne_left -- -DSHIELD=corne_left -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
