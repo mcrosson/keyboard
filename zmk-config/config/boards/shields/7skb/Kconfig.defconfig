@@ -1,0 +1,23 @@
+if SHIELD_7SKB_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "7skb"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_7SKB_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "7skb Right"
+	
+endif
+
+if SHIELD_7SKB_LEFT || SHIELD_7SKB_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
