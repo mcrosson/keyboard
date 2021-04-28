@@ -38,6 +38,10 @@
             key-positions = <34 19 36>; 
             bindings = <&tog LAYER_ID_FUNC>; 
         };
+        combo_shift_lock { 
+            key-positions = <19 35>; 
+            bindings = <&kt LSHFT>; 
+        };
     };
 
     keymap {
