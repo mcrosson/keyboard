@@ -10,6 +10,8 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#define TIMEOUT_COMBO 250
+
 #define LAYER_ID_DEFAULT 0
 #define LAYER_ID_NAV 1
 #define LAYER_ID_FUNC 2
@@ -30,18 +32,22 @@
     combos {
         compatible = "zmk,combos";
         combo_layer_navigation_left { 
+            timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <31 18 33>; 
             bindings = <&tog LAYER_ID_NAV>; 
         };
         combo_layer_navigation_right { 
+            timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <36 23 38>; 
             bindings = <&tog LAYER_ID_NAV>;
         };
         combo_shift_lock_left { 
+            timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <18 32>; 
             bindings = <&kt LSHFT>; 
         };
         combo_shift_lock_right { 
+            timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <23 37>; 
             bindings = <&kt RSHFT>; 
         };
