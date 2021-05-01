@@ -41,25 +41,25 @@
             timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <34 19 36>; 
             bindings = <&tog LAYER_ID_NAV>; 
-            layers = <LAYER_ID_NAV LAYER_ID_FUNC LAYER_ID_MISC>;
+            layers = <LAYER_ID_NAV LAYER_ID_FUNC>;
         };
         combo_layer_navigation_right { 
             timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <39 24 41>; 
             bindings = <&tog LAYER_ID_NAV>; 
-            layers = <LAYER_ID_NAV LAYER_ID_FUNC LAYER_ID_MISC>;
+            layers = <LAYER_ID_NAV LAYER_ID_FUNC>;
         };
         combo_shift_lock_left { 
             timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <19 35>; 
             bindings = <&kt LSHFT>; 
-            layers = <LAYER_ID_NAV LAYER_ID_FUNC LAYER_ID_MISC>;
+            layers = <LAYER_ID_NAV LAYER_ID_FUNC>;
         };
         combo_shift_lock_right { 
             timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <24 40>; 
             bindings = <&kt LSHFT>; 
-            layers = <LAYER_ID_NAV LAYER_ID_FUNC LAYER_ID_MISC>;
+            layers = <LAYER_ID_NAV LAYER_ID_FUNC>;
         };
     };
 
