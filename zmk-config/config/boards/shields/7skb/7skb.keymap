@@ -35,25 +35,25 @@
             timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <31 18 33>; 
             bindings = <&tog LAYER_ID_NAV>; 
-            layers = <LAYER_ID_NAV LAYER_ID_FUNC LAYER_ID_MISC>;
+            layers = <LAYER_ID_NAV LAYER_ID_FUNC>;
         };
         combo_layer_navigation_right { 
             timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <36 23 38>; 
             bindings = <&tog LAYER_ID_NAV>;
-            layers = <LAYER_ID_NAV LAYER_ID_FUNC LAYER_ID_MISC>;
+            layers = <LAYER_ID_NAV LAYER_ID_FUNC>;
         };
         combo_shift_lock_left { 
             timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <18 32>; 
             bindings = <&kt LSHFT>; 
-            layers = <LAYER_ID_NAV LAYER_ID_FUNC LAYER_ID_MISC>;
+            layers = <LAYER_ID_NAV LAYER_ID_FUNC>;
         };
         combo_shift_lock_right { 
             timeout-ms = <TIMEOUT_COMBO>;
             key-positions = <23 37>; 
             bindings = <&kt RSHFT>; 
-            layers = <LAYER_ID_NAV LAYER_ID_FUNC LAYER_ID_MISC>;
+            layers = <LAYER_ID_NAV LAYER_ID_FUNC>;
         };
     };
 
@@ -78,7 +78,7 @@
 &trans     &trans       &trans       &trans       &trans       &trans     &trans &trans   &trans   &trans    &trans     &trans  &trans  &trans &kp DEL
 &trans     &kp PG_UP    &kp HOME     &kp UP       &kp END      &trans     &trans &kp HOME &kp UP   &kp END   &kp PG_UP  &trans  &trans  &trans
 &trans     &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &trans     &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN  &trans  &trans
-&trans     &trans       &trans       &trans       &trans       &trans     &trans &trans   &trans   &trans    &trans     &trans  &trans
+&trans     &trans       &trans       &trans       &trans       &trans     &trans &trans   &trans   &trans    &trans     &trans  &none
     &trans &trans &trans &trans                                                    &trans &trans &trans &trans
             >;
         };
