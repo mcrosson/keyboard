@@ -99,10 +99,10 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
 
             bindings = <
-       &kp GRAVE   &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12 &trans      &kp DEL
-&trans &kp CAPS    &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans  &kp INS     &kp INS
-&none  &trans      &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans    &trans    &trans    &trans            &kp PSCRN   &kp PSCRN
-&none  &trans      &trans       &trans       &trans       &trans       &trans       &trans    &trans    &trans    &trans    &trans    &trans    &trans  &kp C_PP
+       &kp GRAVE   &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6    &kp F7      &kp F8    &kp F9    &kp F10      &kp F11   &kp F12 &trans      &kp DEL
+&trans &kp CAPS    &kp PG_UP    &kp HOME     &kp UP       &kp END      &trans       &trans    &kp HOME    &kp UP    &kp END   &kp PG_UP    &trans    &trans  &kp INS     &kp INS
+&none  &trans      &kp PG_DN    &kp LEFT     &kp DOWN     &kp RIGHT    &trans       &trans    &kp LEFT    &kp DOWN  &kp RIGHT &kp PG_DN    &trans            &kp PSCRN   &kp PSCRN
+&none  &trans      &trans       &trans       &trans       &trans       &trans       &trans    &trans      &trans    &trans    &trans       &trans    &trans  &kp C_PP
 &none  &trans      &trans       &trans                                              &trans                        &trans    &kp C_VOLUME_UP &kp C_VOLUME_DOWN &kp C_MUTE &trans &trans
             >;
         };
