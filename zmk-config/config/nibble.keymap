@@ -128,8 +128,8 @@
                    &trans  &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans       &trans      &trans      &trans
 &trans             &trans  &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans       &trans      &trans      &trans
 &mo LAYER_ID_MISC  &trans  &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans                   &trans      &trans
-&none              &trans  &none      &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans       &trans      &trans      &trans
-&none              &trans  &trans     &trans                           &trans                           &ext_power EP_TOG     &trans     &trans     &trans                   &trans      &trans
+&none              &trans  &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans       &trans      &trans      &trans
+&none              &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_BRI &rgb_ug RGB_BRD                           &ext_power EP_TOG     &trans     &trans     &trans                   &trans      &trans
             >;
         };
     };
