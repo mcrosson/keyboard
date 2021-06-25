@@ -41,10 +41,10 @@
     "End",
     "",
     "",
-    "Home",
+    "Mouse 1",
     "Up",
-    "End",
-    "Pg up",
+    "Mouse 2",
+    "Scroll Up",
     "",
     "",
     {
@@ -71,7 +71,7 @@
     "Left",
     "Down",
     "Right",
-    "Pg Dn",
+    "Scroll Down",
     "",
     {
       "w": 2.25
