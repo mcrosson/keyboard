@@ -1,0 +1,47 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-matrix";
+		label = "KSCAN";
+		
+		diode-direction = "col2row";
+
+        row-gpios
+			= <&pro_micro_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro_d 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro_d 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&pro_micro_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			;
+
+		col-gpios
+			= <&pro_micro_d 4 GPIO_ACTIVE_HIGH>
+			, <&pro_micro_d 7 GPIO_ACTIVE_HIGH>
+			, <&pro_micro_d 15 GPIO_ACTIVE_HIGH>
+			;
+	};
+
+	default_transform: keymap_transform_0 {
+		compatible = "zmk,matrix-transform";
+		rows = <4>;
+        columns = <3>;
+
+        map = <
+RC(0,0) RC(0,1) RC(0,2)
+RC(1,0) RC(1,1) RC(1,2)
+        RC(2,1)
+RC(3,0) RC(3,1) RC(3,2)
+		>;
+	};
+
+	chosen {
+		zmk,kscan = &kscan0;
+		zmk,matrix_transform = &default_transform;
+	};
+};
