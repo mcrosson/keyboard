@@ -31,17 +31,19 @@ rm foo
 
 -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 
-west build --board nice_nano -d build/nibble -- -DSHIELD=nibble -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
+west build --board nice_nano -d /workspaces/zmk/app/build/settings_reset -- -DSHIELD=settings_reset
 
-west build --board nice_nano -d build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
+west build --board nice_nano_v2 -d /workspaces/zmk/app/build/nibble -- -DSHIELD=nibble -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
-west build --board nice_nano -d build/the_paintbrush_left -- -DSHIELD=the_paintbrush_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+west build --board nice_nano_v2 -d /workspaces/zmk/app/build/tidbit -- -DSHIELD=tidbit -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
-west build --board nice_nano -d build/the_paintbrush_right -- -DSHIELD=the_paintbrush_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+west build --board nice_nano -d /workspaces/zmk/app/build/the_paintbrush_left -- -DSHIELD=the_paintbrush_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
 
-west build --board nice_nano -d build/corne_5_col_artsey_left_big -- -DSHIELD=corne_5_col_artsey_left_big -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+west build --board nice_nano -d /workspaces/zmk/app/build/the_paintbrush_right -- -DSHIELD=the_paintbrush_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
 
-west build --board nice_nano -d build/corne_5_col_artsey_right_big -- -DSHIELD=corne_5_col_artsey_right_big -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+west build --board nice_nano -d /workspaces/zmk/app/build/corne_5_col_artsey_left_big -- -DSHIELD=corne_5_col_artsey_left_big -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+
+west build --board nice_nano -d /workspaces/zmk/app/build/corne_5_col_artsey_right_big -- -DSHIELD=corne_5_col_artsey_right_big -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
 
 west build --board nrf52840_mdk_dongle -d build/pockettype/central -- -DSHIELD=pockettype_central -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
@@ -49,9 +51,9 @@ west build --board nice_nano -d build/pockettype/peripheral -- -DSHIELD=pocketty
 
 west build --board nice_nano -d build/tg4x -- -DSHIELD=tg4x -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
-west build --board nice_nano -d build/7skb_left -- -DSHIELD=7skb_left -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
+west build --board nice_nano -d /workspaces/zmk/app/build/7skb_left -- -DSHIELD=7skb_left -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
-west build --board nice_nano -d build/7skb_right -- -DSHIELD=7skb_right -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
+west build --board nice_nano -d /workspaces/zmk/app/build/7skb_right -- -DSHIELD=7skb_right -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
 west build --board nice_nano_v2 -d build/miryoku/corne_left -- -DSHIELD=corne_left -DZMK_CONFIG=/workspaces/miryoku/config
 
@@ -66,6 +68,8 @@ west build --board nice_nano -d build/pockettype/default -- -DSHIELD=pockettype 
 west build --board nice_nano -d build/tidbit_artsey_left -- -DSHIELD=tidbit_artsey_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
 
 west build --board nice_nano -d build/tidbit_artsey_right -- -DSHIELD=tidbit_artsey_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+
+west build --board nice_nano -d /workspaces/zmk/app/build/navi10 -- -DSHIELD=navi10 -DZMK_CONFIG=/workspaces/zmk-config/kemonine/zmk-config/config
 
 west build --board nice_nano_v2 -d build/miryoku/lily58_left -- -DSHIELD=lily58_left -DZMK_CONFIG=/workspaces/miryoku/config
 
