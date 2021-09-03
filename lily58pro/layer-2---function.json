@@ -25,11 +25,17 @@
     "F12"
   ],
   [
-    "",
-    "",
+    {
+      "a": 5
+    },
+    "~\n`",
+    {
+      "a": 7
+    },
     "Pg Up",
+    "Home",
     "↑",
-    "Pg Dn",
+    "End",
     "",
     {
       "x": 2
@@ -42,12 +48,18 @@
     "Del"
   ],
   [
-    "",
-    "Home",
+    {
+      "a": 5
+    },
+    "Alt\nFn\n\n\n\n\n+",
+    {
+      "a": 7
+    },
+    "Pg Dn",
     "←",
     "↓",
     "→",
-    "End",
+    "",
     {
       "x": 2
     },
@@ -69,15 +81,15 @@
       "a": 5
     },
     "BT\n\n\n\n\n\nNext",
-    "Vol\n\n\n\n\n\nUp",
+    "Bt\n\n\n\n\n\nPrev",
     {
       "a": 7
     },
     "",
     "",
     "",
-    "Loader",
-    "Reset",
+    "",
+    "",
     {
       "a": 5
     },
@@ -87,10 +99,10 @@
     {
       "x": 3
     },
+    "BT\n\n\n\n\n\nClear",
     "EXT\n\n\n\n\n\nOn",
     "EXT\n\n\n\n\n\nOff",
-    "BT\n\n\n\n\n\nClear",
-    "BT\n\n\n\n\n\nPrev",
+    "Vol\n\n\n\n\n\nUp",
     "Vol\n\n\n\n\n\nDown",
     {
       "a": 7

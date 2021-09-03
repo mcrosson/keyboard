@@ -9,7 +9,7 @@
       "x": 1,
       "a": 7
     },
-    "TO(1)",
+    "TO(0)",
     "TO(2)",
     "TO(3)"
   ],
@@ -17,25 +17,25 @@
     "Left Click",
     "Up",
     "Right Click",
-    "Ctrl + Alt + Tab"
+    "Wheel Up"
   ],
   [
     "Left",
     "Down",
     "Right",
-    "GUI + Down"
+    "Wheel Down"
   ],
   [
     "Esc",
-    "Wheel Left",
-    "Wheel Right",
+    "Ctrl + Alt + Tab",
+    "GUI + Down",
     "Accel"
   ],
   [
     {
       "a": 5
     },
-    "W Up\nW Dn\n\n\n\n\nMute",
+    "V Up\nV Dn\n\n\n\n\nMute",
     {
       "a": 7
     },
