@@ -143,7 +143,7 @@
 		combo_layer_functions { key-positions = <KEY_F_TOP KEY_F_BOTTOM>; bindings = <&sl LAYER_ID_BIG_FUNCTION>; };
 		#endif
 		combo_enter      { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_A KEY_E>; bindings = <&kp ENTER>; };
-		combo_control    { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_S>; bindings = <&sk LCTRL>; };
+		combo_control    { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_S>; bindings = <&sk RCTRL>; };
 		combo_gui        { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_Y KEY_S>; bindings = <&sk LGUI>; };
 		combo_alt        { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_I KEY_S>; bindings = <&sk LALT>; };
 		combo_backspace  { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_R>; bindings = <&kp BACKSPACE>; };
@@ -263,7 +263,7 @@
                    &none             &none     &none     &none     &none     &none     &none     &none     &none             &none      &none     &none     &none     &none    &none
 &trans             &none             &layer_numbers_kp LAYER_ID_NUMBERS ARTSEY_BASE_S    &kp ARTSEY_BASE_T     &kp ARTSEY_BASE_R     &layer_parentheticals_kp LAYER_ID_PARENTHETICALS ARTSEY_BASE_A &kp MINUS      &none     &none     &none             &none      &none     &none     &none     &none    &none
 &tog LAYER_ID_BASE &none             &layer_custom_kp LAYER_ID_CUSTOM ARTSEY_BASE_O      &kp ARTSEY_BASE_I     &kp ARTSEY_BASE_Y     &layer_symbols_kp LAYER_ID_SYMBOLS ARTSEY_BASE_E               &sk LSHFT      &none     &none     &none             &none      &none     &none               &none    &none
-&trans             &none             &ctrl_alt_kp LALT LCTRL                             &kp AT                &kp DEL               &kp EQUAL                                                      &kp TAB      &none     &none     &none             &none      &none     &none     &none     &none    &none
+&trans             &none             &ctrl_alt_kp LALT RCTRL                             &kp AT                &kp DEL               &kp EQUAL                                                      &kp TAB      &none     &none     &none             &none      &none     &none     &none     &none    &none
 &trans             &none             &none     &mo LAYER_ID_BIG_SYM                                &kp SPACE                          &none             &none      &none     &none               &none    &none
             >;
 		};

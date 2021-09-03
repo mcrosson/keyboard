@@ -10,7 +10,6 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/mouse.h>
 
 &encoder_1_top_row {
     status = "disabled";
@@ -58,8 +57,8 @@
             label = "Mouse";
             bindings = <
                                &to 0             &to 2              &to 3
-                &mkp MB1       &mmv MOVE_UP      &mkp MB2           &mwh SCROLL_UP
-                &mmv MOVE_LEFT &mmv MOVE_DOWN    &mmv MOVE_RIGHT    &mwh SCROLL_DOWN
+                &none          &none             &none              &none
+                &none          &none             &none              &none
                 &kp ESCAPE     &kp LC(LA(TAB))   &kp LG(DOWN_ARROW) &none
                 &kp C_MUTE     &kp C_VOLUME_DOWN &kp C_VOLUME_UP    &none
             >;
