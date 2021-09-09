@@ -1,0 +1,84 @@
+[
+  {
+    "backcolor": "#ffa100",
+    "name": "Layer 1 - Default",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "a": 5
+    },
+    "~\nEsc",
+    {
+      "a": 7
+    },
+    "Q",
+    "W",
+    "E",
+    "R",
+    "T\n\n\n\nartsey",
+    {
+      "x": 2
+    },
+    "Y\n\n\n\nartsey",
+    "U",
+    "I",
+    "O",
+    "P",
+    "Bkspc"
+  ],
+  [
+    "Tab",
+    "A",
+    "S",
+    "D",
+    "F",
+    "G",
+    {
+      "x": 2
+    },
+    "H",
+    "J",
+    "K",
+    "L",
+    ";\n\n\n\n'",
+    "Enter"
+  ],
+  [
+    "Ctrl",
+    "Z",
+    "X",
+    "C",
+    "V",
+    "B",
+    {
+      "x": 2
+    },
+    "N",
+    "M",
+    ",",
+    ".",
+    "/\n\n\n\n\\",
+    "Ctrl"
+  ],
+  [
+    {
+      "x": 3
+    },
+    "GUI",
+    {
+      "a": 5
+    },
+    "artsey\nSYM",
+    {
+      "a": 7
+    },
+    "Space",
+    {
+      "x": 2
+    },
+    "Space\n\n\n\nNav",
+    "-\n\n\n\nMO(1",
+    "=\n\n\n\n@"
+  ]
+]
