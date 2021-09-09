@@ -142,7 +142,7 @@
 		combo_enter      { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_A KEY_E>; bindings = <&kp ENTER>; };
 		combo_control    { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_S>; bindings = <&sk RCTRL>; };
 		combo_gui        { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_Y KEY_S>; bindings = <&sk LGUI>; };
-		combo_alt        { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_I KEY_S>; bindings = <&sk LALT>; };
+		combo_alt        { layers = <LAYERS_ARTSEY_PLUS>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_I KEY_S>; bindings = <&sk LALT>; };
 		combo_backspace  { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_E KEY_R>; bindings = <&kp BACKSPACE>; };
 		combo_delete     { layers = <LAYERS_ARTSEY>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_I KEY_R>; bindings = <&kp DELETE>; };
 		combo_shift_lock { layers = <LAYERS_ARTSEY_BASE>; timeout-ms = <TIMEOUT_COMBO_2>; key-positions = <KEY_R KEY_Y>; bindings = <&kt LSHFT>; };
@@ -226,7 +226,7 @@
 			bindings = <
 &trans     &kp PG_UP  &kp HOME  &kp UP      &kp END    &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL
 &kp LSHFT  &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &trans     &trans    &trans      &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans 
+&kp LGUI     &trans     &trans    &trans      &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans 
 &kp LCTRL    &trans    &trans    &trans    &trans    &trans
 			>;
 		};
