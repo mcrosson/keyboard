@@ -46,7 +46,7 @@
 #define TIMEOUT_COMBO_2 150
 #define TIMEOUT_COMBO_3 150
 #define TIMEOUT_COMBO_4 150
-#define TIMEOUT_LAYER_HOLD 200
+#define TIMEOUT_LAYER_HOLD 250
 #define ARTSEY_BASE_A A
 #define ARTSEY_BASE_R R
 #define ARTSEY_BASE_T T
@@ -74,19 +74,13 @@
 };
 
 ////////////////////////////////////////
-// Sticky / Leader Keys
+// Sticky / Leader Keys / Hold Tap Keys
 #define TIMEOUT_STICKY_LEADER_KEY 5000
 &sk {
 	release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
 };
 &sl { 
 	release-after-ms = <TIMEOUT_STICKY_LEADER_KEY>;
-};
-
-////////////////////////////////////////
-// LED Strip Tweak
-&led_strip {
-    chain-length = <1>;
 };
 
 ////////////////////////////////////////
@@ -222,18 +216,18 @@
 			bindings = <
 &kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6   &kp F7  &kp F8  &kp F9  &kp F10  &kp DEL
 &trans     &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6   &kp N7  &kp N8  &kp N9  &kp N0   &kp INSERT
-&kp LALT   &trans  &trans  &trans  &trans  &kp F11 &kp F12  &trans  &trans  &trans  &trans   &kp PSCRN
-&trans    &trans    &trans    &trans    &trans    &ext_power EP_TOG
+&trans     &trans  &trans  &trans  &trans  &kp F11 &kp F12  &trans  &trans  &trans  &trans   &kp PSCRN
+&kp LALT   &trans    &trans    &trans    &trans    &ext_power EP_TOG
 			>;
 		};
 
 		nav_layer {
 			label = "Nav";
 			bindings = <
-&trans     &kp PG_UP  &kp HOME  &kp UP      &kp END    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &kp PG_UP  &kp HOME  &kp UP      &kp END    &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL
 &kp LSHFT  &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans     &trans    &trans      &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans 
-&trans    &trans    &trans    &trans    &trans    &trans
+&kp LCTRL    &trans    &trans    &trans    &trans    &trans
 			>;
 		};
 
