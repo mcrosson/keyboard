@@ -206,7 +206,7 @@
 			bindings = <
 &tildeesc  &layer_numbers_kp LAYER_ID_NUMBERS Q  &kp W  &kp E  &layer_parentheticals_kp LAYER_ID_PARENTHETICALS R  &artsey LAYER_ID_BASE T  &artsey LAYER_ID_BASE Y  &kp U  &kp I      &kp O   &kp P               &kp BSPC
 &kp TAB    &layer_custom_kp LAYER_ID_CUSTOM A    &kp S  &kp D  &layer_symbols_kp LAYER_ID_SYMBOLS F                &kp G                    &kp H                    &kp J  &kp K      &kp L   &ht_kp_kp SQT SEMI  &kp RET
-&kp LCTRL  &kp Z                                 &kp X  &kp C  &kp V                                               &kp B                    &kp N                    &kp M  &kp COMMA  &kp DOT &ht_kp_kp BSLH FSLH &kp RCTRL
+&kp LCTRL  &kp Z                                 &kp X  &kp C  &kp V                                               &kp B                    &kp N                    &kp M  &kp COMMA  &kp DOT &ht_kp_kp BSLH FSLH &ht_kp_kp RSHFT RCTRL
 &kp LGUI   &mo LAYER_ID_BIG_SYM    &kp SPACE    &ht_mo_kp LAYER_ID_NAV SPACE    &ht_mo_kp LAYER_ID_FUNC MINUS    &ht_kp_kp AT EQUAL
 			>;
 		};
@@ -226,7 +226,7 @@
 			bindings = <
 &trans     &kp PG_UP  &kp HOME  &kp UP      &kp END    &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL
 &kp TAB    &kp PG_DN  &kp LEFT  &kp DOWN    &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL  &trans     &trans    &trans      &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans 
+&kp LCTRL  &trans     &trans    &trans      &trans     &trans  &trans  &trans  &trans  &trans  &trans  &kp RSHFT 
 &kp LGUI    &trans    &trans    &trans    &trans    &trans
 			>;
 		};
