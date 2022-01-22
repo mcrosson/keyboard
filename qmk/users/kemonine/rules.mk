@@ -17,6 +17,7 @@ VELOCIKEY_ENABLE = no
 VIA_ENABLE = no
 WPM_ENABLE = no
 BACKLIGHT_ENABLE = no
+ENCODER_ENABLE = yes
 
 BOOTLOADER = qmk-dfu
 
@@ -26,20 +27,6 @@ LTO_ENABLE = yes
 
 SRC += kemonine.c
 
-ifeq ($(KEYBOARD), $(filter $(KEYBOARD), reviung39 reviung41))
-	RGBLIGHT_ENABLE = yes
-	SRC += boards/reviung41.c
+ifeq ($(KEYBOARD), nullbitsco/tidbit)
+	SRC += boards/tidbit.c
 endif
-
-ifeq ($(KEYBOARD), crkbd/rev1)
-	SPLIT_KEYBOARD = yes
-	RGBLIGHT_ENABLE = no
-	RGB_MATRIX_ENABLE = no
-endif
-
-ifeq ($(KEYBOARD), keebio/iris/rev4)
-	RGBLIGHT_ENABLE = yes
-	SPLIT_KEYBOARD = yes
-	SRC += boards/iris.c
-endif
-
