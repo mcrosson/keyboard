@@ -20,8 +20,8 @@ qmk compile -kb tidbit -km kemonine
 #     Use ${PWD} instead of $(pwd)
 docker run --rm -it \
   -v qmk_firmware:/qmk_firmware \
-  -v ${PWD}/.build:/qmk_firmware/.build \
-  -v ${PWD}/kemonine:/qmk_firmware/users/kemonine \
+  -v $(pwd)/.build:/qmk_firmware/.build \
+  -v $(pwd)/kemonine:/qmk_firmware/users/kemonine \
   qmkfm/qmk_cli /bin/bash
  ```
 
@@ -40,6 +40,14 @@ then
 git pull; 
 else 
 git clone https://github.com/qmk/qmk_firmware.git .; 
+fi
+cd /qmk_firmware/keyboards/nullbitsco
+if [ -d tidbit ];
+then
+cd tidbit;
+git pull;
+else
+git clone https://github.com/nullbitsco/tidbit tidbit
 fi
 ```
 
