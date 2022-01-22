@@ -21,7 +21,7 @@ qmk compile -kb tidbit -km kemonine
 docker run --rm -it \
   -v qmk_firmware:/qmk_firmware \
   -v $(pwd)/.build:/qmk_firmware/.build \
-  -v $(pwd)/kemonine:/qmk_firmware/users/kemonine \
+  -v $(pwd)/users/kemonine:/qmk_firmware/users/kemonine \
   qmkfm/qmk_cli /bin/bash
  ```
 

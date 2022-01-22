@@ -1,0 +1,45 @@
+AUDIO_ENABLE = no
+BOOTMAGIC_ENABLE = no
+COMMAND_ENABLE = no
+CONSOLE_ENABLE = no
+EXTRAKEY_ENABLE = no
+KEY_LOCK_ENABLE = no
+LEADER_ENABLE = no
+RGBLIGHT_ENABLE = no
+SLEEP_LED_ENABLE = no
+SPACE_CADET_ENABLE = no
+STENO_ENABLE = no
+SWAP_HANDS_ENABLE = no
+TAP_DANCE_ENABLE = no
+TERMINAL_ENABLE = no
+UNICODE_ENABLE = no
+VELOCIKEY_ENABLE = no
+VIA_ENABLE = no
+WPM_ENABLE = no
+BACKLIGHT_ENABLE = no
+
+BOOTLOADER = qmk-dfu
+
+MOUSEKEY_ENABLE = yes
+NKRO_ENABLE = yes
+LTO_ENABLE = yes
+
+SRC += kemonine.c
+
+ifeq ($(KEYBOARD), $(filter $(KEYBOARD), reviung39 reviung41))
+	RGBLIGHT_ENABLE = yes
+	SRC += boards/reviung41.c
+endif
+
+ifeq ($(KEYBOARD), crkbd/rev1)
+	SPLIT_KEYBOARD = yes
+	RGBLIGHT_ENABLE = no
+	RGB_MATRIX_ENABLE = no
+endif
+
+ifeq ($(KEYBOARD), keebio/iris/rev4)
+	RGBLIGHT_ENABLE = yes
+	SPLIT_KEYBOARD = yes
+	SRC += boards/iris.c
+endif
+
