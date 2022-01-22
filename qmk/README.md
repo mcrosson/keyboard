@@ -7,7 +7,8 @@
 ## Compiling
 
 ``` sh
-qmk compile -kb tidbit -km kemonine
+cd /qmk_firmware/users/kemonine
+qmk compile keymaps/tidbit.json
 ```
 
 ## Docker Critical
