@@ -1,0 +1,46 @@
+[
+  {
+    "backcolor": "#00f3ff",
+    "name": "Layer 1 - Navigation",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "x": 1,
+      "a": 7
+    },
+    "TG(0)",
+    "TO(2)",
+    "TO(3)"
+  ],
+  [
+    "Pg Up",
+    "↑",
+    "Pg Dn",
+    "Gui + E"
+  ],
+  [
+    "←",
+    "↓",
+    "→",
+    "Space"
+  ],
+  [
+    "Home",
+    "Bksp",
+    "End",
+    "Enter"
+  ],
+  [
+    {
+      "a": 5
+    },
+    "Vol Up\nVol Dn\n\n\n\n\nMute",
+    {
+      "a": 7
+    },
+    "Esc",
+    "",
+    "Alt + F4"
+  ]
+]

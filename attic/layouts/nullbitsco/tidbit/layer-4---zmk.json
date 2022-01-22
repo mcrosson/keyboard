@@ -1,0 +1,46 @@
+[
+  {
+    "backcolor": "#ff0000",
+    "name": "Layer 4 - ZMK",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "x": 1,
+      "a": 7
+    },
+    "TO(0)",
+    "Reset",
+    "Boot"
+  ],
+  [
+    "RGB Hue Down",
+    "RGB Hue Up",
+    "RGB Bright Down",
+    "RGB Bright Up"
+  ],
+  [
+    "",
+    "",
+    "",
+    ""
+  ],
+  [
+    "Ext Pwr Tog",
+    "RGB Toggle",
+    "Output Toggle",
+    ""
+  ],
+  [
+    {
+      "a": 5
+    },
+    "Vol Up\nVol Dn\n\n\n\n\nMute",
+    {
+      "a": 7
+    },
+    "BT Prev",
+    "BT Next",
+    "BT Clear"
+  ]
+]

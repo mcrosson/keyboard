@@ -1,0 +1,46 @@
+[
+  {
+    "backcolor": "#ba00ff",
+    "name": "Layer 2 - Mouse",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "x": 1,
+      "a": 7
+    },
+    "TO(0)",
+    "TO(2)",
+    "TO(3)"
+  ],
+  [
+    "Left Click",
+    "Up",
+    "Right Click",
+    "Wheel Up"
+  ],
+  [
+    "Left",
+    "Down",
+    "Right",
+    "Wheel Down"
+  ],
+  [
+    "Esc",
+    "Ctrl + Alt + Tab",
+    "GUI + Down",
+    "Accel"
+  ],
+  [
+    {
+      "a": 5
+    },
+    "V Up\nV Dn\n\n\n\n\nMute",
+    {
+      "a": 7
+    },
+    "Vol Up",
+    "Vol Down",
+    "Accel Mode"
+  ]
+]
