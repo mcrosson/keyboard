@@ -2,4 +2,4 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //   NAME                            RESULT                         TRIGGER
-COMB(combo_kmn_base_altf4,           LALT(KC_F4),                   KC_SPACE, KC_ESC)
+COMB(combo_layer_basemse_kmn,        TG(LAYER_ID_MOUSE),            KC_HOME, KC_DOWN, KC_END)
