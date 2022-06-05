@@ -21,25 +21,25 @@
       "y": 0.25,
       "a": 5
     },
-    "Mouse\nUp\n\n\n\n\nWheel",
+    "LGUI\n\n\n\n\n\nDown",
     {
       "x": 4
     },
     "LCTL\nTab\n\n\n\n\nLALT"
   ],
   [
-    "Mouse\nDown\n\n\n\n\nWheel",
+    "\nBack\n\n\n\n\nBrowser",
     {
       "x": 4
     },
-    "Browser\n\n\n\n\n\nBack"
+    "Mouse\nUp\n\n\n\n\nWheel"
   ],
   [
     "Browser\n\n\n\n\n\nHome",
     {
       "x": 4
     },
-    "LGUI\n\n\n\n\n\nDown"
+    "Mouse\nDown\n\n\n\n\nWheel"
   ],
   [
     {
