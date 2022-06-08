@@ -1,0 +1,113 @@
+diff --git a/drivers/sensors/cirque_pinnacle.c b/drivers/sensors/cirque_pinnacle.c
+index 2db7f916fe..668973f70c 100644
+--- a/drivers/sensors/cirque_pinnacle.c
++++ b/drivers/sensors/cirque_pinnacle.c
+@@ -213,7 +213,7 @@ void cirque_pinnacle_init(void) {
+     // Host sets z-idle packet count to 5 (default is 30)
+     RAP_Write(Z_IDLE_COUNT, Z_IDLE_COUNT_VALUE);
+ 
+-    cirque_pinnacle_set_adc_attenuation(0xFF);
++    cirque_pinnacle_set_adc_attenuation(0x40);
+     cirque_pinnacle_tune_edge_sensitivity();
+     cirque_pinnacle_enable_feed(true);
+ }
+diff --git a/keyboards/mechwild/puckbuddy/config.h b/keyboards/mechwild/puckbuddy/config.h
+index dc94d9b474..ff71eb67a1 100644
+--- a/keyboards/mechwild/puckbuddy/config.h
++++ b/keyboards/mechwild/puckbuddy/config.h
+@@ -27,7 +27,7 @@
+ #define LED_PIN_ON_STATE 0
+ 
+ /* set the tapping term for glidepoint pad to register a tap click */
+-#define CIRQUE_PINNACLE_TAPPING_TERM 10 // This is set unreasonably low to effectively disable it
++#define CIRQUE_PINNACLE_TAPPING_TERM 0 // This is set unreasonably low to effectively disable it
+ 
+ /*
+  * Keyboard Matrix Assignments
+@@ -143,4 +143,4 @@
+ 
+ /* Bootmagic Lite key configuration */
+ //#define BOOTMAGIC_LITE_ROW 0
+-//#define BOOTMAGIC_LITE_COLUMN 0
+\ No newline at end of file
++//#define BOOTMAGIC_LITE_COLUMN 0
+diff --git a/keyboards/mechwild/puckbuddy/keymaps/default/keymap.c b/keyboards/mechwild/puckbuddy/keymaps/default/keymap.c
+index bb5313fcb2..643fdb2818 100644
+--- a/keyboards/mechwild/puckbuddy/keymaps/default/keymap.c
++++ b/keyboards/mechwild/puckbuddy/keymaps/default/keymap.c
+@@ -34,10 +34,10 @@ enum layer_names {
+ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+     /* Base */
+     [_BASE] = LAYOUT(
+-    KC_MUTE,  MO(_FN3), MO(_FN2), MO(_FN1),       LGUI(KC_D),
+-    KC_HOME,                                      KC_PGUP,
+-    KC_END,                                       KC_PGDN,
+-    KC_BTN3,  KC_BTN1, KC_BTN2, KC_BTN2, KC_BTN1, DPI_FINE
++    RGB_TOG,          KC_NO,   KC_NO,   DPI_DN,              DPI_UP,
++    LGUI(KC_DOWN),                                           LCA(KC_TAB),
++    KC_WBAK,                                                 KC_WH_U,
++    KC_WHOM,          KC_BTN1, KC_BTN2, KC_WH_L, KC_WH_R,    KC_WH_D
+     ),
+     [_FN1] = LAYOUT(
+     RGB_TOG, KC_TRNS, KC_TRNS, KC_TRNS,          RESET,
+@@ -57,4 +57,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+     KC_TRNS,                                     KC_TRNS,
+     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+     )
+-};
+\ No newline at end of file
++};
+diff --git a/keyboards/mechwild/puckbuddy/puckbuddy.c b/keyboards/mechwild/puckbuddy/puckbuddy.c
+index 6a8df58655..6f68f3bf1e 100644
+--- a/keyboards/mechwild/puckbuddy/puckbuddy.c
++++ b/keyboards/mechwild/puckbuddy/puckbuddy.c
+@@ -7,11 +7,11 @@
+ #    define GLIDEPOINT_DPI_OPTIONS \
+         { 400, 800, 1200, 1600, 2000, 2400, 2800, 3200, 3600, 4000 }
+ #    ifndef GLIDEPOINT_DPI_DEFAULT
+-#        define GLIDEPOINT_DPI_DEFAULT 1
++#        define GLIDEPOINT_DPI_DEFAULT 3
+ #    endif
+ #endif
+ #ifndef GLIDEPOINT_DPI_DEFAULT
+-#    define GLIDEPOINT_DPI_DEFAULT 1
++#    define GLIDEPOINT_DPI_DEFAULT 3
+ #endif
+ 
+ keyboard_config_t keyboard_config;
+@@ -132,7 +132,7 @@ bool oled_task_kb(void) {
+         }
+         led_t led_state = host_keyboard_led_state();
+         oled_set_cursor(8,0);
+-        oled_write_P(led_state.scroll_lock ? PSTR("SCRLK") : PSTR("     "), false);
++        oled_write_P(led_state.scroll_lock ? PSTR("SCRLK") : PSTR("uf2  "), false);
+         oled_set_cursor(8,1);
+         oled_write_P(led_state.num_lock ? PSTR("NLCK ") : PSTR("     "), false);
+         oled_write_P(led_state.caps_lock ? PSTR("CAPS ") : PSTR("     "), false);
+@@ -202,4 +202,4 @@ void keyboard_post_init_kb(void) {
+     keyboard_post_init_user();
+     rgblight_toggle_noeeprom();     //double toggle post init removes the weirdness with rgb strips having a yellow first LED
+     rgblight_toggle_noeeprom();
+-}
+\ No newline at end of file
++}
+diff --git a/keyboards/mechwild/puckbuddy/rules.mk b/keyboards/mechwild/puckbuddy/rules.mk
+index d9b8e45488..3d5a6caf57 100644
+--- a/keyboards/mechwild/puckbuddy/rules.mk
++++ b/keyboards/mechwild/puckbuddy/rules.mk
+@@ -2,7 +2,7 @@
+ MCU = STM32F401
+ 
+ # Bootloader selection
+-BOOTLOADER = stm32-dfu
++BOOTLOADER = tinyuf2
+ 
+ # Build Options
+ #   change yes to no to disable
+@@ -22,4 +22,4 @@ OLED_DRIVER = SSD1306       # OLED Driver
+ DIP_SWITCH_ENABLE = yes     # Dip Switch Enabled
+ 
+ POINTING_DEVICE_ENABLE = yes                    # Pointing Device Enabled
+-POINTING_DEVICE_DRIVER = cirque_pinnacle_spi    # Pointing Device Driver
+\ No newline at end of file
++POINTING_DEVICE_DRIVER = cirque_pinnacle_spi    # Pointing Device Driver
