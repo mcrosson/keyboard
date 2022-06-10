@@ -73,7 +73,7 @@ index bb5313fcb2..643fdb2818 100644
 \ No newline at end of file
 +};
 diff --git a/keyboards/mechwild/puckbuddy/puckbuddy.c b/keyboards/mechwild/puckbuddy/puckbuddy.c
-index 65e939166d..eeb5e20db3 100644
+index 65e939166d..7ed54625a0 100644
 --- a/keyboards/mechwild/puckbuddy/puckbuddy.c
 +++ b/keyboards/mechwild/puckbuddy/puckbuddy.c
 @@ -6,12 +6,6 @@
@@ -103,7 +103,7 @@ index 65e939166d..eeb5e20db3 100644
          led_t led_state = host_keyboard_led_state();
          oled_set_cursor(8,0);
 -        oled_write_P(led_state.scroll_lock ? PSTR("SCRLK") : PSTR("     "), false);
-+        oled_write_P(led_state.scroll_lock ? PSTR("SCRLK") : PSTR("uf2  "), false);
++        oled_write_P(PSTR("uf2/2"), false);
          oled_set_cursor(8,1);
          oled_write_P(led_state.num_lock ? PSTR("NLCK ") : PSTR("     "), false);
          oled_write_P(led_state.caps_lock ? PSTR("CAPS ") : PSTR("     "), false);
