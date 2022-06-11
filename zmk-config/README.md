@@ -42,7 +42,7 @@ west build --board nice_nano_v2 -d /workspaces/zmk/app/build/tidbit -- -DSHIELD=
 
 west build --board nice_nano -d /workspaces/zmk/app/build/the_paintbrush_left -- -DSHIELD=the_paintbrush_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
 
-west build --board nice_nano_v2 -d /workspaces/zmk/app/build/the_paintbrush_left_nn_v2 -- -DSHIELD=the_paintbrush_left -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
+west build --board nice_nano_v2 -d /workspaces/zmk/app/build/the_paintbrush_left_nn_v2 -- -DSHIELD=the_paintbrush_left -DZMK_CONFIG=/workspaces/zmk-ardux/config
 
 west build --board nice_nano -d /workspaces/zmk/app/build/the_paintbrush_right -- -DSHIELD=the_paintbrush_right -DZMK_CONFIG=/workspaces/zmk-config/zmk-artsey/config
 
