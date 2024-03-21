@@ -1,0 +1,6 @@
+// Copyright (c) 2021 Mike "KemoNine" Crosson
+// SPDX-License-Identifier: Apache-2.0
+
+//   NAME                            RESULT                         TRIGGER
+COMB(combo_period,                   KC_DOT,                        KC_1, KC_5)
+COMB(combo_comma,                    KC_COMM,                       KC_1, KC_6)
