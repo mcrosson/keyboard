@@ -4,10 +4,22 @@
 
 #define ARDUX_STD_LAYER_CUS_LEFT \
 STD_LEADING_NONES \
-KC_NO,            KC_VOLU,          KC_WWW_HOME,        KC_WWW_BACK, \
+KC_PSCR,            KC_VOLU,          KC_WWW_HOME,        KC_WWW_BACK, \
 STD_BETWEEN_ROW_ONE_TWO_NONES \
 KC_TRNS,          KC_VOLD,          KC_WWW_SEARCH,      KC_MUTE      \
 STD_TRAILING_NONES
+
+#define ARDUX_BIG_LAYER_CUS_LEFT \
+BIG_LEADING_NONES \
+KC_PSCR,            KC_VOLU,          KC_WWW_HOME,           KC_WWW_BACK,          KC_NO,            \
+BIG_BETWEEN_ROW_ONE_TWO_NONES \
+KC_TRNS,          KC_VOLD,          KC_WWW_SEARCH,          KC_MUTE,          KC_NO,            \
+BIG_BETWEEN_ROW_TWO_THREE_NONES \
+KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,            \
+BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
+ARDUX_BIG_LAYER_CUS_LEFT_THUMBS \
+BIG_TRAILING_NONES
+#endif
 
 // Copy of needed defines from layers.h
 #ifndef ARDUX_BIG_LAYER_NUM_LEFT
