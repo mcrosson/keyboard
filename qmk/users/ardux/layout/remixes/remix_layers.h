@@ -2,12 +2,25 @@
 // SPDX-License-Identifier: Apache-2.0
 #pragma once
 
+//////////
+// std ardux custom layer
 #define ARDUX_STD_LAYER_CUS_LEFT \
 STD_LEADING_NONES \
 KC_PSCR,            KC_VOLU,          KC_WWW_HOME,        KC_WWW_BACK, \
 STD_BETWEEN_ROW_ONE_TWO_NONES \
 KC_TRNS,          KC_VOLD,          KC_WWW_SEARCH,      KC_MUTE      \
 STD_TRAILING_NONES
+
+//////////
+// big ardux custom layer
+#ifndef ARDUX_BIG_LAYER_CUS_LEFT
+#ifdef ARDUX_TWO_THUMB
+#define ARDUX_BIG_LAYER_CUS_LEFT_THUMBS KC_NO, KC_NO
+#endif
+#ifndef ARDUX_TWO_THUMB
+#define ARDUX_BIG_LAYER_CUS_LEFT_THUMBS KC_NO, KC_NO, KC_NO
+#endif
+#endif
 
 #define ARDUX_BIG_LAYER_CUS_LEFT \
 BIG_LEADING_NONES \
@@ -19,9 +32,9 @@ KC_NO,            KC_NO,            KC_NO,            KC_NO,            KC_NO,  
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
 ARDUX_BIG_LAYER_CUS_LEFT_THUMBS \
 BIG_TRAILING_NONES
-#endif
 
-// Copy of needed defines from layers.h
+//////////
+// big ardux number layer
 #ifndef ARDUX_BIG_LAYER_NUM_LEFT
 #ifdef ARDUX_TWO_THUMB
 #define ARDUX_BIG_LAYER_NUM_LEFT_THUMBS KC_UNDS, KC_SPACE
@@ -41,3 +54,12 @@ KC_NO,            KC_NO,            KC_NO,            KC_TAB,            KC_COLO
 BIG_BETWEEN_ROW_THREE_THUMBS_NONES \
 ARDUX_BIG_LAYER_NUM_LEFT_THUMBS \
 BIG_TRAILING_NONES
+
+//////////
+// big ardux mouse layer
+#define ARDUX_BIG_LAYER_MSE_LEFT_THUMBS
+#define ARDUX_BIG_LAYER_MSE_LEFT \
+KC_NO, KMSE_T4, KMSE_T3, KMSE_T2, KMSE_T1, KC_NO,        KC_NO, KMSE_T1, KMSE_T2,  KMSE_T3, KMSE_T4, KC_NO, \
+KC_NO, KMSE_B4, KMSE_B3, KMSE_B2, KMSE_B1, KC_NO,        KC_NO, KMSE_B3, KMSE_B2,  KMSE_B1, KMSE_B4, KC_NO, \
+KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,        KC_NO, KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO, \
+                         KC_NO,   KC_NO,   KC_NO,        KC_NO, KC_NO, KC_NO
