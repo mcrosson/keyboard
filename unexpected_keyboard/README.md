@@ -32,6 +32,8 @@ To use these layouts you can copy/paste the contents of the `xml` files into the
 - F11
 - F12
 
+**General Settings**
+
 - Disable `Show number row`
 - `Show NumPad` set to `Never`
 - `NumPad layout` set to `Low digits first`
