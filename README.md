@@ -8,6 +8,7 @@ Various sources and information on how KemoNine has setup their keyboards, mice 
 - The ```hardware``` folder contains useful hardware
 - The ```layouts``` folder has [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/) json and image files for keymaps in use
 - The ```notes``` folder has various notes KemoNine has taken while working on this code
+- The ```unexpected_keyboard``` folder includes layouts for the Unexpected Keyboard app on Android
 - The ```qmk``` folder has KemoNine's QMK changes and personalization
 - The ```zmk-config``` folder has KemoNine's ZMK changes and personalization
 - Other folders are keyboard related sources, keymaps and ohter information

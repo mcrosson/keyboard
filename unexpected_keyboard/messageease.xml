@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This file defines the KmN messagease layout.
+
+A layout is made of keys arranged into rows. Keys can be made bigger with the
+'width' attribute and blank space can be added on the left of a key with the
+'shift' attribute.
+
+old method:
+'key0' assigns the symbol on the middle of the key. 'key1', 'key2', etc..
+assign symbols to the corners of a key, they are arranged like this:
+
+  1 7 2
+  5 0 6
+  3 8 4
+
+new method
+  nw  n   ne
+  w  key0 e
+  sw  s   se
+
+Keys prefixed with 'loc ' are not visible on the keyboard. They are used to
+specify a place for a key, if it needed to be added to the layout later.
+(for example, by the "Add keys to keyboard" option)
+
+-->
+<keyboard bottom_row="false" name="KmN MessagEase">
+  <row>
+    <key indication="" anticircle="1" key0="a" key1="(" key4="v" key5="[" key7="\\"/>
+    <key indication="" anticircle="2" key0="n" key1="~" key2="&amp;" key7="_" key8="l"/>
+    <key indication="" anticircle="3" key0="i" key2=")" key3="x" key6="]" key7="/"/>
+    <key key0="fn" key1="copy" key2="cut" key5="undo" key6="redo" key7="selectAll" key8="paste"/>
+  </row>
+  <row>
+    <key indication="" anticircle="4" key0="h" key1="`" key5="&lt;" key6="k" key7="%" key8="\@"/>
+    <key indication="" anticircle="5" key0="o" key1="q" key2="p" key3="g" key4="j" key5="c" key6="b" key7="u" key8="d"/>
+    <key indication="" anticircle="6" key0="r" key2="#" key5="m" key6=">" key7="shift" key8="ctrl"/>
+    <key key0="switch_numeric" key1="alt" key5="loc meta" key2="loc change_method" key3="switch_emoji" key4="config"/>
+  </row>
+  <row>
+    <key indication="" anticircle="7" key0="t" key1="'" key2="y" key3=";" key4="\?" key5="^" key7="$" key8="+"/>
+    <key indication="" anticircle="8" key0="e" key3="," key4="." key5="=" key6="z" key7="w" key8="-"/>
+    <key indication="" anticircle="9" key0="s" key1="f" key2="&quot;" key3="!" key4=":" key6="tab" key7="€" key8="*"/>
+    <key key0="backspace" key2="delete"/>
+  </row>
+  <row>
+    <key key0="loc compose" key1="loc home" key2="loc page_up" key3="loc end" key4="loc page_down" key5="left" key6="right" key7="up" key8="down"/>
+    <key indication="" anticircle="0" width="2" key0="space"/>
+    <key key0="enter" key1="loc voice_typing" key2="action" key3="switch_forward" key4="switch_backward"/>
+  </row>
+</keyboard>
