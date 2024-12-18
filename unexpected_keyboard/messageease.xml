@@ -25,20 +25,20 @@ specify a place for a key, if it needed to be added to the layout later.
 -->
 <keyboard bottom_row="false" name="KmN MessagEase">
   <row>
-    <key indication="" anticircle="1" key0="a" key1="(" key4="v" key5="[" key7="\\"/>
-    <key indication="" anticircle="2" key0="n" key1="~" key2="&amp;" key7="_" key8="l"/>
-    <key indication="" anticircle="3" key0="i" key2=")" key3="x" key6="]" key7="/"/>
+    <key indication="" anticircle="1" key0="a" key1="(" key3="{" key4="v" key5="[" key7="\\"/>
+    <key indication="" anticircle="2" key0="n" key1="~" key2="&amp;" key7="-" key8="l"/>
+    <key indication="" anticircle="3" key0="i" key2=")" key3="x" key4="}" key6="]" key7="/"/>
     <key key0="fn" key1="copy" key2="cut" key5="undo" key6="redo" key7="selectAll" key8="paste"/>
   </row>
   <row>
-    <key indication="" anticircle="4" key0="h" key1="`" key5="&lt;" key6="k" key7="%" key8="\@"/>
+    <key indication="" anticircle="4" key0="h" key1="`" key4="\@" key5="&lt;" key6="k" key7="%" key8="esc"/>
     <key indication="" anticircle="5" key0="o" key1="q" key2="p" key3="g" key4="j" key5="c" key6="b" key7="u" key8="d"/>
-    <key indication="" anticircle="6" key0="r" key2="#" key5="m" key6=">" key7="shift" key8="ctrl"/>
+    <key indication="" anticircle="6" key0="r" key2="#" key3="|" key5="m" key6=">" key7="shift" key8="ctrl"/>
     <key key0="switch_numeric" key1="alt" key5="loc meta" key2="loc change_method" key3="switch_emoji" key4="config"/>
   </row>
   <row>
     <key indication="" anticircle="7" key0="t" key1="'" key2="y" key3=";" key4="\?" key5="^" key7="$" key8="+"/>
-    <key indication="" anticircle="8" key0="e" key3="," key4="." key5="=" key6="z" key7="w" key8="-"/>
+    <key indication="" anticircle="8" key0="e" key3="," key4="." key5="=" key6="z" key7="w" key8="_"/>
     <key indication="" anticircle="9" key0="s" key1="f" key2="&quot;" key3="!" key4=":" key6="tab" key7="€" key8="*"/>
     <key key0="backspace" key2="delete"/>
   </row>
