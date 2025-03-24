@@ -1,0 +1,57 @@
+[
+  [
+    "TO(0)\n\n\n\nKrita",
+    {
+      "x": 0.5,
+      "a": 7
+    },
+    "\n\n\n\nOLED",
+    "\n\n\n\nOLED",
+    "Ctl (J)\n\n\n\nTog Rib",
+    {
+      "x": 0.5
+    },
+    "Ctl (Y)\n\n\n\nRedo"
+  ],
+  [
+    {
+      "y": 0.25
+    },
+    "T\n\n\n\nTog GUI",
+    {
+      "x": 4
+    },
+    "DPI Up"
+  ],
+  [
+    {
+      "a": 5
+    },
+    "Mouse\nUp\n\n\nZoom In\n\nWheel",
+    {
+      "x": 4,
+      "a": 7
+    },
+    "DPI Down"
+  ],
+  [
+    {
+      "a": 5
+    },
+    "Mouse\nDown\n\n\nZoom Out\n\nWheel",
+    {
+      "x": 4,
+      "a": 7
+    },
+    "DPI Min\n\n\n\nHold"
+  ],
+  [
+    {
+      "x": 1
+    },
+    "Mouse 1\n\n\n\nPaint",
+    "Z (Down)\n\n\n\nNav Pop",
+    "Z (Up)\n\n\n\nNav Pop",
+    "T\n\n\n\nTog GUI"
+  ]
+]
