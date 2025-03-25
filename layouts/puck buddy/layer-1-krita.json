@@ -1,0 +1,57 @@
+[
+  [
+    {
+      "a": 7
+    },
+    "Ctrl (Z)\n\n\n\nUndo",
+    {
+      "x": 0.5
+    },
+    "\n\n\n\nOLED",
+    "\n\n\n\nOLED",
+    "Tab\n\n\n\nFull Scn",
+    {
+      "x": 0.5
+    },
+    "Ctl (Y)\n\n\n\nRedo"
+  ],
+  [
+    {
+      "y": 0.25,
+      "a": 5
+    },
+    "Mouse\nUp\n\n\nZm In\n\nWheel",
+    {
+      "x": 4,
+      "a": 7
+    },
+    "DPI Up"
+  ],
+  [
+    "Ctl (Enter\n\n\n\nPopPalt",
+    {
+      "x": 4
+    },
+    "DPI Min\n\n\n\n(Hold)"
+  ],
+  [
+    {
+      "a": 5
+    },
+    "Mouse\nDown\n\n\nZm Out\n\nWheel",
+    {
+      "x": 4,
+      "a": 7
+    },
+    "DPI Down"
+  ],
+  [
+    {
+      "x": 1
+    },
+    "Mouse 2\n\n\n\nPan",
+    "Mouse 3\n\n\n\nRotate",
+    "",
+    "Ctl (Enter)\n\n\n\nPop Palt"
+  ]
+]

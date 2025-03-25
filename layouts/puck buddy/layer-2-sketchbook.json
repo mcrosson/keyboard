@@ -3,13 +3,13 @@
     {
       "a": 7
     },
-    "TO(1)\n\n\n\nSktchBk",
+    "Ctl (Z)\n\n\n\nUndo",
     {
       "x": 0.5
     },
     "\n\n\n\nOLED",
     "\n\n\n\nOLED",
-    "Tab\n\n\n\nFull Scn",
+    "Ctl (J)\n\n\n\nTog Rib",
     {
       "x": 0.5
     },
@@ -17,16 +17,7 @@
   ],
   [
     {
-      "y": 0.25
-    },
-    "Ctl (Enter)\n\n\n\nPopPalt",
-    {
-      "x": 4
-    },
-    "DPI Up"
-  ],
-  [
-    {
+      "y": 0.25,
       "a": 5
     },
     "Mouse\nUp\n\n\nZm In\n\nWheel",
@@ -34,7 +25,14 @@
       "x": 4,
       "a": 7
     },
-    "DPI Dn"
+    "DPI Up"
+  ],
+  [
+    "T\n\n\n\nTog GUI",
+    {
+      "x": 4
+    },
+    "DPI Min\n\n\n\n(Hold)"
   ],
   [
     {
@@ -45,15 +43,15 @@
       "x": 4,
       "a": 7
     },
-    "DPI Min\n\n\n\n(Hold)"
+    "DPI Down"
   ],
   [
     {
       "x": 1
     },
-    "Mouse 2\n\n\n\nPan",
-    "Mouse 3\n\n\n\nRotate",
-    "",
-    "Ctl (Enter)\n\n\n\nPop Palt"
+    "Mouse 1\n\n\n\nPaint",
+    "Z (Down)\n\n\n\nNav On",
+    "Z (Up)\n\n\n\nNav Off",
+    "T\n\n\n\nTog GUI"
   ]
 ]

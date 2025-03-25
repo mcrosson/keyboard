@@ -1,0 +1,55 @@
+[
+  [
+    {
+      "a": 7
+    },
+    "Ctl (Z)\n\n\n\nUndo",
+    {
+      "x": 0.5
+    },
+    "\n\n\n\nOLED",
+    "\n\n\n\nOLED",
+    "",
+    {
+      "x": 0.5
+    },
+    "Ctl (Y)\n\n\n\nRedo"
+  ],
+  [
+    {
+      "y": 0.25
+    },
+    "DPI Up",
+    {
+      "x": 4
+    },
+    "Up\n\n\n\nNav Up"
+  ],
+  [
+    "DPI Min\n\n\n\n(Hold)",
+    {
+      "x": 4
+    },
+    "Ctl (E)\n\n\n\nEraser"
+  ],
+  [
+    "DPI Down",
+    {
+      "x": 4
+    },
+    "Down\n\n\n\nNav"
+  ],
+  [
+    {
+      "x": 1,
+      "a": 5
+    },
+    "Mouse\nDown\n\n\nZm Out\n\nWheel",
+    "Mouse\nUp\n\n\nZm In\n\nWheel",
+    {
+      "a": 7
+    },
+    "Ctl (C)\n\n\n\nColor",
+    "Ctl (F)\n\n\n\nTog Pen"
+  ]
+]
