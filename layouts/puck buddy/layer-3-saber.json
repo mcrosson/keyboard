@@ -21,11 +21,17 @@
     },
     "DPI Up",
     {
-      "x": 4
+      "x": 4,
+      "a": 5,
+      "f": 2
     },
-    "Up\n\n\n\nNav Up"
+    "Ms W Up\nUp\n\n\nZm/Nav"
   ],
   [
+    {
+      "a": 7,
+      "f": 3
+    },
     "DPI Min\n\n\n\n(Hold)",
     {
       "x": 4
@@ -35,20 +41,20 @@
   [
     "DPI Down",
     {
-      "x": 4
+      "x": 4,
+      "a": 5,
+      "f": 2
     },
-    "Down\n\n\n\nNav"
+    "Ms W Dn\nDown\n\n\nZm/Nav"
   ],
   [
     {
       "x": 1,
-      "a": 5
+      "a": 7,
+      "f": 3
     },
-    "Mouse\nDown\n\n\nZm Out\n\nWheel",
-    "Mouse\nUp\n\n\nZm In\n\nWheel",
-    {
-      "a": 7
-    },
+    "",
+    "",
     "Ctl (C)\n\n\n\nColor",
     "Ctl (F)\n\n\n\nTog Pen"
   ]
