@@ -1,0 +1,166 @@
+name: Build
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: qmkfm/qmk_cli
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - layout: ardux_thepaintbrush
+            hand: left
+            size: std
+            fwext: hex
+            args: "-e ARDUX_REMIX=yes"
+          - layout: ardux_thepaintbrush
+            hand: right
+            size: std
+            fwext: hex
+            args: "-e ARDUX_REMIX=yes"
+          - layout: ardux_thepaintbrush
+            hand: left
+            size: std
+            fwext: uf2
+            args: "-e CONVERT_TO=promicro_rp2040 -e ARDUX_REMIX=yes"
+          - layout: ardux_thepaintbrush
+            hand: right
+            size: std
+            fwext: uf2
+            args: "-e CONVERT_TO=promicro_rp2040 -e ARDUX_REMIX=yes"
+          - layout: crkbd_rev1
+            hand: left
+            size: big
+            fwext: hex
+            args: "-e ARDUX_REMIX=yes"
+          - layout: crkbd_rev1
+            hand: right
+            size: big
+            fwext: hex
+            args: "-e ARDUX_REMIX=yes"
+          - layout: crkbd_rev1_40p
+            hand: left
+            size: 40p
+            fwext: hex
+            args: "-e ARDUX_REMIX=yes"
+          - layout: crkbd_rev1_40p
+            hand: right
+            size: 40p
+            fwext: hex
+            args: "-e ARDUX_REMIX=yes"
+          - layout: crkbd_rev1_40p
+            hand: left
+            size: 40p
+            fwext: uf2
+            args: "-e ARDUX_REMIX=yes -e OLED_ENABLE=no -e ARDUX_LAYER_UNDERGLOW=yes -e ARDUX_LAYER_UNDERGLOW_ONLY_PRIMARY=yes -e CONVERT_TO=kb2040"
+          - layout: crkbd_rev1_40p
+            hand: right
+            size: 40p
+            fwext: uf2
+            args: "-e ARDUX_REMIX=yes -e OLED_ENABLE=no -e ARDUX_LAYER_UNDERGLOW=yes -e ARDUX_LAYER_UNDERGLOW_ONLY_PRIMARY=yes -e CONVERT_TO=kb2040"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cache - QMK Source
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-qmk_firmware
+        with:
+          path: /qmk_firmware
+          key: ${{ env.cache-name }}-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}
+      - name: Update QMK Sources
+        run: |
+            if [ -d /qmk_firmware/.git ]; 
+            then 
+                echo "ignoring qmk updates as we are on a disconnected head"
+            else 
+                git clone --branch 0.18.5 https://github.com/qmk/qmk_firmware.git /qmk_firmware/; 
+            fi
+            if [ ! -d /qmk_firmware/keyboards/ardux ];
+            then
+                ln -s "${GITHUB_WORKSPACE}/keyboards/ardux" /qmk_firmware/keyboards/ardux;
+                echo "Created keyboards/ardux symlink";
+            fi
+            if [ ! -d /qmk_firmware/keyboards/faunchpad ];
+            then
+                ln -s "${GITHUB_WORKSPACE}/keyboards/faunchpad" /qmk_firmware/keyboards/faunchpad;
+                echo "Created keyboards/faunchpad symlink";
+            fi
+            if [ ! -d /qmk_firmware/users/ardux ];
+            then
+                ln -s "${GITHUB_WORKSPACE}/users/ardux" /qmk_firmware/users/ardux;
+                echo "Created users/ardux symlink";
+            fi
+            /usr/bin/python3 -m pip install -r /qmk_firmware/requirements.txt;
+            qmk setup -y;
+      - name: QMK Clean
+        run: qmk clean
+      - name: QMK Build
+        run: |
+            cd /qmk_firmware/users/ardux
+            qmk compile -e ALLOW_WARNINGS=yes -e ARDUX_SIZE=${{ matrix.size }} -e ARDUX_HAND=${{ matrix.hand }} ${{ matrix.args }} layout/${{ matrix.layout }}.json
+      - name: Debug - ls build artifact folder
+        run: ls /qmk_firmware/.build
+      - name: Prep artifacts
+        shell: bash
+        run: |
+            ls /qmk_firmware/.build/ ;
+            if [[ "${{ matrix.layout }}" =~ .*_40p$ ]];
+            then
+              layout="${{ matrix.layout }}"
+              base=${layout/%_40p}
+              cp /qmk_firmware/.build/${base}_ardux.${{ matrix.fwext }} /qmk_firmware/.build/ardux-${{ matrix.layout}}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }}
+            else
+              cp /qmk_firmware/.build/${{ matrix.layout }}_ardux.${{ matrix.fwext }} /qmk_firmware/.build/ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }}
+            fi
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: "ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }}"
+          path: "/qmk_firmware/.build/ardux-${{ matrix.layout }}-${{ matrix.size }}-${{ matrix.hand }}.${{ matrix.fwext }}"
+          if-no-files-found: error
+          retention-days: 14
+  release:
+    runs-on: ubuntu-latest
+    name: Create Release
+    needs: build
+    if: ${{ !github.event.pull_request.head.repo.fork }}
+    steps:
+      - name: Get current date/time
+        id: date
+        run: echo "date=$(date +'%Y%m%d-%H%M')" >>$GITHUB_OUTPUT
+      - name: Generate release text
+        id: release_text
+        run: >
+          echo "release_text=$(echo '<b>Precompiled firmware files for ARDUX</b><br><br>
+          Download a firmware file by expanding "Assets", right clicking, and choosing "Save File As" or "Save Link As".
+          <br>${{ github.event.inputs.releaseBody }}
+          <br>Released on ${{ steps.date.outputs.date }}.
+          <br><br>${{ steps.docker_build.outputs.commits }}')" >>$GITHUB_OUTPUT
+      - name: Download build artifacts for release
+        uses: actions/download-artifact@v4
+        with:
+          path: release
+      - name: List files to include in release
+        if: always()
+        run: ls -R release/
+      - name: Create firmware files directory for individual board assets
+        if: always()
+        run: mkdir fwfiles
+      - name: cp all firmware files for release to one output dir
+        if: always()
+        run: cd release && for folder in ./*; do echo $folder; cp ${folder}/*.* ../fwfiles/; done && cd ..
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "fwfiles/*"
+          allowUpdates: false
+          artifactErrorsFailBuild: true
+          commit: main
+          tag: ${{ steps.date.outputs.date }}
+          body: ${{ steps.release_text.outputs.release_text }}
+          name: ${{ steps.date.outputs.date }}
+          token: ${{ secrets.GITHUB_TOKEN }}

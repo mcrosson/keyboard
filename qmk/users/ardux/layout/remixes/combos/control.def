@@ -1,5 +1,6 @@
-w// Copyright (c) 2021 Mike "KemoNine" Crosson
+// Copyright (c) 2021 Mike "KemoNine" Crosson
 // SPDX-License-Identifier: Apache-2.0
 
 //   NAME                            RESULT                         TRIGGER
 COMB(combo_kmn_base_altf4,           LALT(KC_F4),                   KC_LBRC, KC_RBRC)
+COMB(combo_kmn_base_ctlw,            LCTL(KC_W),                    KC_HOME, KC_UP)
