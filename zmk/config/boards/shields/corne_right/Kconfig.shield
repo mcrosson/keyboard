@@ -1,0 +1,5 @@
+# Copyright (c) 2021 Mike "KemoNine" Crosson
+# SPDX-License-Identifier: MIT
+
+config SHIELD_CORNE_5_COL_ARDUX_RIGHT_BIG
+	def_bool $(shields_list_contains,corne_5_col_ardux_right_big)

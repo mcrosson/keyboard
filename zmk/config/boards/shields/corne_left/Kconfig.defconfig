@@ -1,0 +1,12 @@
+if SHIELD_CORNE_ARDUX_LEFT || SHIELD_CORNE_5_COL_ARDUX_LEFT || SHIELD_CORNE_5_COL_ARDUX_LEFT_BIG
+
+config ZMK_KEYBOARD_NAME
+	default "ARDUX L"
+
+config I2C
+	default n
+
+config SSD1306
+	default n
+
+endif
