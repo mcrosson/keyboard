@@ -126,7 +126,7 @@
 #define TIMEOUT_COMBO_4 175
 #endif
 #if !defined TIMEOUT_LAYER_HOLD
-#define TIMEOUT_LAYER_HOLD 200
+#define TIMEOUT_LAYER_HOLD 175
 #endif
 #if !defined TIMEOUT_STICKY_LEADER_KEY
 #define TIMEOUT_STICKY_LEADER_KEY 5000
@@ -334,7 +334,7 @@
 				BIG_BETWEEN_ROW_TWO_THREE_NONES
 				&kp TAB              &kp EQUAL                                                         &kp DEL               &kp AT                &ctrl_alt_kp LALT LCTRL
 				BIG_BETWEEN_ROW_THREE_THUMBS
-				&kp ENTER            &kp SPACE                                                         &mo LAYER_ID_BIG_SYM
+				&kp SPACE            &kp SPACE                                                         &mo LAYER_ID_BIG_SYM
 				BIG_TRAILING_NONES
 			>;
 		};

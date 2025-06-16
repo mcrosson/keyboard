@@ -3,6 +3,13 @@
 #pragma once
 
 //////////
+// tweak right handed thumb so its 'space only' given ive only ever used my right thumb for space
+//    i keep tapping enter by accident and its pissing me off
+#ifndef ARDUX_TWO_THUMB
+#define ARDUX_BIG_LAYER_BASE_RIGHT_THUMBS KC_SPC, KC_SPC, MO(LAYER_ID_BIG_SYM)
+#endif
+
+//////////
 // std ardux custom layer
 #define ARDUX_STD_LAYER_CUS_LEFT \
 STD_LEADING_NONES \
