@@ -3,4 +3,5 @@
 
 //   NAME                            RESULT                         TRIGGER
 COMB(combo_kmn_base_altf4,           LALT(KC_F4),                   KC_LBRC, KC_RBRC)
-COMB(combo_kmn_base_ctlw,            LCTL(KC_W),                    KC_HOME, KC_UP)
+COMB(combo_kmn_base_ctlw_right_hand,            LCTL(KC_W),                    KC_HOME, KC_UP)
+COMB(combo_kmn_base_ctlw_left_hand,            LCTL(KC_W),                    KC_END, KC_UP)
