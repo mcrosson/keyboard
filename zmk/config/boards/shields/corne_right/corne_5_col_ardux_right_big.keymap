@@ -25,6 +25,9 @@
 // Big ardux F1-12 layer keys for combo
 #define KEY_F_TOP 0
 #define KEY_F_BOTTOM 5
+// Alt-F4 combo key positions
+#define KEY_ALT_F4_1 11
+#define KEY_ALT_F4_2 12
 
 // Define Offsets
 #define LEADING_NONES NONE(0,0,1)
