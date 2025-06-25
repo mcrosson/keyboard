@@ -10,6 +10,7 @@ Various sources and information on how KemoNine has setup their keyboards, mice 
 - The ```notes``` folder has various notes KemoNine has taken while working on this code
 - The ```unexpected_keyboard``` folder includes layouts for the Unexpected Keyboard app on Android
 - The ```qmk``` folder has KemoNine's QMK changes and personalization
+- The ```zmk``` folder has KemoNine's ZMK ardux remix
 - Other folders are keyboard related sources, keymaps and ohter information
 
 ## Licensing
