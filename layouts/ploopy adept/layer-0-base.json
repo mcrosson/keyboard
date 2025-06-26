@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Base"
+  },
+  [
+    {
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macropad - Combo Key 1\n\n\n\n\nTo Righty  - Combo Key 1",
+    {
+      "a": 7,
+      "w": 2,
+      "h": 2
+    },
+    "QMK Boot - Combo Key 1",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "QMK Boot - Combo Key 2",
+    {
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macropad - Combo Key 2\n\n\n\n\nTo Lefty - Combo Key 1"
+  ],
+  [
+    {
+      "y": 2,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macropad - Combo Key 3\n\n\n\n\nTo Righty  - Combo Key 2",
+    {
+      "x": 4,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macropad - Combo Key 4\n\n\n\n\nTo Lefty - Combo Key 2"
+  ]
+]

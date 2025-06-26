@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Macropad - Base"
+  },
+  [
+    {
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Saber - Combo 1 - Key 1\n\n\n\n\nTo Krita",
+    {
+      "a": 7,
+      "w": 2,
+      "h": 2
+    },
+    "To Base",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "To Base",
+    {
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Saber - Combo 2 - Key 1\n\n\n\n\nTo Krita"
+  ],
+  [
+    {
+      "y": 2,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Saber - Combo 1 - Key 2\n\n\n\n\nTo Sketchbook",
+    {
+      "x": 4,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Saber - Combo 2 - Key 2\n\n\n\n\nTo Sketchbook"
+  ]
+]

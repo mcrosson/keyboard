@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Right"
+  },
+  [
+    {
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "Hold - Wheel Toggle - U/D/L/R\nTo Base - Combo Key 1\n\n\n\n\nM3",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Hold - Wheel Left\nCTL-T - Combo Key 1\n\n\n\n\nWheel Up",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "Hold - Wheel Right\nCTL-T - Combo Key 2\n\n\n\n\nWheel Down",
+    {
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Lefty - Combo Key 1\n\n\n\n\nM2"
+  ],
+  [
+    {
+      "y": 2,
+      "w": 2,
+      "h": 3
+    },
+    "Hold - Wheel - U/D/L/R\nTo Base - Combo Key 2\n\n\n\n\nM1",
+    {
+      "x": 4,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Lefty - Combo Key 2\n\n\n\n\nGUI Down"
+  ]
+]

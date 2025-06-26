@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Macropad - Krita"
+  },
+  [
+    {
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macro Base - Combo Key 1\n\n\n\n\nCTL(Y) - Redo",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "\nHold - Up\n\n\n\n\nWheel Up - Zoom In",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "\nHold - Down\n\n\n\n\nWheel Down - Zm Out",
+    {
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macro Base - Combo Key 2\n\n\n\n\nCTL(Z) - Undo"
+  ],
+  [
+    {
+      "y": 2,
+      "w": 2,
+      "h": 3
+    },
+    "Double Tap - CTL(Enter) - Pop Palt\n\n\n\n\n\nM2 - Pan",
+    {
+      "x": 4,
+      "w": 2,
+      "h": 3
+    },
+    "Double Tap - Tab - Full Screen\n\n\n\n\n\nM3 - Rotate"
+  ]
+]

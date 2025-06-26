@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Macropad - Saber"
+  },
+  [
+    {
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macro Base - Combo Key 1\n\n\n\n\nCTL(Z) - Undo",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "\nHold - Down\n\n\nZoom / Nav\n\nWheel Down",
+    {
+      "w": 2,
+      "h": 2
+    },
+    "\nHold - Up\n\n\nZoom / Nav\n\nWheel Up",
+    {
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macro Base - Combo Key 2\n\n\n\n\nCTL(Y) - Redo"
+  ],
+  [
+    {
+      "y": 2,
+      "a": 7,
+      "w": 2,
+      "h": 3
+    },
+    "CTL(C) - Color",
+    {
+      "x": 4,
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "Double Tap - CTL(E) - Tog Eraser\n\n\n\n\n\nCTL(F) - Tog Pen"
+  ]
+]
