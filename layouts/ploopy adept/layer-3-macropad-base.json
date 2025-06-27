@@ -4,14 +4,13 @@
   },
   [
     {
-      "a": 5,
-      "w": 2,
-      "h": 3
-    },
-    "\nTo Saber - Combo 1 - Key 1\n\n\nTD(14)\n\nTo Krita",
-    {
       "a": 7,
       "w": 2,
+      "h": 3
+    },
+    "To Krita",
+    {
+      "w": 2,
       "h": 2
     },
     "To Base",
@@ -21,35 +20,34 @@
     },
     "To Base",
     {
-      "a": 5,
       "w": 2,
       "h": 3
     },
-    "\nTo Saber - Combo 2 - Key 1\n\n\nTD(14)\n\nTo Krita"
+    "To Krita"
   ],
   [
     {
       "y": 1.5,
       "x": 2.5,
-      "a": 6,
+      "a": 4,
       "w": 3,
       "h": 3
     },
-    "C6: Saber"
+    "C12: To Saber - TO(4) + TO(5)\n\n\n\nAmbidexterous"
   ],
   [
     {
       "y": -0.5,
-      "a": 5,
+      "a": 7,
       "w": 2,
       "h": 3
     },
-    "\nTo Saber - Combo 1 - Key 2\n\n\nTD(15)\n\nTo Sketchbook",
+    "To Sketchbook",
     {
       "x": 4,
       "w": 2,
       "h": 3
     },
-    "\nTo Saber - Combo 2 - Key 2\n\n\nTD(15)\n\nTo Sketchbook"
+    "To Sketchbook"
   ]
 ]

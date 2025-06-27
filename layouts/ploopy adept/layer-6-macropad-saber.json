@@ -4,50 +4,53 @@
   },
   [
     {
+      "a": 7,
+      "w": 2,
+      "h": 3
+    },
+    "CTL(Z) - Undo",
+    {
       "a": 5,
       "w": 2,
-      "h": 3
+      "h": 2
     },
-    "\nTo Macro Base - Combo Key 1\n\n\nTD(24)\n\nCTL(Z) - Undo",
+    "T+H: Down\nZoom / Nav\n\n\nTD(10)\n\nWheel Down",
     {
       "w": 2,
       "h": 2
     },
-    "Hold: Down\nZoom / Nav\n\n\nTD(28)\n\nWheel Down",
+    "T+H: Up\nZoom / Nav\n\n\nTD(11)\n\nWheel Up",
     {
-      "w": 2,
-      "h": 2
-    },
-    "Hold: Up\nZoom / Nav\n\n\nTD(29)\n\nWheel Up",
-    {
+      "a": 7,
       "w": 2,
       "h": 3
     },
-    "\nTo Macro Base - Combo Key 2\n\n\nTD(26)\n\nCTL(Y) - Redo"
+    "CTL(Y) - Redo"
   ],
   [
     {
       "y": 1.5,
       "x": 2.5,
-      "a": 6,
+      "a": 4,
       "w": 3,
       "h": 3
     },
-    "C5: Macro"
+    "C15: To Macro Base - CTL(Z) + CTL(Y) + CTL(C) + TD(9)\n\n\n\nLeft Handed"
   ],
   [
     {
       "y": -0.5,
+      "a": 7,
+      "w": 2,
+      "h": 3
+    },
+    "CTL(C) - Color",
+    {
+      "x": 4,
       "a": 5,
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 3\n\n\nTD(25)\n\nCTL(C) - Color",
-    {
-      "x": 4,
-      "w": 2,
-      "h": 3
-    },
-    "Double Tap - CTL(E) - Tog Eraser\nTo Macropad - Combo Key 4\n\n\nTD(27)\n\nCTL(F) - Tog Pen"
+    "Double Tap - CTL(E) - Tog Eraser\n\n\n\nTD(9)\n\nCTL(F) - Tog Pen"
   ]
 ]

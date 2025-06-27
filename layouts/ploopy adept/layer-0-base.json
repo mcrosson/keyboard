@@ -4,13 +4,12 @@
   },
   [
     {
-      "a": 5,
+      "a": 7,
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 1\n\n\nTD(0)\n\nTo Righty  - Combo Key 1",
+    "To Righty  - Combo Key 1",
     {
-      "a": 7,
       "w": 2,
       "h": 2
     },
@@ -21,11 +20,10 @@
     },
     "QMK Boot - Combo Key 2",
     {
-      "a": 5,
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 2\n\n\nTD(2)\n\nTo Lefty - Combo Key 1"
+    "To Lefty - Combo Key 1"
   ],
   [
     {
@@ -35,21 +33,21 @@
       "w": 3,
       "h": 3
     },
-    "C1: Boot\n\nC4: Macro\n\n\n\nC2: Righty\nC3: Lefty"
+    "C1: Boot\nC7: To Macro - Righty + Lefty keys (all 4)\nC3: To Righty\n\nAmbidexterous\n\nC4: To Lefty"
   ],
   [
     {
       "y": -0.5,
-      "a": 5,
+      "a": 7,
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 3\n\n\nTD(1)\n\nTo Righty  - Combo Key 2",
+    "To Righty  - Combo Key 2",
     {
       "x": 4,
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 4\n\n\nTD(3)\n\nTo Lefty - Combo Key 2"
+    "To Lefty - Combo Key 2"
   ]
 ]

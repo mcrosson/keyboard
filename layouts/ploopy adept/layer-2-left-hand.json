@@ -8,46 +8,48 @@
       "w": 2,
       "h": 3
     },
-    "T+H: Wheel Left\nTo Righty - Combo Key 1\n\n\nTD(10)\n\nM2",
+    "T+H: Wheel Left\n\n\n\nTD(2)\n\nM2",
+    {
+      "a": 7,
+      "w": 2,
+      "h": 2
+    },
+    "Wheel Down\n\n\n\nTD(9)",
     {
       "w": 2,
       "h": 2
     },
-    "\nTp+Hd - G+C(T) - Combo Key 1\n\n\nTD(9)\n\nWheel Down",
+    "Wheel Up\n\n\n\nTD(8)",
     {
-      "w": 2,
-      "h": 2
-    },
-    "\nTp+Hd - G+C(T) - Combo Key 2\n\n\nTD(8)\n\nWheel Up",
-    {
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "T+H: Wheel Right\nTo Base - Combo Key 1\n\n\nTD(12)\n\nM3"
+    "T+H: Wheel Right\n\n\n\nTD(3)\n\nM3"
   ],
   [
     {
       "y": 1.5,
       "x": 2.5,
-      "a": 6,
+      "a": 4,
       "w": 3,
       "h": 3
     },
-    "C2: Base\n\nC3: Righty"
+    "C10: To Righty - TD(2) + GUI(Down)\n\n\n\nLeft Handed\n\nC11: To Base - TD(3) + M1"
   ],
   [
     {
       "y": -0.5,
-      "a": 5,
+      "a": 7,
       "w": 2,
       "h": 3
     },
-    "\nTo Righty - Combo Key 2\n\n\nTD(11)\n\nGUI Down",
+    "GUI Down",
     {
       "x": 4,
       "w": 2,
       "h": 3
     },
-    "\nTo Base - Combo Key 2\n\n\nTD(13)\n\nM1"
+    "M1"
   ]
 ]
