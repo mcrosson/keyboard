@@ -4,8 +4,22 @@
   "productId": "0x5442",
   "lighting": "none",
   "customKeycodes": [
-    {"name": "DPI Config", "title": "DPI Config", "shortName": "DPI"},
-    {"name": "Drag Scroll", "title": "Drag Scroll", "shortName": "Drag\nScrl"}
+    {"name": "Layer Boot Combo 1", "title": "Boot Layer Combo Key 1", "shortName": "Boot\nCmb 1"},
+    {"name": "Layer Boot Combo 2", "title": "Boot Layer Combo Key 2", "shortName": "Boot\nCmb 2"},
+    {"name": "Layer Base Combo 1", "title": "Base Layer Combo Key 1", "shortName": "Base\nCmb 1"},
+    {"name": "Layer Base Combo 2", "title": "Base Layer Combo Key 2", "shortName": "Base\nCmb 2"},
+    {"name": "Layer Right Combo 1", "title": "Right Layer Combo Key 1", "shortName": "Right\nCmb 1"},
+    {"name": "Layer Right Combo 2", "title": "Right Layer Combo Key 2", "shortName": "Right\nCmb 2"},
+    {"name": "Layer Left Combo 1", "title": "Left Layer Combo Key 1", "shortName": "Left\nCmb 1"},
+    {"name": "Layer Left Combo 2", "title": "Left Layer Combo Key 2", "shortName": "Left\nCmb 2"},
+    {"name": "Layer Macropad Combo 1", "title": "Macropad Layer Combo Key 1", "shortName": "McrPd\nCmb 1"},
+    {"name": "Layer Macropad Combo 2", "title": "Macropad Layer Combo Key 2", "shortName": "McrPd\nCmb 2"},
+    {"name": "Layer Macropad Combo 3", "title": "Macropad Layer Combo Key 3", "shortName": "McrPd\nCmb 3"},
+    {"name": "Layer Macropad Combo 4", "title": "Macropad Layer Combo Key 4", "shortName": "McrPd\nCmb 4"},
+    {"name": "Layer Saber Combo 1", "title": "Saber Combo Layer Key 1", "shortName": "Saber\nCmb 1"},
+    {"name": "Layer Saber Combo 2", "title": "Saber Combo Layer Key 2", "shortName": "Saber\nCmb 2"},
+    {"name": "GUI CTL T Combo 1", "title": "G+C(T) Combo Key 1", "shortName": "G+C(T)\nCmb 1"},
+    {"name": "GUI CTL T Combo 2", "title": "G+C(T) Combo Key 2", "shortName": "G+C(T)\nCmb 2"}
   ],
   "matrix": {"rows": 1, "cols": 6},
   "layouts": {

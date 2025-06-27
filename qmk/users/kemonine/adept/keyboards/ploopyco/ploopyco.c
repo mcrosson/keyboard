@@ -197,6 +197,27 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
 #endif
     }
 
+    // No Op custom key codes
+    if (keycode == BOOT_COMBO_1
+        || keycode == BOOT_COMBO_2
+        || keycode == LAYER_BASE_COMBO_1
+        || keycode == LAYER_BASE_COMBO_2
+        || keycode == LAYER_RIGHT_COMBO_1
+        || keycode == LAYER_RIGHT_COMBO_2
+        || keycode == LAYER_LEFT_COMBO_1
+        || keycode == LAYER_LEFT_COMBO_2
+        || keycode == LAYER_MACROPAD_COMBO_1
+        || keycode == LAYER_MACROPAD_COMBO_2
+        || keycode == LAYER_MACROPAD_COMBO_3
+        || keycode == LAYER_MACROPAD_COMBO_4
+        || keycode == LAYER_SABER_COMBO_1
+        || keycode == LAYER_SABER_COMBO_2
+        || keycode == GUI_CTL_T_COMBO_1
+        || keycode == GUI_CTL_T_COMBO_2
+    ) {
+        return false;
+    }
+
     return true;
 }
 

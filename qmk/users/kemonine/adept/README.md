@@ -39,3 +39,8 @@ qmk config user.overlay_dir="$(realpath .)"
 qmk userspace-list
 qmk compile -kb ploopyco/madromys/rev1_001 -km vial_kmn
 ```
+
+## Custom Keycodes
+
+- [Vial Docs](https://get.vial.today/docs/custom_keycode.html)
+- [QMK](https://github.com/qmk/qmk_firmware/blob/master/docs/custom_quantum_functions.md)

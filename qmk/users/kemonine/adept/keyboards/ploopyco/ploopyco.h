@@ -33,6 +33,22 @@ extern uint16_t          dpi_array[];
 enum ploopy_keycodes {
     DPI_CONFIG = QK_KB_0,
     DRAG_SCROLL,
+    BOOT_COMBO_1,
+    BOOT_COMBO_2,
+    LAYER_BASE_COMBO_1,
+    LAYER_BASE_COMBO_2,
+    LAYER_RIGHT_COMBO_1,
+    LAYER_RIGHT_COMBO_2,
+    LAYER_LEFT_COMBO_1,
+    LAYER_LEFT_COMBO_2,
+    LAYER_MACROPAD_COMBO_1,
+    LAYER_MACROPAD_COMBO_2,
+    LAYER_MACROPAD_COMBO_3,
+    LAYER_MACROPAD_COMBO_4,
+    LAYER_SABER_COMBO_1,
+    LAYER_SABER_COMBO_2,
+    GUI_CTL_T_COMBO_1,
+    GUI_CTL_T_COMBO_2,
 };
 
 bool encoder_update_user(uint8_t index, bool clockwise);
