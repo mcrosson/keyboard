@@ -1,6 +1,6 @@
 [
   {
-    "name": "Base"
+    "name": "Base - Layer 0"
   },
   [
     {
@@ -8,7 +8,7 @@
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 1\n\n\n\n\nTo Righty  - Combo Key 1",
+    "\nTo Macropad - Combo Key 1\n\n\nTD(0)\n\nTo Righty  - Combo Key 1",
     {
       "a": 7,
       "w": 2,
@@ -25,20 +25,31 @@
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 2\n\n\n\n\nTo Lefty - Combo Key 1"
+    "\nTo Macropad - Combo Key 2\n\n\nTD(2)\n\nTo Lefty - Combo Key 1"
   ],
   [
     {
-      "y": 2,
+      "y": 1.5,
+      "x": 2.5,
+      "a": 4,
+      "w": 3,
+      "h": 3
+    },
+    "C1: Boot\n\nC4: Macro\n\n\n\nC2: Righty\nC3: Lefty"
+  ],
+  [
+    {
+      "y": -0.5,
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 3\n\n\n\n\nTo Righty  - Combo Key 2",
+    "\nTo Macropad - Combo Key 3\n\n\nTD(1)\n\nTo Righty  - Combo Key 2",
     {
       "x": 4,
       "w": 2,
       "h": 3
     },
-    "\nTo Macropad - Combo Key 4\n\n\n\n\nTo Lefty - Combo Key 2"
+    "\nTo Macropad - Combo Key 4\n\n\nTD(3)\n\nTo Lefty - Combo Key 2"
   ]
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "name": "Left - Press left or right two 1.5U keys to set handedness (global combo)"
+    "name": "Left -  - Layer 2"
   },
   [
     {
@@ -8,35 +8,46 @@
       "w": 2,
       "h": 3
     },
-    "\nTo Righty - Combo Key 1\n\n\n\n\nM2",
+    "T+H: Wheel Left\nTo Righty - Combo Key 1\n\n\nTD(10)\n\nM2",
     {
       "w": 2,
       "h": 2
     },
-    "Hold - Wheel Left\nCTL-T - Combo Key 1\n\n\n\n\nWheel Down",
+    "\nTp+Hd - G+C(T) - Combo Key 1\n\n\nTD(9)\n\nWheel Down",
     {
       "w": 2,
       "h": 2
     },
-    "Hold - Wheel Right\nCTL-T - Combo Key 2\n\n\n\n\nWheel Up",
+    "\nTp+Hd - G+C(T) - Combo Key 2\n\n\nTD(8)\n\nWheel Up",
     {
       "w": 2,
       "h": 3
     },
-    "Hold - Wheel Toggle - U/D/L/R\nTo Base - Combo Key 1\n\n\n\n\nM3"
+    "T+H: Wheel Right\nTo Base - Combo Key 1\n\n\nTD(12)\n\nM3"
   ],
   [
     {
-      "y": 2,
+      "y": 1.5,
+      "x": 2.5,
+      "a": 6,
+      "w": 3,
+      "h": 3
+    },
+    "C2: Base\n\nC3: Righty"
+  ],
+  [
+    {
+      "y": -0.5,
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "\nTo Righty - Combo Key 2\n\n\n\n\nGUI Down",
+    "\nTo Righty - Combo Key 2\n\n\nTD(11)\n\nGUI Down",
     {
       "x": 4,
       "w": 2,
       "h": 3
     },
-    "Hold - Wheel - U/D/L/R\nTo Base - Combo Key 2\n\n\n\n\nM1"
+    "\nTo Base - Combo Key 2\n\n\nTD(13)\n\nM1"
   ]
 ]

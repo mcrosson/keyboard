@@ -1,6 +1,6 @@
 [
   {
-    "name": "Macropad - Sketchbook"
+    "name": "Macropad - Sketchbook - Layer 5"
   },
   [
     {
@@ -8,37 +8,48 @@
       "w": 2,
       "h": 3
     },
-    "Double Tap - T - Tog GUI\nTo Macro Base - Combo Key 2\n\n\n\n\nCTL(Y) - Redo",
+    "Double Tap - T - Tog GUI\nTo Macro Base - Combo Key 2\n\n\nTD(20)\n\nCTL(Y) - Redo",
     {
-      "w": 2,
-      "h": 2
-    },
-    "\nHold - Up\n\n\n\n\nWheel Up - Zoom In",
-    {
-      "w": 2,
-      "h": 2
-    },
-    "\nHold - Down\n\n\n\n\nWheel Down - Zm Out",
-    {
-      "w": 2,
-      "h": 3
-    },
-    "Double Tap - CTL(J) - Tog Rib\nTo Macro Base - Combo Key 1\n\n\n\n\nCTL(Z) - Undo"
-  ],
-  [
-    {
-      "y": 2,
       "a": 7,
       "w": 2,
-      "h": 3
+      "h": 2
     },
-    "M1 - Paint",
+    "Wheel Up - Zoom In",
     {
-      "x": 4,
+      "w": 2,
+      "h": 2
+    },
+    "Wheel Down - Zm Out",
+    {
       "a": 5,
       "w": 2,
       "h": 3
     },
-    "Double Tap - Macro - Z + Up - Nav Off\n\n\n\n\n\nMacro - Z + Down - Nav On"
+    "Double Tap - CTL(J) - Tog Rib\nTo Macro Base - Combo Key 1\n\n\nTD(22)\n\nCTL(Z) - Undo"
+  ],
+  [
+    {
+      "y": 1.5,
+      "x": 2.5,
+      "a": 6,
+      "w": 3,
+      "h": 3
+    },
+    "C5: Macro"
+  ],
+  [
+    {
+      "y": -0.5,
+      "a": 5,
+      "w": 2,
+      "h": 3
+    },
+    "\nTo Macropad - Combo Key 4\n\n\nTD(21)\n\nM1 - Paint",
+    {
+      "x": 4,
+      "w": 2,
+      "h": 3
+    },
+    "Double Tap - Macro 1 - Release Z - Nav Off\nTo Macropad - Combo Key 3\n\n\nTD(23)\n\nMacro 0 - Hold Z Down - Nav On"
   ]
 ]

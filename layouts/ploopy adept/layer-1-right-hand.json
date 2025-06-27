@@ -1,6 +1,6 @@
 [
   {
-    "name": "Right"
+    "name": "Right - Layer 1"
   },
   [
     {
@@ -8,35 +8,46 @@
       "w": 2,
       "h": 3
     },
-    "Hold - Wheel Toggle - U/D/L/R\nTo Base - Combo Key 1\n\n\n\n\nM3",
+    "T+H: Wheel Left\nTo Base - Combo Key 1\n\n\nTD(4)\n\nM3",
     {
       "w": 2,
       "h": 2
     },
-    "Hold - Wheel Left\nCTL-T - Combo Key 1\n\n\n\n\nWheel Up",
+    "\nTp+Hd - G+C(T) - Combo Key 1\n\n\nTD(8)\n\nWheel Up",
     {
       "w": 2,
       "h": 2
     },
-    "Hold - Wheel Right\nCTL-T - Combo Key 2\n\n\n\n\nWheel Down",
+    "\nTp+Hd - G+C(T) - Combo Key 2\n\n\nTD(9)\n\nWheel Down",
     {
       "w": 2,
       "h": 3
     },
-    "\nTo Lefty - Combo Key 1\n\n\n\n\nM2"
+    "T+H: Wheel Right\nTo Lefty - Combo Key 1\n\n\nTD(6)\n\nM2"
   ],
   [
     {
-      "y": 2,
+      "y": 1.5,
+      "x": 2.5,
+      "a": 6,
+      "w": 3,
+      "h": 3
+    },
+    "C2: Base\n\nC4: Lefty"
+  ],
+  [
+    {
+      "y": -0.5,
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "Hold - Wheel - U/D/L/R\nTo Base - Combo Key 2\n\n\n\n\nM1",
+    "\nTo Base - Combo Key 2\n\n\nTD(5)\n\nM1",
     {
       "x": 4,
       "w": 2,
       "h": 3
     },
-    "\nTo Lefty - Combo Key 2\n\n\n\n\nGUI Down"
+    "\nTo Lefty - Combo Key 2\n\n\nTD(7)\n\nGUI Down"
   ]
 ]

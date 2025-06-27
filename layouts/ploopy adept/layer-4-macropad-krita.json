@@ -1,6 +1,6 @@
 [
   {
-    "name": "Macropad - Krita"
+    "name": "Macropad - Krita - Layer 4"
   },
   [
     {
@@ -8,35 +8,48 @@
       "w": 2,
       "h": 3
     },
-    "\nTo Macro Base - Combo Key 1\n\n\n\n\nCTL(Y) - Redo",
+    "\nTo Macro Base - Combo Key 1\n\n\nTD(16)\n\nCTL(Y) - Redo",
+    {
+      "a": 7,
+      "w": 2,
+      "h": 2
+    },
+    "Wheel Up - Zoom In",
     {
       "w": 2,
       "h": 2
     },
-    "\nHold - Up\n\n\n\n\nWheel Up - Zoom In",
+    "Wheel Down - Zm Out",
     {
-      "w": 2,
-      "h": 2
-    },
-    "\nHold - Down\n\n\n\n\nWheel Down - Zm Out",
-    {
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "\nTo Macro Base - Combo Key 2\n\n\n\n\nCTL(Z) - Undo"
+    "\nTo Macro Base - Combo Key 2\n\n\nTD(18)\n\nCTL(Z) - Undo"
   ],
   [
     {
-      "y": 2,
+      "y": 1.5,
+      "x": 2.5,
+      "a": 6,
+      "w": 3,
+      "h": 3
+    },
+    "C5: Macro"
+  ],
+  [
+    {
+      "y": -0.5,
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "Double Tap - CTL(Enter) - Pop Palt\n\n\n\n\n\nM2 - Pan",
+    "Double Tap - CTL(Enter) - Pop Palt\nTo Macropad - Combo Key 3\n\n\nTD(17)\n\nM2 - Pan",
     {
       "x": 4,
       "w": 2,
       "h": 3
     },
-    "Double Tap - Tab - Full Screen\n\n\n\n\n\nM3 - Rotate"
+    "Double Tap - Tab - Full Screen\nTo Macropad - Combo Key 4\n\n\nTD(19)\n\nM3 - Rotate"
   ]
 ]
