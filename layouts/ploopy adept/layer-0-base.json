@@ -4,12 +4,13 @@
   },
   [
     {
-      "a": 7,
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "To Righty  - Combo Key 1",
+    "Double Tap: DPI_RESET\n\n\n\nTD(12)\n\nDPI_UP",
     {
+      "a": 7,
       "w": 2,
       "h": 2
     },
@@ -20,10 +21,11 @@
     },
     "QMK Boot - Combo Key 2",
     {
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "To Lefty - Combo Key 1"
+    "Double Tap: DPI_RESET\n\n\n\nTD(14)\n\nDPI_UP"
   ],
   [
     {
@@ -33,21 +35,21 @@
       "w": 3,
       "h": 3
     },
-    "C1: Boot\nC7: To Macro - Righty + Lefty keys (all 4)\nC3: To Righty\n\nAmbidexterous\n\nC4: To Lefty"
+    "C1: Boot ******************************* C3: RH - TD(12) + TD(13) ******************************* C4: LH - TD(14) + TD(15) ******************************* C7: To Macro - Righty + Lefty keys (all 4) *******************************\n\n\n\nAmbidexterous"
   ],
   [
     {
       "y": -0.5,
-      "a": 7,
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "To Righty  - Combo Key 2",
+    "Double Tap: DPI_RESET\n\n\n\nTD(13)\n\nDPI_DOWN",
     {
       "x": 4,
       "w": 2,
       "h": 3
     },
-    "To Lefty - Combo Key 2"
+    "Double Tap: DPI_RESET\n\n\n\nTD(15)\n\nDPI_DOWN"
   ]
 ]

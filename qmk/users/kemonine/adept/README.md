@@ -16,6 +16,10 @@ docker run --rm -it `
 qmkfm/qmk_cli:latest
 ```
 
+## Boot Mode
+
+Hold lower left button when powering on or boot combo from personal vial config.
+
 ## Prep
 
 ### Sources

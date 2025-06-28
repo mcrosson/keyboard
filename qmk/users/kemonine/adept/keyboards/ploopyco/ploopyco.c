@@ -132,8 +132,30 @@ void toggle_drag_scroll(void) {
     is_drag_scroll ^= 1;
 }
 
-void cycle_dpi(void) {
-    keyboard_config.dpi_config = (keyboard_config.dpi_config + 1) % DPI_OPTION_SIZE;
+void cycle_dpi_reset(void) {
+    cycle_dpi_val(PLOOPY_DPI_DEFAULT);
+}
+
+void cycle_dpi_up(void) {
+    uint8_t new_val = keyboard_config.dpi_config + 1;
+    // no rollover for value, use `0` for rollover
+    if (new_val >= DPI_OPTION_SIZE) {
+        new_val = DPI_OPTION_SIZE - 1;
+    }
+    cycle_dpi_val(new_val);
+}
+
+void cycle_dpi_down(void) {
+    uint8_t new_val = (keyboard_config.dpi_config - 1);
+    // no rollover for value, use `DPI_OPTION_SIZE - 1` for rollover
+    if (new_val < 0) {
+        new_val = 0;
+    }
+    cycle_dpi_val(new_val);
+}
+
+void cycle_dpi_val(uint8_t new_val) {
+    keyboard_config.dpi_config = new_val;
     eeconfig_update_kb(keyboard_config.raw);
     pointing_device_set_cpi(dpi_array[keyboard_config.dpi_config]);
 }
@@ -183,8 +205,16 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
         return false;
     }
 
-    if (keycode == DPI_CONFIG && record->event.pressed) {
-        cycle_dpi();
+    if (keycode == DPI_UP && record->event.pressed) {
+        cycle_dpi_up();
+    }
+
+    if (keycode == DPI_DOWN && record->event.pressed) {
+        cycle_dpi_down();
+    }
+
+    if (keycode == DPI_RESET && record->event.pressed) {
+        cycle_dpi_reset();
     }
 
     if (keycode == DRAG_SCROLL) {
@@ -198,7 +228,8 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
     }
 
     // No Op custom key codes
-    if (keycode == BOOT_COMBO_1
+    if (keycode == NO_OP
+        || keycode == BOOT_COMBO_1
         || keycode == BOOT_COMBO_2
         || keycode == LAYER_BASE_COMBO_1
         || keycode == LAYER_BASE_COMBO_2

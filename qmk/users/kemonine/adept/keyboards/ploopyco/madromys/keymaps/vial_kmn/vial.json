@@ -4,6 +4,11 @@
   "productId": "0x5442",
   "lighting": "none",
   "customKeycodes": [
+    {"name": "No Op", "title": "No Op", "shortName": "No Op"},
+    {"name": "Drag Scroll", "title": "Drag Scroll", "shortName": "Drag\nScrl"},
+    {"name": "DPI Reset", "title": "DPI Reset", "shortName": "DPI\nReset"},
+    {"name": "DPI Up", "title": "DPI Up", "shortName": "DPI\nUp"},
+    {"name": "DPI Down", "title": "DPI Down", "shortName": "DPI\nDown"},
     {"name": "Layer Boot Combo 1", "title": "Boot Layer Combo Key 1", "shortName": "Boot\nCmb 1"},
     {"name": "Layer Boot Combo 2", "title": "Boot Layer Combo Key 2", "shortName": "Boot\nCmb 2"},
     {"name": "Layer Base Combo 1", "title": "Base Layer Combo Key 1", "shortName": "Base\nCmb 1"},
