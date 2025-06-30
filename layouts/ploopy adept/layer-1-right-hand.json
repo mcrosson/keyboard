@@ -35,7 +35,7 @@
       "w": 3,
       "h": 3
     },
-    "C8: To Base - TD(0) + M1\n\n\n\nRight Handed\n\nC9: To Lefty - TD(1) + GUI(Down)"
+    "C8: To Base - TD(0) + M1\n\n\n\nRight Handed\n\nC9: To Lefty - TD(1) + TD(16)"
   ],
   [
     {
@@ -47,9 +47,10 @@
     "M1",
     {
       "x": 4,
+      "a": 5,
       "w": 2,
       "h": 3
     },
-    "GUI(Down)"
+    "Hold: GUI(Up)\n\n\n\nTD(16)\n\nGUI(Down)"
   ]
 ]
