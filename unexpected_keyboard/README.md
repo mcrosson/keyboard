@@ -47,6 +47,10 @@ To use these layouts you can copy/paste the contents of the `xml` files into the
 
 ## Additional Info
 
+### Foldable Devices
+
+Please note: as of version `1.32.0` (July 1, 2025) there are options specific to foldable devices. See Pull Request [982](https://github.com/Julow/Unexpected-Keyboard) and Commit [97355881a855c5d2503f7e518c1e30fc03f88d4e](https://github.com/Julow/Unexpected-Keyboard/commit/97355881a855c5d2503f7e518c1e30fc03f88d4e) for additional details.
+
 ### Resources
 
 - https://github.com/Julow/Unexpected-Keyboard
