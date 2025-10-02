@@ -1,0 +1,50 @@
+[
+  {
+    "backcolor": "#ba00ff",
+    "name": "Layer 1",
+    "author": "KemoNine"
+  },
+  [
+    {
+      "a": 7
+    },
+    "Undo",
+    "",
+    "",
+    "Redo"
+  ],
+  [
+    "Color",
+    "",
+    "Tog Eraser",
+    "Tog Pen"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 4.5,
+      "a": 4,
+      "w": 2.5,
+      "h": 2
+    },
+    "\n\n\n\n\n\nLeft\nRight\nUp\n<i class='fa fa-retweet'></i> Wheel\nDown"
+  ],
+  [
+    {
+      "y": -0.5,
+      "a": 7
+    },
+    "Undo",
+    "Layer 1\n\n\n\nBoot",
+    "Redo"
+  ],
+  [
+    {
+      "y": 0.5,
+      "x": 3.5,
+      "w": 2,
+      "h": 2
+    },
+    "<i class='fa fa-retweet'></i> Up / Dn"
+  ]
+]
