@@ -40,6 +40,7 @@ qmk compile -kb qvex/lynepad -km default
 ``` shell
 cd /qmk_kmn_lynepad
 qmk config user.overlay_dir="$(realpath .)"
+qmk userspace-add -kb qvex/lynepad -km kmn
 qmk userspace-list
-qmk compile -kb qvex/lynepad -km kmn
+qmk compile -kb qvex/lynepad -km kmn -e TAP_DANCE_ENABLE=yes
 ```
